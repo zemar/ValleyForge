@@ -10,11 +10,10 @@
 		275010891B52DBC300C0CC71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010881B52DBC300C0CC71 /* main.m */; };
 		2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750108B1B52DBC300C0CC71 /* AppDelegate.m */; };
 		2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */; };
-		275010921B52DBC300C0CC71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010911B52DBC300C0CC71 /* ViewController.m */; };
-		275010951B52DBC300C0CC71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275010931B52DBC300C0CC71 /* Main.storyboard */; };
 		275010971B52DBC300C0CC71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275010961B52DBC300C0CC71 /* Images.xcassets */; };
 		2750109A1B52DBC300C0CC71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 275010981B52DBC300C0CC71 /* LaunchScreen.xib */; };
 		275010A61B52DBC300C0CC71 /* ValleyForgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */; };
+		275010B31B53018300C0CC71 /* QuestionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010B21B53018300C0CC71 /* QuestionListTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +33,13 @@
 		2750108A1B52DBC300C0CC71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2750108B1B52DBC300C0CC71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2750108E1B52DBC300C0CC71 /* ValleyForge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ValleyForge.xcdatamodel; sourceTree = "<group>"; };
-		275010901B52DBC300C0CC71 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		275010911B52DBC300C0CC71 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		275010941B52DBC300C0CC71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		275010961B52DBC300C0CC71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		275010991B52DBC300C0CC71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2750109F1B52DBC300C0CC71 /* ValleyForgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValleyForgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275010A41B52DBC300C0CC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValleyForgeTests.m; sourceTree = "<group>"; };
+		275010B11B53018300C0CC71 /* QuestionListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewController.h; sourceTree = "<group>"; };
+		275010B21B53018300C0CC71 /* QuestionListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +83,12 @@
 			children = (
 				2750108A1B52DBC300C0CC71 /* AppDelegate.h */,
 				2750108B1B52DBC300C0CC71 /* AppDelegate.m */,
-				275010901B52DBC300C0CC71 /* ViewController.h */,
-				275010911B52DBC300C0CC71 /* ViewController.m */,
-				275010931B52DBC300C0CC71 /* Main.storyboard */,
 				275010961B52DBC300C0CC71 /* Images.xcassets */,
 				275010981B52DBC300C0CC71 /* LaunchScreen.xib */,
 				2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */,
 				275010861B52DBC300C0CC71 /* Supporting Files */,
+				275010B11B53018300C0CC71 /* QuestionListTableViewController.h */,
+				275010B21B53018300C0CC71 /* QuestionListTableViewController.m */,
 			);
 			path = ValleyForge;
 			sourceTree = "<group>";
@@ -202,7 +199,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275010951B52DBC300C0CC71 /* Main.storyboard in Resources */,
 				2750109A1B52DBC300C0CC71 /* LaunchScreen.xib in Resources */,
 				275010971B52DBC300C0CC71 /* Images.xcassets in Resources */,
 			);
@@ -224,8 +220,8 @@
 			files = (
 				2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */,
 				275010891B52DBC300C0CC71 /* main.m in Sources */,
-				275010921B52DBC300C0CC71 /* ViewController.m in Sources */,
 				2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */,
+				275010B31B53018300C0CC71 /* QuestionListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,14 +244,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		275010931B52DBC300C0CC71 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				275010941B52DBC300C0CC71 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		275010981B52DBC300C0CC71 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

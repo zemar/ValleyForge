@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "QuestionListTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    QuestionListTableViewController *tvc = [[QuestionListTableViewController alloc] init];
+    
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:tvc];
+    
+    self.window.rootViewController = nv;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
