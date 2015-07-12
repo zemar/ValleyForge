@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		275010891B52DBC300C0CC71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010881B52DBC300C0CC71 /* main.m */; };
+		2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750108B1B52DBC300C0CC71 /* AppDelegate.m */; };
+		2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */; };
+		275010921B52DBC300C0CC71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010911B52DBC300C0CC71 /* ViewController.m */; };
+		275010951B52DBC300C0CC71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275010931B52DBC300C0CC71 /* Main.storyboard */; };
+		275010971B52DBC300C0CC71 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275010961B52DBC300C0CC71 /* Images.xcassets */; };
+		2750109A1B52DBC300C0CC71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 275010981B52DBC300C0CC71 /* LaunchScreen.xib */; };
+		275010A61B52DBC300C0CC71 /* ValleyForgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		275010A01B52DBC300C0CC71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2750107B1B52DBC300C0CC71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 275010821B52DBC300C0CC71;
+			remoteInfo = ValleyForge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		275010831B52DBC300C0CC71 /* ValleyForge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValleyForge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		275010871B52DBC300C0CC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		275010881B52DBC300C0CC71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2750108A1B52DBC300C0CC71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2750108B1B52DBC300C0CC71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2750108E1B52DBC300C0CC71 /* ValleyForge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ValleyForge.xcdatamodel; sourceTree = "<group>"; };
+		275010901B52DBC300C0CC71 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		275010911B52DBC300C0CC71 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		275010941B52DBC300C0CC71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		275010961B52DBC300C0CC71 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		275010991B52DBC300C0CC71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2750109F1B52DBC300C0CC71 /* ValleyForgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValleyForgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		275010A41B52DBC300C0CC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValleyForgeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		275010801B52DBC300C0CC71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2750109C1B52DBC300C0CC71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2750107A1B52DBC300C0CC71 = {
+			isa = PBXGroup;
+			children = (
+				275010851B52DBC300C0CC71 /* ValleyForge */,
+				275010A21B52DBC300C0CC71 /* ValleyForgeTests */,
+				275010841B52DBC300C0CC71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		275010841B52DBC300C0CC71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				275010831B52DBC300C0CC71 /* ValleyForge.app */,
+				2750109F1B52DBC300C0CC71 /* ValleyForgeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		275010851B52DBC300C0CC71 /* ValleyForge */ = {
+			isa = PBXGroup;
+			children = (
+				2750108A1B52DBC300C0CC71 /* AppDelegate.h */,
+				2750108B1B52DBC300C0CC71 /* AppDelegate.m */,
+				275010901B52DBC300C0CC71 /* ViewController.h */,
+				275010911B52DBC300C0CC71 /* ViewController.m */,
+				275010931B52DBC300C0CC71 /* Main.storyboard */,
+				275010961B52DBC300C0CC71 /* Images.xcassets */,
+				275010981B52DBC300C0CC71 /* LaunchScreen.xib */,
+				2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */,
+				275010861B52DBC300C0CC71 /* Supporting Files */,
+			);
+			path = ValleyForge;
+			sourceTree = "<group>";
+		};
+		275010861B52DBC300C0CC71 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				275010871B52DBC300C0CC71 /* Info.plist */,
+				275010881B52DBC300C0CC71 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		275010A21B52DBC300C0CC71 /* ValleyForgeTests */ = {
+			isa = PBXGroup;
+			children = (
+				275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */,
+				275010A31B52DBC300C0CC71 /* Supporting Files */,
+			);
+			path = ValleyForgeTests;
+			sourceTree = "<group>";
+		};
+		275010A31B52DBC300C0CC71 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				275010A41B52DBC300C0CC71 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		275010821B52DBC300C0CC71 /* ValleyForge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 275010A91B52DBC300C0CC71 /* Build configuration list for PBXNativeTarget "ValleyForge" */;
+			buildPhases = (
+				2750107F1B52DBC300C0CC71 /* Sources */,
+				275010801B52DBC300C0CC71 /* Frameworks */,
+				275010811B52DBC300C0CC71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ValleyForge;
+			productName = ValleyForge;
+			productReference = 275010831B52DBC300C0CC71 /* ValleyForge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2750109E1B52DBC300C0CC71 /* ValleyForgeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 275010AC1B52DBC300C0CC71 /* Build configuration list for PBXNativeTarget "ValleyForgeTests" */;
+			buildPhases = (
+				2750109B1B52DBC300C0CC71 /* Sources */,
+				2750109C1B52DBC300C0CC71 /* Frameworks */,
+				2750109D1B52DBC300C0CC71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				275010A11B52DBC300C0CC71 /* PBXTargetDependency */,
+			);
+			name = ValleyForgeTests;
+			productName = ValleyForgeTests;
+			productReference = 2750109F1B52DBC300C0CC71 /* ValleyForgeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2750107B1B52DBC300C0CC71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "X-Tic Systems";
+				TargetAttributes = {
+					275010821B52DBC300C0CC71 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					2750109E1B52DBC300C0CC71 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 275010821B52DBC300C0CC71;
+					};
+				};
+			};
+			buildConfigurationList = 2750107E1B52DBC300C0CC71 /* Build configuration list for PBXProject "ValleyForge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2750107A1B52DBC300C0CC71;
+			productRefGroup = 275010841B52DBC300C0CC71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				275010821B52DBC300C0CC71 /* ValleyForge */,
+				2750109E1B52DBC300C0CC71 /* ValleyForgeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		275010811B52DBC300C0CC71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275010951B52DBC300C0CC71 /* Main.storyboard in Resources */,
+				2750109A1B52DBC300C0CC71 /* LaunchScreen.xib in Resources */,
+				275010971B52DBC300C0CC71 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2750109D1B52DBC300C0CC71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2750107F1B52DBC300C0CC71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */,
+				275010891B52DBC300C0CC71 /* main.m in Sources */,
+				275010921B52DBC300C0CC71 /* ViewController.m in Sources */,
+				2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2750109B1B52DBC300C0CC71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				275010A61B52DBC300C0CC71 /* ValleyForgeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		275010A11B52DBC300C0CC71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 275010821B52DBC300C0CC71 /* ValleyForge */;
+			targetProxy = 275010A01B52DBC300C0CC71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		275010931B52DBC300C0CC71 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				275010941B52DBC300C0CC71 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		275010981B52DBC300C0CC71 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				275010991B52DBC300C0CC71 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		275010A71B52DBC300C0CC71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		275010A81B52DBC300C0CC71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		275010AA1B52DBC300C0CC71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ValleyForge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		275010AB1B52DBC300C0CC71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ValleyForge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		275010AD1B52DBC300C0CC71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ValleyForgeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ValleyForge.app/ValleyForge";
+			};
+			name = Debug;
+		};
+		275010AE1B52DBC300C0CC71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ValleyForgeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ValleyForge.app/ValleyForge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2750107E1B52DBC300C0CC71 /* Build configuration list for PBXProject "ValleyForge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275010A71B52DBC300C0CC71 /* Debug */,
+				275010A81B52DBC300C0CC71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		275010A91B52DBC300C0CC71 /* Build configuration list for PBXNativeTarget "ValleyForge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275010AA1B52DBC300C0CC71 /* Debug */,
+				275010AB1B52DBC300C0CC71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		275010AC1B52DBC300C0CC71 /* Build configuration list for PBXNativeTarget "ValleyForgeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				275010AD1B52DBC300C0CC71 /* Debug */,
+				275010AE1B52DBC300C0CC71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2750108E1B52DBC300C0CC71 /* ValleyForge.xcdatamodel */,
+			);
+			currentVersion = 2750108E1B52DBC300C0CC71 /* ValleyForge.xcdatamodel */;
+			path = ValleyForge.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2750107B1B52DBC300C0CC71 /* Project object */;
+}
