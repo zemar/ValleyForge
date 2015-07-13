@@ -14,6 +14,7 @@
 		2750109A1B52DBC300C0CC71 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 275010981B52DBC300C0CC71 /* LaunchScreen.xib */; };
 		275010A61B52DBC300C0CC71 /* ValleyForgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */; };
 		275010B31B53018300C0CC71 /* QuestionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010B21B53018300C0CC71 /* QuestionListTableViewController.m */; };
+		275010B81B53421C00C0CC71 /* QuestionListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010B71B53421C00C0CC71 /* QuestionListTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValleyForgeTests.m; sourceTree = "<group>"; };
 		275010B11B53018300C0CC71 /* QuestionListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewController.h; sourceTree = "<group>"; };
 		275010B21B53018300C0CC71 /* QuestionListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewController.m; sourceTree = "<group>"; };
+		275010B61B53421C00C0CC71 /* QuestionListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionListTableView.h; path = ../QuestionListTableView.h; sourceTree = "<group>"; };
+		275010B71B53421C00C0CC71 /* QuestionListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionListTableView.m; path = ../QuestionListTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				275010861B52DBC300C0CC71 /* Supporting Files */,
 				275010B11B53018300C0CC71 /* QuestionListTableViewController.h */,
 				275010B21B53018300C0CC71 /* QuestionListTableViewController.m */,
+				275010B61B53421C00C0CC71 /* QuestionListTableView.h */,
+				275010B71B53421C00C0CC71 /* QuestionListTableView.m */,
 			);
 			path = ValleyForge;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275010B81B53421C00C0CC71 /* QuestionListTableView.m in Sources */,
 				2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */,
 				275010891B52DBC300C0CC71 /* main.m in Sources */,
 				2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */,

@@ -1,5 +1,5 @@
 //
-//  QuestionListTableViewController.h
+//  QuestionListTableView.h
 //  ValleyForge
 //
 //  Created by mike on 7/12/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionListTableViewController : UITableViewController
+@interface QuestionListTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
 
 @end

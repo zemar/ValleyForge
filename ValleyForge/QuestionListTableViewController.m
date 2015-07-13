@@ -17,9 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"QuestionListTableViewController viewDidLoad");
-    
-//    UINib *nib = [UINib nibWithNibName:@"QuestionListTableView" bundle:nil];
+//    self.tableView = [self initWithNibName:@"QuestionListTableView" bundle:nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
