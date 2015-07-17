@@ -11,6 +11,8 @@
 
 @interface QuestionListTableViewController ()
 
+@property (nonatomic) QuestionListTableView *tv;
+
 @end
 
 @implementation QuestionListTableViewController
@@ -26,11 +28,9 @@
 }
 
 - (void)loadView {
-    NSLog(@"loadView");
     CGRect frame = [UIScreen mainScreen].bounds;
-    QuestionListTableView *tv = [[QuestionListTableView alloc] initWithFrame:frame];
-    self.tableView = tv;
-    self.view = tv;
+    self.tv = [[QuestionListTableView alloc] initWithFrame:frame];
+    self.view = self.tv;
 }
 
 - (void)viewDidLoad {
@@ -57,7 +57,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+    return 3;
 }
 
 /*

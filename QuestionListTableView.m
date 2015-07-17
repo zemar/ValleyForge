@@ -10,10 +10,18 @@
 
 @implementation QuestionListTableView
 
-- (instancetype)init {
-    self = [super init];
-    NSLog(@"init");
-        
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    
+    self.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0];
+    self.rowHeight = 100.0;
+    self.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+    self.separatorColor = [UIColor blueColor];
+    self.separatorEffect = [[UIBlurEffect alloc] init];
+    self.separatorInset = UIEdgeInsetsMake(0, 50, 0, 50);
+
+//    self.dataSource = self.parentViewController;
+//    self.delegate = self.parentViewController;
     return self;
 }
 
