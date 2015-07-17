@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionListTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
+@interface QuestionListTableView : UITableView //<UITableViewDelegate, UITableViewDataSource>
 
 @end

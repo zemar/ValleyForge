@@ -7,6 +7,7 @@
 //
 
 #import "QuestionListTableViewController.h"
+#import "QuestionListTableView.h"
 
 @interface QuestionListTableViewController ()
 
@@ -14,14 +15,32 @@
 
 @implementation QuestionListTableViewController
 
+- (instancetype)init {
+    self = [super initWithStyle:UITableViewStylePlain];
+    return self;
+}
+
+- (instancetype)initWithStyle:(UITableViewStyle)style {
+    
+    return [self init];
+}
+
+- (void)loadView {
+    NSLog(@"loadView");
+    CGRect frame = [UIScreen mainScreen].bounds;
+    QuestionListTableView *tv = [[QuestionListTableView alloc] initWithFrame:frame];
+    self.tableView = tv;
+    self.view = tv;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.tableView = [self initWithNibName:@"QuestionListTableView" bundle:nil];
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller. self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,13 +51,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }

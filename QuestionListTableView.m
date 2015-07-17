@@ -10,6 +10,18 @@
 
 @implementation QuestionListTableView
 
+- (instancetype)init {
+    self = [super init];
+    NSLog(@"init");
+        
+    return self;
+}
+
+- (void)viewDidLoad {
+    
+    NSLog(@"viewDidLoad");
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
