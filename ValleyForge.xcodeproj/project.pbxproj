@@ -16,7 +16,8 @@
 		275010B31B53018300C0CC71 /* QuestionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010B21B53018300C0CC71 /* QuestionListTableViewController.m */; };
 		275010B81B53421C00C0CC71 /* QuestionListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010B71B53421C00C0CC71 /* QuestionListTableView.m */; };
 		2773C4B61B59E0E40021762C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4B51B59E0E40021762C /* Default-568h@2x.png */; };
-		DD2968B21B5A9F3F007E152E /* QuestionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2968B11B5A9F3F007E152E /* QuestionListCell.xib */; };
+		DD2968B21B5A9F3F007E152E /* QuestionListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */; };
+		DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,9 @@
 		275010B61B53421C00C0CC71 /* QuestionListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionListTableView.h; path = ../QuestionListTableView.h; sourceTree = "<group>"; };
 		275010B71B53421C00C0CC71 /* QuestionListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionListTableView.m; path = ../QuestionListTableView.m; sourceTree = "<group>"; };
 		2773C4B51B59E0E40021762C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		DD2968B11B5A9F3F007E152E /* QuestionListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListCell.xib; sourceTree = "<group>"; };
+		DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListTableViewCell.xib; sourceTree = "<group>"; };
+		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionListTableViewCell.h; path = ../QuestionListTableViewCell.h; sourceTree = "<group>"; };
+		DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionListTableViewCell.m; path = ../QuestionListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +101,9 @@
 				275010B21B53018300C0CC71 /* QuestionListTableViewController.m */,
 				275010B61B53421C00C0CC71 /* QuestionListTableView.h */,
 				275010B71B53421C00C0CC71 /* QuestionListTableView.m */,
-				DD2968B11B5A9F3F007E152E /* QuestionListCell.xib */,
+				DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */,
+				DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */,
+				DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */,
 			);
 			path = ValleyForge;
 			sourceTree = "<group>";
@@ -211,7 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2750109A1B52DBC300C0CC71 /* LaunchScreen.xib in Resources */,
-				DD2968B21B5A9F3F007E152E /* QuestionListCell.xib in Resources */,
+				DD2968B21B5A9F3F007E152E /* QuestionListTableViewCell.xib in Resources */,
 				275010971B52DBC300C0CC71 /* Images.xcassets in Resources */,
 				2773C4B61B59E0E40021762C /* Default-568h@2x.png in Resources */,
 			);
@@ -236,6 +241,7 @@
 				275010891B52DBC300C0CC71 /* main.m in Sources */,
 				2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */,
 				275010B31B53018300C0CC71 /* QuestionListTableViewController.m in Sources */,
+				DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "QuestionListTableViewController.h"
 #import "QuestionListTableView.h"
+#import "QuestionListTableViewCell.h"
 
 @interface QuestionListTableViewController ()
 
@@ -43,6 +44,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    [self.tableView registerNib:[UINib nibWithNibName:@"QuestionListTableViewCell" bundle:nil] forCellReuseIdentifier:@"QuestionListCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,9 +68,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionListCell" forIndexPath:indexPath];
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-    // Configure the cell...
+
+    QuestionListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionListCell" forIndexPath:indexPath];
     
     return cell;
 }
