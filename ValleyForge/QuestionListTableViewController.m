@@ -11,7 +11,7 @@
 
 @interface QuestionListTableViewController ()
 
-@property (nonatomic) QuestionListTableView *tv;
+@property (nonatomic) QuestionListTableView *qltv;
 
 @end
 
@@ -29,8 +29,10 @@
 
 - (void)loadView {
     CGRect frame = [UIScreen mainScreen].bounds;
-    self.tv = [[QuestionListTableView alloc] initWithFrame:frame];
-    self.view = self.tv;
+    self.qltv = [[QuestionListTableView alloc] initWithFrame:frame];
+    self.qltv.delegate = self;
+    self.qltv.dataSource = self;
+    self.view = self.qltv;
 }
 
 - (void)viewDidLoad {

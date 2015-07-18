@@ -20,8 +20,6 @@
     self.separatorEffect = [[UIBlurEffect alloc] init];
     self.separatorInset = UIEdgeInsetsMake(0, 50, 0, 50);
 
-//    self.dataSource = self.parentViewController;
-//    self.delegate = self.parentViewController;
     return self;
 }
 
