@@ -16,6 +16,9 @@
 		275010B31B53018300C0CC71 /* QuestionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010B21B53018300C0CC71 /* QuestionListTableViewController.m */; };
 		275010B81B53421C00C0CC71 /* QuestionListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010B71B53421C00C0CC71 /* QuestionListTableView.m */; };
 		2773C4B61B59E0E40021762C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4B51B59E0E40021762C /* Default-568h@2x.png */; };
+		2773C4BB1B5C1D940021762C /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773C4BA1B5C1D940021762C /* AnswerViewController.m */; };
+		2773C4BE1B5C1DD90021762C /* AnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773C4BD1B5C1DD90021762C /* AnswerView.m */; };
+		2773C4C01B5C1DF50021762C /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4BF1B5C1DF50021762C /* AnswerView.xib */; };
 		DD2968B21B5A9F3F007E152E /* QuestionListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */; };
 		DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,11 @@
 		275010B61B53421C00C0CC71 /* QuestionListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionListTableView.h; path = ../QuestionListTableView.h; sourceTree = "<group>"; };
 		275010B71B53421C00C0CC71 /* QuestionListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionListTableView.m; path = ../QuestionListTableView.m; sourceTree = "<group>"; };
 		2773C4B51B59E0E40021762C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		2773C4B91B5C1D940021762C /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
+		2773C4BA1B5C1D940021762C /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
+		2773C4BC1B5C1DD90021762C /* AnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerView.h; sourceTree = "<group>"; };
+		2773C4BD1B5C1DD90021762C /* AnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerView.m; sourceTree = "<group>"; };
+		2773C4BF1B5C1DF50021762C /* AnswerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
 		DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListTableViewCell.xib; sourceTree = "<group>"; };
 		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionListTableViewCell.h; path = ../QuestionListTableViewCell.h; sourceTree = "<group>"; };
 		DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionListTableViewCell.m; path = ../QuestionListTableViewCell.m; sourceTree = "<group>"; };
@@ -93,6 +101,11 @@
 			children = (
 				2750108A1B52DBC300C0CC71 /* AppDelegate.h */,
 				2750108B1B52DBC300C0CC71 /* AppDelegate.m */,
+				2773C4B91B5C1D940021762C /* AnswerViewController.h */,
+				2773C4BA1B5C1D940021762C /* AnswerViewController.m */,
+				2773C4BC1B5C1DD90021762C /* AnswerView.h */,
+				2773C4BD1B5C1DD90021762C /* AnswerView.m */,
+				2773C4BF1B5C1DF50021762C /* AnswerView.xib */,
 				275010961B52DBC300C0CC71 /* Images.xcassets */,
 				275010981B52DBC300C0CC71 /* LaunchScreen.xib */,
 				2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */,
@@ -217,6 +230,7 @@
 			files = (
 				2750109A1B52DBC300C0CC71 /* LaunchScreen.xib in Resources */,
 				DD2968B21B5A9F3F007E152E /* QuestionListTableViewCell.xib in Resources */,
+				2773C4C01B5C1DF50021762C /* AnswerView.xib in Resources */,
 				275010971B52DBC300C0CC71 /* Images.xcassets in Resources */,
 				2773C4B61B59E0E40021762C /* Default-568h@2x.png in Resources */,
 			);
@@ -238,6 +252,8 @@
 			files = (
 				275010B81B53421C00C0CC71 /* QuestionListTableView.m in Sources */,
 				2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */,
+				2773C4BE1B5C1DD90021762C /* AnswerView.m in Sources */,
+				2773C4BB1B5C1D940021762C /* AnswerViewController.m in Sources */,
 				275010891B52DBC300C0CC71 /* main.m in Sources */,
 				2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */,
 				275010B31B53018300C0CC71 /* QuestionListTableViewController.m in Sources */,

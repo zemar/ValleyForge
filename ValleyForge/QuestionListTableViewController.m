@@ -9,6 +9,7 @@
 #import "QuestionListTableViewController.h"
 #import "QuestionListTableView.h"
 #import "QuestionListTableViewCell.h"
+#import "AnswerViewController.h"
 
 @interface QuestionListTableViewController ()
 
@@ -90,6 +91,12 @@
     UIView *v = [[UIView alloc] init];
     [v setBackgroundColor:[UIColor clearColor]];
     return v;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AnswerViewController *avc = [[AnswerViewController alloc] init];
+    [self.navigationController pushViewController:avc animated:YES];
 }
 
 /*
