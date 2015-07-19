@@ -95,7 +95,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    AnswerViewController *avc = [[AnswerViewController alloc] init];
+    AnswerViewController *avc = [[AnswerViewController alloc] initWithNibName:@"AnswerView" bundle:nil];
     [self.navigationController pushViewController:avc animated:YES];
 }
 

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
             <connections>
                 <outlet property="view" destination="0GI-O1-BFi" id="qNt-Hh-qA7"/>
             </connections>
@@ -14,18 +14,38 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer Cell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38X-M3-MgN" userLabel="textLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="240" fixedFrame="YES" text="Answer Cell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38X-M3-MgN" userLabel="textLabel">
                     <rect key="frame" x="214" y="195" width="197" height="21"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
-                    <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="102" y="189" width="197" height="21"/>
-                    </variation>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="147" y="330"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="38X-M3-MgN" firstAttribute="top" secondItem="0GI-O1-BFi" secondAttribute="top" constant="50" id="6qT-vE-dER"/>
+                <constraint firstAttribute="trailing" secondItem="38X-M3-MgN" secondAttribute="trailing" constant="35" id="PXx-Kq-pG8"/>
+                <constraint firstItem="38X-M3-MgN" firstAttribute="leading" relation="lessThanOrEqual" secondItem="0GI-O1-BFi" secondAttribute="leading" constant="20" id="b3P-iX-MWq"/>
+                <constraint firstAttribute="bottom" secondItem="38X-M3-MgN" secondAttribute="bottom" constant="33" id="r3A-hI-Ciz"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="6qT-vE-dER"/>
+                    <exclude reference="PXx-Kq-pG8"/>
+                    <exclude reference="b3P-iX-MWq"/>
+                    <exclude reference="r3A-hI-Ciz"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="6qT-vE-dER"/>
+                    <include reference="PXx-Kq-pG8"/>
+                    <include reference="b3P-iX-MWq"/>
+                    <include reference="r3A-hI-Ciz"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="149" y="367"/>
         </view>
     </objects>
 </document>

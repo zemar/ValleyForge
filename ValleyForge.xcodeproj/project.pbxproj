@@ -106,10 +106,6 @@
 				2773C4BC1B5C1DD90021762C /* AnswerView.h */,
 				2773C4BD1B5C1DD90021762C /* AnswerView.m */,
 				2773C4BF1B5C1DF50021762C /* AnswerView.xib */,
-				275010961B52DBC300C0CC71 /* Images.xcassets */,
-				275010981B52DBC300C0CC71 /* LaunchScreen.xib */,
-				2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */,
-				275010861B52DBC300C0CC71 /* Supporting Files */,
 				275010B11B53018300C0CC71 /* QuestionListTableViewController.h */,
 				275010B21B53018300C0CC71 /* QuestionListTableViewController.m */,
 				275010B61B53421C00C0CC71 /* QuestionListTableView.h */,
@@ -117,6 +113,10 @@
 				DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */,
 				DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */,
 				DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */,
+				275010961B52DBC300C0CC71 /* Images.xcassets */,
+				275010981B52DBC300C0CC71 /* LaunchScreen.xib */,
+				2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */,
+				275010861B52DBC300C0CC71 /* Supporting Files */,
 			);
 			path = ValleyForge;
 			sourceTree = "<group>";

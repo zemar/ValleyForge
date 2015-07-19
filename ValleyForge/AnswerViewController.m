@@ -19,8 +19,7 @@
     self = [super init];
     
     if (self) {
-        UIViewController *controller = [[UIViewController alloc] initWithNibName:@"AnswerView" bundle:nil];
-        AnswerView *av = (AnswerView*)controller.view;
+        AnswerView *av = (AnswerView*)self.view;
         [self.view addSubview:av];
     }
 
