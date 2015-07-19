@@ -58,7 +58,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     // If this is 0, dataSource methods are ignored!!
-    return 3;
+    return 15;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -71,9 +71,26 @@
 
     QuestionListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionListCell" forIndexPath:indexPath];
     
+    NSString *cellText = [NSString stringWithFormat:@"This is cell number %ld", (long)indexPath.section];
+    
+    cell.textLabel.text = cellText;
+    
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80.0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)selection {
+    return 10.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)selection {
+    UIView *v = [[UIView alloc] init];
+    [v setBackgroundColor:[UIColor clearColor]];
+    return v;
+}
 
 /*
 // Override to support conditional editing of the table view.
