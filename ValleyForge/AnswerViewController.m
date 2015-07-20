@@ -16,14 +16,20 @@
 @implementation AnswerViewController
 
 - (instancetype)init {
-    self = [super init];
+    self = [super initWithNibName:@"AnswerView" bundle:nil];
     
     if (self) {
-        AnswerView *av = (AnswerView*)self.view;
-        [self.view addSubview:av];
+        UIBarButtonItem *correct = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                 target:self
+                                                                                 action:@selector(dismiss:)];
+        self.navigationItem.rightBarButtonItem = correct;
     }
 
     return self;
+}
+
+- (void)dismiss:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)viewDidLoad {

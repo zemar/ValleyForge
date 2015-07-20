@@ -95,8 +95,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    AnswerViewController *avc = [[AnswerViewController alloc] initWithNibName:@"AnswerView" bundle:nil];
-    [self.navigationController pushViewController:avc animated:YES];
+    AnswerViewController *avc = [[AnswerViewController alloc] init];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:avc];
+    navController.modalPresentationStyle = UIModalPresentationPageSheet;
+    navController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+    
+    [self presentViewController:navController animated:YES completion:NULL];
 }
 
 /*
