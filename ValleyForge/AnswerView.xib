@@ -24,11 +24,20 @@
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="38X-M3-MgN" firstAttribute="top" secondItem="0GI-O1-BFi" secondAttribute="top" constant="50" id="6qT-vE-dER"/>
-                <constraint firstAttribute="trailing" secondItem="38X-M3-MgN" secondAttribute="trailing" constant="35" id="PXx-Kq-pG8"/>
-                <constraint firstItem="38X-M3-MgN" firstAttribute="leading" relation="lessThanOrEqual" secondItem="0GI-O1-BFi" secondAttribute="leading" constant="20" id="b3P-iX-MWq"/>
-                <constraint firstAttribute="bottom" secondItem="38X-M3-MgN" secondAttribute="bottom" constant="33" id="r3A-hI-Ciz"/>
+                <constraint firstItem="38X-M3-MgN" firstAttribute="top" relation="lessThanOrEqual" secondItem="0GI-O1-BFi" secondAttribute="top" constant="50" id="6qT-vE-dER">
+                    <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                </constraint>
+                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="38X-M3-MgN" secondAttribute="trailing" constant="35" id="PXx-Kq-pG8">
+                    <variation key="heightClass=compact-widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstItem="38X-M3-MgN" firstAttribute="leading" relation="lessThanOrEqual" secondItem="0GI-O1-BFi" secondAttribute="leading" constant="20" id="b3P-iX-MWq">
+                    <variation key="heightClass=compact-widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="38X-M3-MgN" secondAttribute="bottom" constant="33" id="r3A-hI-Ciz">
+                    <variation key="heightClass=compact-widthClass=compact" constant="5"/>
+                </constraint>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="6qT-vE-dER"/>
@@ -45,7 +54,7 @@
                     <include reference="r3A-hI-Ciz"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="149" y="367"/>
+            <point key="canvasLocation" x="167" y="429"/>
         </view>
     </objects>
 </document>
