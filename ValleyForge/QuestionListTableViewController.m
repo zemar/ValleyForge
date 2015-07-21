@@ -96,6 +96,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     AnswerViewController *avc = [[AnswerViewController alloc] init];
+    NSLog(@"QuestionList frame  %1.0f, %1.0f, %1.0f, %1.0f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:avc];
     navController.modalPresentationStyle = UIModalPresentationPageSheet;
