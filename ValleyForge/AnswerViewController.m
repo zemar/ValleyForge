@@ -23,6 +23,7 @@
                                                                                  target:self
                                                                                  action:@selector(dismiss:)];
         self.navigationItem.rightBarButtonItem = correct;
+        
     }
 
     return self;

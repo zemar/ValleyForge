@@ -11,12 +11,16 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="0GI-O1-BFi" customClass="AnswerView">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="240" fixedFrame="YES" text="Answer Cell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38X-M3-MgN" userLabel="textLabel">
-                    <rect key="frame" x="214" y="195" width="197" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="240" text="Answer Cell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38X-M3-MgN" userLabel="textLabel">
+                    <rect key="frame" x="10" y="78" width="300" height="400"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="S94-cH-NOv"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Z6R-mb-OYs"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -27,12 +31,15 @@
                 <constraint firstItem="38X-M3-MgN" firstAttribute="top" relation="lessThanOrEqual" secondItem="0GI-O1-BFi" secondAttribute="top" constant="50" id="6qT-vE-dER">
                     <variation key="heightClass=compact-widthClass=compact" constant="5"/>
                 </constraint>
+                <constraint firstItem="38X-M3-MgN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0GI-O1-BFi" secondAttribute="leading" constant="10" id="Bes-fs-JVh"/>
                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="38X-M3-MgN" secondAttribute="trailing" constant="35" id="PXx-Kq-pG8">
                     <variation key="heightClass=compact-widthClass=compact" constant="10"/>
                 </constraint>
                 <constraint firstItem="38X-M3-MgN" firstAttribute="leading" relation="lessThanOrEqual" secondItem="0GI-O1-BFi" secondAttribute="leading" constant="20" id="b3P-iX-MWq">
                     <variation key="heightClass=compact-widthClass=compact" constant="10"/>
                 </constraint>
+                <constraint firstAttribute="bottom" secondItem="38X-M3-MgN" secondAttribute="bottom" constant="50" id="bUq-sR-9uo"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="38X-M3-MgN" secondAttribute="trailing" constant="10" id="cJp-YN-IQM"/>
                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="38X-M3-MgN" secondAttribute="bottom" constant="33" id="r3A-hI-Ciz">
                     <variation key="heightClass=compact-widthClass=compact" constant="5"/>
                 </constraint>
@@ -54,7 +61,7 @@
                     <include reference="r3A-hI-Ciz"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="167" y="429"/>
+            <point key="canvasLocation" x="28" y="393"/>
         </view>
     </objects>
 </document>
