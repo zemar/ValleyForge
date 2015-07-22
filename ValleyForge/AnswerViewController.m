@@ -23,6 +23,8 @@
                                                                                  target:self
                                                                                  action:@selector(dismiss:)];
         self.navigationItem.rightBarButtonItem = correct;
+        NSLog(@"AnswerViewController.view: %@", self.view);
+//        self.view.textLabel.text = @"Hi";  // Why isn't this working???
         
     }
 
@@ -35,7 +37,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"AnswerView frame  %1.0f, %1.0f, %1.0f, %1.0f", self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning {

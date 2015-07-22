@@ -10,4 +10,6 @@
 
 @interface AnswerView : UIView
 
+@property (nonatomic, weak) IBOutlet UILabel *textLabel;
+
 @end
