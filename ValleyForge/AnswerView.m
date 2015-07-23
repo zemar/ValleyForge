@@ -10,18 +10,6 @@
 
 @implementation AnswerView
 
-- (instancetype)init {
-    self = [super init];
-    
-    if (self) {
-        self.textLabel.text = @"Hi";
-        self.backgroundColor = [UIColor redColor];
-        NSLog(@"AnswerView.m: %@", self);
-    }
-    
-    return self;
-}
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -4,17 +4,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnswerViewController">
             <connections>
-                <outlet property="view" destination="0GI-O1-BFi" id="qNt-Hh-qA7"/>
+                <outlet property="textLabel" destination="38X-M3-MgN" id="v4z-52-pkB"/>
+                <outlet property="view" destination="0GI-O1-BFi" id="VE3-c4-xZD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="0GI-O1-BFi" userLabel="AnswerView" customClass="AnswerView">
+        <view contentMode="scaleToFill" id="0GI-O1-BFi" userLabel="View" customClass="AnswerView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="240" text="Answer Cell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38X-M3-MgN" userLabel="AnswerText">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="240" text="Answer Cell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38X-M3-MgN" userLabel="Label">
                     <rect key="frame" x="10" y="78" width="300" height="400"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -33,9 +34,6 @@
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="38X-M3-MgN" secondAttribute="trailing" constant="10" id="cJp-YN-IQM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="textLabel" destination="38X-M3-MgN" id="8UY-cC-bgl"/>
-            </connections>
             <point key="canvasLocation" x="28" y="393"/>
         </view>
     </objects>

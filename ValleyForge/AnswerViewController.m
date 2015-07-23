@@ -16,27 +16,27 @@
 @implementation AnswerViewController
 
 - (instancetype)init {
-    self = [super initWithNibName:@"AnswerView" bundle:nil];
+    self = [super init];
     
     if (self) {
         UIBarButtonItem *correct = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                  target:self
                                                                                  action:@selector(dismiss:)];
         self.navigationItem.rightBarButtonItem = correct;
-        NSLog(@"AnswerViewController.view: %@", self.view);
-//        self.view.textLabel.text = @"Hi";  // Why isn't this working???
-        
+        self.view = nil;
     }
 
     return self;
 }
 
-- (void)dismiss:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+- (void)loadView {
+    AnswerView *av = [[[NSBundle mainBundle] loadNibNamed:@"AnswerView" owner:self options:nil] firstObject];
+    self.view = av;
+    self.textLabel.text = [NSString stringWithFormat:@"This is the answer to question %ld", (long)self.index];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)dismiss:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {
