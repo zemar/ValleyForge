@@ -47,8 +47,8 @@
 		275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValleyForgeTests.m; sourceTree = "<group>"; };
 		275010B11B53018300C0CC71 /* QuestionListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewController.h; sourceTree = "<group>"; };
 		275010B21B53018300C0CC71 /* QuestionListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewController.m; sourceTree = "<group>"; };
-		275010B61B53421C00C0CC71 /* QuestionListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionListTableView.h; path = ../QuestionListTableView.h; sourceTree = "<group>"; };
-		275010B71B53421C00C0CC71 /* QuestionListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionListTableView.m; path = ../QuestionListTableView.m; sourceTree = "<group>"; };
+		275010B61B53421C00C0CC71 /* QuestionListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableView.h; sourceTree = "<group>"; };
+		275010B71B53421C00C0CC71 /* QuestionListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableView.m; sourceTree = "<group>"; };
 		2773C4B51B59E0E40021762C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		2773C4B91B5C1D940021762C /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
 		2773C4BA1B5C1D940021762C /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
@@ -56,8 +56,8 @@
 		2773C4BD1B5C1DD90021762C /* AnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerView.m; sourceTree = "<group>"; };
 		2773C4BF1B5C1DF50021762C /* AnswerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
 		DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListTableViewCell.xib; sourceTree = "<group>"; };
-		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionListTableViewCell.h; path = ../QuestionListTableViewCell.h; sourceTree = "<group>"; };
-		DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionListTableViewCell.m; path = ../QuestionListTableViewCell.m; sourceTree = "<group>"; };
+		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewCell.h; sourceTree = "<group>"; };
+		DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
