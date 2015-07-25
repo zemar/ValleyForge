@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class QuestionListModel;
+
 @interface QuestionListTableViewController : UITableViewController
+
+@property (nonatomic, strong) QuestionListModel *model;
 
 @end

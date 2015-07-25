@@ -10,6 +10,7 @@
 #import "QuestionListTableView.h"
 #import "QuestionListTableViewCell.h"
 #import "AnswerViewController.h"
+#import "QuestionListModel.h"
 
 @interface QuestionListTableViewController ()
 
@@ -20,13 +21,20 @@
 @implementation QuestionListTableViewController
 
 - (instancetype)init {
-    self = [super initWithStyle:UITableViewStylePlain];
+    self = [super init];
+    
+    if (self) {
+        self = [self initWithStyle:UITableViewStylePlain];
+        self.model = [[QuestionListModel alloc] init];
+        
+    }
+    
     return self;
 }
 
 - (instancetype)initWithStyle:(UITableViewStyle)style {
     
-    return [self init];
+    return [super initWithStyle:style];
 }
 
 - (void)loadView {
