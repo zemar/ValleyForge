@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QuestionListModel : NSObject
+@class ExamItem;
+
+@interface QuestionListModel : NSObject <NSXMLParserDelegate>
+
+@property (nonatomic, strong) NSMutableArray *exam;
 
 @end
