@@ -12,5 +12,6 @@
 
 @property (nonatomic) NSInteger index;
 @property (nonatomic, weak) IBOutlet UILabel *textLabel;
+@property (nonatomic) NSString *answer;
 
 @end

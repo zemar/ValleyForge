@@ -32,7 +32,7 @@
 - (void)loadView {
     AnswerView *av = [[[NSBundle mainBundle] loadNibNamed:@"AnswerView" owner:self options:nil] firstObject];
     self.view = av;
-    self.textLabel.text = [NSString stringWithFormat:@"This is the answer to question %ld", (long)self.index];
+    self.textLabel.text = self.answer;
 }
 
 - (void)dismiss:(id)sender {

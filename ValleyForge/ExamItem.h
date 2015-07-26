@@ -10,7 +10,7 @@
 
 @interface ExamItem : NSObject
 
-@property (nonatomic, strong) NSString *question;
-@property (nonatomic, strong) NSString *answer;
+@property (nonatomic, copy) NSString *question;
+@property (nonatomic, copy) NSString *answer;
 
 @end

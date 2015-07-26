@@ -11,6 +11,7 @@
 #import "QuestionListTableViewCell.h"
 #import "AnswerViewController.h"
 #import "QuestionListModel.h"
+#import "ExamItem.h"
 
 @interface QuestionListTableViewController ()
 
@@ -79,9 +80,9 @@
 
     QuestionListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionListCell" forIndexPath:indexPath];
     
-    NSString *cellText = [NSString stringWithFormat:@"This is cell number %ld", (long)indexPath.section];
+    NSString *cellText = [NSString stringWithFormat:@"%@", [[self.model.exam objectAtIndex:indexPath.section] question] ];
     
-    cell.textLabel.text = cellText;
+    cell.textLabel.text = [cellText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     return cell;
 }
@@ -103,7 +104,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     AnswerViewController *avc = [[AnswerViewController alloc] init];
-    avc.index = indexPath.section;
+    NSString *answerCellText = [NSString stringWithFormat:@"%@", [[self.model.exam objectAtIndex:indexPath.section] answer] ];
+    avc.answer = [answerCellText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:avc];
     navController.modalPresentationStyle = UIModalPresentationPageSheet;

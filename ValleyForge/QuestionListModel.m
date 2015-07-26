@@ -78,6 +78,10 @@
     [self.tempElement setString:@""];
 }
 
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    
+}
+
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
     NSLog(@"Parse error occured"); // throw exception
 }
