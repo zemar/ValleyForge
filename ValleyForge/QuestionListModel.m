@@ -9,23 +9,31 @@
 #import "QuestionListModel.h"
 #import "ExamItem.h"
 
+@interface QuestionListModel ()
+
+@property NSMutableString *tempElement;
+
+@end
+
 @implementation QuestionListModel
 
 - (instancetype)init {
     self = [super init];
-    
+
+
     if (self) {
+        self.exam = [[NSMutableArray alloc] init];
+
         if ( ![self checkForExam] ) {
             [self initializeDefaultExam];
         }
-        self.exam = [[NSMutableArray alloc] init];
     }
     
     return self;
 }
 
 - (BOOL)checkForExam {
-    // Query CoreData for existing exam
+    // Query CoreData for existing examß
     return false;
 }
 
@@ -40,25 +48,38 @@
     
 }
 
-#pragma NSXMLParser Delegate
-- (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+#pragma mark - NSXMLParser Delegate
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
     if ( [elementName isEqualToString:@"examItem"] ) {
         ExamItem *item = [[ExamItem alloc] init];
         [self.exam addObject:item];
-        
+        if (!self.tempElement) {
+            self.tempElement = [[NSMutableString alloc] init];
+        }
+        [self.tempElement setString:@""];
     }
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    [self.tempElement appendString:string];
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     if ( [elementName isEqualToString:@"question"] ) {
-        ExamItem *item = [self.exam lastObject];
-        item.question = @"question1";
+        [[self.exam lastObject] setQuestion:self.tempElement];
     }
     
     if ( [elementName isEqualToString:@"answer"] ) {
-        ExamItem *item = [self.exam lastObject];
-        item.question = @"answer";
+        [[self.exam lastObject] setAnswer:self.tempElement];
     }
     
+    [self.tempElement setString:@""];
+}
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+    NSLog(@"Parse error occured"); // throw exception
 }
 
 @end

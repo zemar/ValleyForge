@@ -26,8 +26,6 @@
     if (self) {
         self = [self initWithStyle:UITableViewStylePlain];
         self.model = [[QuestionListModel alloc] init];
-        NSLog(@"Exam: %@", self.model.exam);
-        
     }
     
     return self;
