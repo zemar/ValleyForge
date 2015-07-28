@@ -11,7 +11,7 @@
 @interface AnswerViewController : UIViewController
 
 @property (nonatomic) NSInteger index;
-@property (nonatomic, weak) IBOutlet UILabel *textLabel;
+@property (nonatomic, strong) IBOutlet UILabel *answerLabel;
 @property (nonatomic) NSString *answer;
 
 @end

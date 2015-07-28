@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnswerViewController">
             <connections>
-                <outlet property="textLabel" destination="38X-M3-MgN" id="v4z-52-pkB"/>
+                <outlet property="answerLabel" destination="38X-M3-MgN" id="ttt-vL-Nc2"/>
                 <outlet property="view" destination="0GI-O1-BFi" id="VE3-c4-xZD"/>
             </connections>
         </placeholder>

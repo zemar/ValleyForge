@@ -10,4 +10,6 @@
 
 @interface QuestionListTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) IBOutlet UILabel *questionLabel;
+
 @end

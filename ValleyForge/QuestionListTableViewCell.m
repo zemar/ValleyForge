@@ -11,7 +11,6 @@
 @implementation QuestionListTableViewCell
 
 - (void)awakeFromNib {
-    [self.textLabel setFont:[UIFont fontWithName:@"Apple Symbols" size:12.0]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
