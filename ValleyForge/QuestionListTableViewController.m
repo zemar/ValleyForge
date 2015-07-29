@@ -82,7 +82,7 @@
     
     NSString *cellText = [NSString stringWithFormat:@"%@", [[self.model.exam objectAtIndex:indexPath.section] question] ];
     
-    cell.questionLabel.text = [cellText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    [cell.questionLabel setText:[cellText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
     
     return cell;
 }

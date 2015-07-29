@@ -4,11 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionListTableViewCell">
-            <connections>
-                <outlet property="questionLabel" destination="HnP-dJ-tSG" id="sYi-fJ-wsK"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionListTableViewController"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" alpha="0.5" contentMode="center" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="QuestionListCell" rowHeight="63" id="SsM-GG-U5K" customClass="QuestionListTableViewCell">
             <rect key="frame" x="0.0" y="-1" width="307" height="64"/>
@@ -25,6 +21,9 @@
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="questionLabel" destination="HnP-dJ-tSG" id="Vg1-Kh-DOQ"/>
+            </connections>
             <point key="canvasLocation" x="313.5" y="233"/>
         </tableViewCell>
     </objects>

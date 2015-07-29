@@ -10,6 +10,6 @@
 
 @interface QuestionListTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 
 @end
