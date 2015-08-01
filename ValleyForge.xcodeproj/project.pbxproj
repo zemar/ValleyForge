@@ -22,6 +22,7 @@
 		27E221A31B64178A00B0D873 /* ExamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E221A21B64178A00B0D873 /* ExamItem.m */; };
 		DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0446021B63D77200A82969 /* QuestionListModel.m */; };
 		DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */; };
+		DD5F68541B6D17FF00D68A39 /* ExamItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD5F68521B6D17FF00D68A39 /* ExamItem.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListTableViewCell.xib; sourceTree = "<group>"; };
 		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewCell.h; sourceTree = "<group>"; };
 		DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewCell.m; sourceTree = "<group>"; };
+		DD5F68531B6D17FF00D68A39 /* ExamItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExamItem.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */,
 				27E221A11B64178A00B0D873 /* ExamItem.h */,
 				27E221A21B64178A00B0D873 /* ExamItem.m */,
+				DD5F68521B6D17FF00D68A39 /* ExamItem.xcdatamodeld */,
 				275010961B52DBC300C0CC71 /* Images.xcassets */,
 				275010981B52DBC300C0CC71 /* LaunchScreen.xib */,
 				2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */,
@@ -263,6 +266,7 @@
 				275010B81B53421C00C0CC71 /* QuestionListTableView.m in Sources */,
 				27E221A31B64178A00B0D873 /* ExamItem.m in Sources */,
 				2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */,
+				DD5F68541B6D17FF00D68A39 /* ExamItem.xcdatamodeld in Sources */,
 				2773C4BE1B5C1DD90021762C /* AnswerView.m in Sources */,
 				DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */,
 				2773C4BB1B5C1D940021762C /* AnswerViewController.m in Sources */,
@@ -479,6 +483,16 @@
 			);
 			currentVersion = 2750108E1B52DBC300C0CC71 /* ValleyForge.xcdatamodel */;
 			path = ValleyForge.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		DD5F68521B6D17FF00D68A39 /* ExamItem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DD5F68531B6D17FF00D68A39 /* ExamItem.xcdatamodel */,
+			);
+			currentVersion = DD5F68531B6D17FF00D68A39 /* ExamItem.xcdatamodel */;
+			path = ExamItem.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
