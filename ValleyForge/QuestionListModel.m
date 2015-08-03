@@ -9,9 +9,13 @@
 #import "QuestionListModel.h"
 #import "ExamItem.h"
 
+@import CoreData;
+
 @interface QuestionListModel ()
 
 @property NSMutableString *tempElement;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) NSManagedObjectModel *model;
 
 @end
 
@@ -23,6 +27,24 @@
 
     if (self) {
         self.exam = [[NSMutableArray alloc] init];
+        
+        // Initialize CoreData ValleyForge.xcdatamodeld
+        self.model = [NSManagedObjectModel mergedModelFromBundles:nil];
+        NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
+        
+        // SQLite file
+        NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        NSString *path = [documentDirectory stringByAppendingPathComponent:@"questionlists.data"];
+        NSURL *storageURL = [NSURL fileURLWithPath:path];
+        NSError *error;
+        
+        if (![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storageURL options:nil error:&error]) {
+            [NSException raise:@"SQLite Open Failure" format:@"%@", [error localizedDescription]];
+        }
+        
+        // Create managed object context
+        self.context = [[NSManagedObjectContext alloc] init];
+        self.context.persistentStoreCoordinator = psc;
 
         if ( ![self checkForExam] ) {
             [self initializeDefaultExam];
@@ -58,6 +80,12 @@
             self.tempElement = [[NSMutableString alloc] init];
         }
         [self.tempElement setString:@""];
+        
+        NSError *error;
+        if ( ![self.context save:&error] ) {
+            NSLog(@"Error saving: %@", [error localizedDescription]);
+        }
+            
     }
 }
 
@@ -75,6 +103,11 @@
         [[self.exam lastObject] setAnswer:self.tempElement];
     }
     
+    NSError *error;
+    if ( ![self.context save:&error] ) {
+        NSLog(@"Error saving: %@", [error localizedDescription]);
+    }
+    
     [self.tempElement setString:@""];
 }
 
@@ -83,7 +116,9 @@
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-    NSLog(@"Parse error occured"); // throw exception
+    NSError *error;
+    [NSException raise:@"XML parsing error occurred" format:@"%@", [error localizedDescription]];
+
 }
 
 @end
