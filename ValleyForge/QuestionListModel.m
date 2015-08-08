@@ -16,6 +16,7 @@
 @property NSMutableString *tempElement;
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic, strong) NSManagedObjectModel *model;
+@property (nonatomic, strong) ExamItem *currentExamItem;
 
 @end
 
@@ -74,7 +75,11 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
     if ( [elementName isEqualToString:@"examItem"] ) {
-        ExamItem *item = [[ExamItem alloc] init];
+        
+        // Create CoreData ExamItem entry
+        ExamItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"ExamItem" inManagedObjectContext:self.context];
+        self.currentExamItem = item;
+        
         [self.exam addObject:item];
         if (!self.tempElement) {
             self.tempElement = [[NSMutableString alloc] init];
@@ -96,10 +101,12 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     if ( [elementName isEqualToString:@"question"] ) {
+        self.currentExamItem.question = self.tempElement;
         [[self.exam lastObject] setQuestion:self.tempElement];
     }
     
     if ( [elementName isEqualToString:@"answer"] ) {
+        self.currentExamItem.answer = self.tempElement;
         [[self.exam lastObject] setAnswer:self.tempElement];
     }
     
