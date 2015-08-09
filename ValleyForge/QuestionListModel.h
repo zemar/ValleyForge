@@ -10,6 +10,7 @@
 
 @interface QuestionListModel : NSObject <NSXMLParserDelegate>
 
-@property (nonatomic, strong) NSMutableArray *exam;
+- (NSString *)question:(NSInteger)index;
+- (NSString *)answer:(NSInteger)index;
 
 @end

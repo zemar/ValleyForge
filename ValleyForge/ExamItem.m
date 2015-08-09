@@ -11,7 +11,10 @@
 
 @implementation ExamItem
 
+@dynamic examName;
+@dynamic index;
 @dynamic question;
 @dynamic answer;
+
 
 @end

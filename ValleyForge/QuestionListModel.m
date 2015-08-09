@@ -27,7 +27,6 @@
 
 
     if (self) {
-        self.exam = [[NSMutableArray alloc] init];
         
         // Initialize CoreData ValleyForge.xcdatamodeld
         self.model = [NSManagedObjectModel mergedModelFromBundles:nil];
@@ -71,6 +70,10 @@
     
 }
 
+#pragma mark - Fetch from CoreData
+
+
+
 #pragma mark - NSXMLParser Delegate
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
@@ -80,7 +83,6 @@
         ExamItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"ExamItem" inManagedObjectContext:self.context];
         self.currentExamItem = item;
         
-        [self.exam addObject:item];
         if (!self.tempElement) {
             self.tempElement = [[NSMutableString alloc] init];
         }
@@ -97,18 +99,24 @@
     
     if ( [elementName isEqualToString:@"question"] ) {
         self.currentExamItem.question = self.tempElement;
-        [[self.exam lastObject] setQuestion:self.tempElement];
     }
     
     if ( [elementName isEqualToString:@"answer"] ) {
         self.currentExamItem.answer = self.tempElement;
-        [[self.exam lastObject] setAnswer:self.tempElement];
     }
     
     NSError *error;
     if ( ![self.context save:&error] ) {
         NSLog(@"Error saving: %@", [error localizedDescription]);
     }
+    
+    // Confirm CoreData write
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
+    request.entity = e;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    NSLog(@"CoreData query: %@", result);
+    
     
     [self.tempElement setString:@""];
 }

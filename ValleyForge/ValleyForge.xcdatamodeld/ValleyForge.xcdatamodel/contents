@@ -2,9 +2,11 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="ExamItem" representedClassName="ExamItem" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="examName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="question" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ExamItem" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="ExamItem" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>

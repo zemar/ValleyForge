@@ -12,7 +12,9 @@
 
 @interface ExamItem : NSManagedObject
 
-@property (nonatomic, strong) NSString * question;
-@property (nonatomic, strong) NSString * answer;
+@property (nonatomic, strong) NSString *examName;
+@property (nonatomic) NSInteger index;
+@property (nonatomic, strong) NSString *question;
+@property (nonatomic, strong) NSString *answer;
 
 @end
