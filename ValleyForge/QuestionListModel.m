@@ -86,11 +86,6 @@
         }
         [self.tempElement setString:@""];
         
-        NSError *error;
-        if ( ![self.context save:&error] ) {
-            NSLog(@"Error saving: %@", [error localizedDescription]);
-        }
-            
     }
 }
 
