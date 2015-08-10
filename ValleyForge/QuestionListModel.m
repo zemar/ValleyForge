@@ -71,8 +71,47 @@
 }
 
 #pragma mark - Fetch from CoreData
+- (NSString *)question:(NSInteger)index {
+    
+    // CoreData read
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
+    request.entity = e;
+    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
+    request.sortDescriptors = @[sd];
+    
+    NSError *error;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    
+    if (!result) {
+        [NSException raise:@"Fetch question failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    NSLog(@"CoreData question query for index %ld: %@", (long)index, result);
+    return @"Question";
+    
+}
 
-
+- (NSString *)answer:(NSInteger)index {
+    
+    // CoreData read
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
+    request.entity = e;
+    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
+    request.sortDescriptors = @[sd];
+    
+    NSError *error;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    
+    if (!result) {
+        [NSException raise:@"Fetch answer failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    NSLog(@"CoreData answer query for index %ld: %@", (long)index, result);
+    return @"Answer";
+    
+}
 
 #pragma mark - NSXMLParser Delegate
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
@@ -98,11 +137,11 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     if ( [elementName isEqualToString:@"question"] ) {
-        self.currentExamItem.question = self.tempElement;
+        self.currentExamItem.question = [self.tempElement stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     
     if ( [elementName isEqualToString:@"answer"] ) {
-        self.currentExamItem.answer = self.tempElement;
+        self.currentExamItem.answer = [self.tempElement stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     
     NSError *error;
@@ -110,14 +149,7 @@
         NSLog(@"Error saving: %@", [error localizedDescription]);
     }
     
-    // Confirm CoreData write
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
-    request.entity = e;
-    NSArray *result = [self.context executeFetchRequest:request error:&error];
-    NSLog(@"CoreData query: %@", result);
-    
-    
+    // Reset tempElement
     [self.tempElement setString:@""];
 }
 
