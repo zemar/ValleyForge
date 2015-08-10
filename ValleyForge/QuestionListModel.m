@@ -25,7 +25,6 @@
 - (instancetype)init {
     self = [super init];
 
-
     if (self) {
         
         // Initialize CoreData ValleyForge.xcdatamodeld
@@ -63,6 +62,7 @@
     parser.delegate = self;
     [parser parse];
     
+    self.examName = defaultExamFile;
 }
 
 #pragma mark - Fetch from CoreData
@@ -73,13 +73,11 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
     request.entity = e;
-    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
-    request.sortDescriptors = @[sd];
     
     NSError *error;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
     
-    if (result) {
+    if ( [result count] > 0 ) {
         examPresent = true;
     }
     
@@ -134,6 +132,7 @@
         // Create CoreData ExamItem entry
         ExamItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"ExamItem" inManagedObjectContext:self.context];
         self.currentExamItem = item;
+        self.currentExamItem.examName = self.examName;
         
         if (!self.tempElement) {
             self.tempElement = [[NSMutableString alloc] init];

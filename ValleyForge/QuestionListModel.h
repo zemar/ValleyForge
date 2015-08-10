@@ -10,6 +10,8 @@
 
 @interface QuestionListModel : NSObject <NSXMLParserDelegate>
 
+@property (nonatomic, strong) NSString *examName;
+
 - (NSString *)question:(NSInteger)index;
 - (NSString *)answer:(NSInteger)index;
 
