@@ -90,8 +90,9 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
     request.entity = e;
-    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
-    request.sortDescriptors = @[sd];
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"index = index"];
+    [request setPredicate:p];
     
     NSError *error;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
