@@ -54,11 +54,6 @@
     return self;
 }
 
-- (BOOL)checkForExam {
-    // Query CoreData for existing examß
-    return false;
-}
-
 - (void)initializeDefaultExam {
 
     NSString *defaultExamFile = @"CitizenshipExam2014";
@@ -71,6 +66,26 @@
 }
 
 #pragma mark - Fetch from CoreData
+- (BOOL)checkForExam {
+    BOOL examPresent = false;
+    
+    // Query CoreData for existing exam
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
+    request.entity = e;
+    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
+    request.sortDescriptors = @[sd];
+    
+    NSError *error;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    
+    if (result) {
+        examPresent = true;
+    }
+    
+    return examPresent;
+}
+
 - (NSString *)question:(NSInteger)index {
     
     // CoreData read
@@ -87,8 +102,7 @@
         [NSException raise:@"Fetch question failed" format:@"Reason: %@", [error localizedDescription]];
     }
     
-    NSLog(@"CoreData question query for index %ld: %@", (long)index, result);
-    return @"Question";
+    return [result[index] question];
     
 }
 
@@ -108,8 +122,7 @@
         [NSException raise:@"Fetch answer failed" format:@"Reason: %@", [error localizedDescription]];
     }
     
-    NSLog(@"CoreData answer query for index %ld: %@", (long)index, result);
-    return @"Answer";
+    return [result[index] answer];
     
 }
 

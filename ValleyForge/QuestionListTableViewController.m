@@ -80,7 +80,7 @@
 
     QuestionListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionListCell" forIndexPath:indexPath];
     
-    cell.questionLabel.text = [self.model question:(NSInteger)indexPath];
+    cell.questionLabel.text = [self.model question:indexPath.section];
     
     return cell;
 }
@@ -102,7 +102,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     AnswerViewController *avc = [[AnswerViewController alloc] init];
-    avc.answer = [self.model answer:(NSInteger)indexPath];
+    avc.answer = [self.model answer:(NSInteger)indexPath.section];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:avc];
     navController.modalPresentationStyle = UIModalPresentationPageSheet;
