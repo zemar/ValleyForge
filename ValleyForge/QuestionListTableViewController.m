@@ -17,6 +17,7 @@
 
 @property (nonatomic) QuestionListTableView *qltv;
 @property (nonatomic, strong) UIBarButtonItem *infoButton;
+@property (nonatomic, strong) UIBarButtonItem *backButton;
 
 @end
 
@@ -52,15 +53,25 @@
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
     
-    self.infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showInfo:)];
+    self.infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(showInfo:)];
+    self.backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(homeScreen:)];
+
     self.navigationItem.rightBarButtonItem = self.infoButton;
 
     [self.tableView registerNib:[UINib nibWithNibName:@"QuestionListTableViewCell" bundle:nil] forCellReuseIdentifier:@"QuestionListCell"];
 }
 
 - (void)showInfo:(id)sender {
-    NSLog(@"showInfo");
+    UIWebView *webView = [[UIWebView alloc] init];
+    webView.scalesPageToFit = YES;
+    self.view = webView;
     
+    self.navigationItem.rightBarButtonItem = self.backButton;
+}
+
+- (void)homeScreen:(id)sender {
+    self.view = self.qltv;
+    self.navigationItem.rightBarButtonItem = self.infoButton;
 }
 
 - (void)didReceiveMemoryWarning {
