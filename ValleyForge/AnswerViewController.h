@@ -14,4 +14,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *answerLabel;
 @property (nonatomic) NSString *answer;
 
+- (IBAction) dismiss:(id)sender;
+
 @end
