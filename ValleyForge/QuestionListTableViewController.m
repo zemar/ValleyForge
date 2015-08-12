@@ -16,6 +16,7 @@
 @interface QuestionListTableViewController ()
 
 @property (nonatomic) QuestionListTableView *qltv;
+@property (nonatomic, strong) UIBarButtonItem *infoButton;
 
 @end
 
@@ -51,10 +52,15 @@
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showInfo:)];
+    self.navigationItem.rightBarButtonItem = self.infoButton;
 
     [self.tableView registerNib:[UINib nibWithNibName:@"QuestionListTableViewCell" bundle:nil] forCellReuseIdentifier:@"QuestionListCell"];
+}
+
+- (void)showInfo:(id)sender {
+    NSLog(@"showInfo");
+    
 }
 
 - (void)didReceiveMemoryWarning {
