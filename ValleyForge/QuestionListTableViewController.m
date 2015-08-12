@@ -64,6 +64,11 @@
 - (void)showInfo:(id)sender {
     UIWebView *webView = [[UIWebView alloc] init];
     webView.scalesPageToFit = YES;
+    
+    // Set the home URL
+    NSURL *url = [[NSURL alloc] initWithString:@"http://x-tic-systems.wix.com/exam-store"];
+
+    [webView loadRequest:[NSURLRequest requestWithURL:url]];
     self.view = webView;
     
     self.navigationItem.rightBarButtonItem = self.backButton;
