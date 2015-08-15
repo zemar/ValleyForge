@@ -29,6 +29,10 @@
     if (self) {
         self = [self initWithStyle:UITableViewStylePlain];
         self.model = [[QuestionListModel alloc] init];
+        
+        self.tabBarItem.title = @"Exam";
+        UIImage *examImage = [UIImage imageNamed:@"exam.png"];
+        self.tabBarItem.image = examImage;
     }
     
     return self;
