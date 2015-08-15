@@ -31,8 +31,7 @@
         self.model = [[QuestionListModel alloc] init];
         
         self.tabBarItem.title = @"Exam";
-        UIImage *examImage = [UIImage imageNamed:@"exam.png"];
-        self.tabBarItem.image = examImage;
+        self.tabBarItem.image = [UIImage imageNamed:@"exam"];
     }
     
     return self;
