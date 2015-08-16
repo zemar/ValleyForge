@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "QuestionListTableViewController.h"
+#import "ExamStoreViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,9 +22,10 @@
     
     QuestionListTableViewController *tvc = [[QuestionListTableViewController alloc] init];
 //    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:tvc];
+    ExamStoreViewController *esvc = [[ExamStoreViewController alloc] init];
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    tbc.viewControllers = @[tvc];
+    tbc.viewControllers = @[tvc, esvc];
     
     self.window.rootViewController = tbc;
     

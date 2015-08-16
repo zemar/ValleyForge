@@ -20,6 +20,7 @@
 		2773C4C41B61E8910021762C /* CitizenshipExam2014.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4C31B61E8910021762C /* CitizenshipExam2014.xml */; };
 		278501351B67342D00074C64 /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4BF1B5C1DF50021762C /* AnswerView.xib */; };
 		278501361B67343300074C64 /* QuestionListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */; };
+		279EB4E71B800FF900858A62 /* ExamStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4E61B800FF900858A62 /* ExamStoreViewController.m */; };
 		27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5D9301B800B11003BEDFD /* Media.xcassets */; };
 		DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0446021B63D77200A82969 /* QuestionListModel.m */; };
 		DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */; };
@@ -59,6 +60,8 @@
 		2773C4BD1B5C1DD90021762C /* AnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerView.m; sourceTree = "<group>"; };
 		2773C4BF1B5C1DF50021762C /* AnswerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
 		2773C4C31B61E8910021762C /* CitizenshipExam2014.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CitizenshipExam2014.xml; sourceTree = "<group>"; };
+		279EB4E51B800FF900858A62 /* ExamStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamStoreViewController.h; sourceTree = "<group>"; };
+		279EB4E61B800FF900858A62 /* ExamStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamStoreViewController.m; sourceTree = "<group>"; };
 		27F5D9301B800B11003BEDFD /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DD0446011B63D77200A82969 /* QuestionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListModel.h; sourceTree = "<group>"; };
 		DD0446021B63D77200A82969 /* QuestionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListModel.m; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				2773C4BF1B5C1DF50021762C /* AnswerView.xib */,
 				271962031B6E8F0F0064C30B /* ExamItem.h */,
 				271962041B6E8F0F0064C30B /* ExamItem.m */,
+				279EB4E51B800FF900858A62 /* ExamStoreViewController.h */,
+				279EB4E61B800FF900858A62 /* ExamStoreViewController.m */,
 				DD0446011B63D77200A82969 /* QuestionListModel.h */,
 				DD0446021B63D77200A82969 /* QuestionListModel.m */,
 				275010B11B53018300C0CC71 /* QuestionListTableViewController.h */,
@@ -264,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				275010B81B53421C00C0CC71 /* QuestionListTableView.m in Sources */,
+				279EB4E71B800FF900858A62 /* ExamStoreViewController.m in Sources */,
 				271962051B6E8F0F0064C30B /* ExamItem.m in Sources */,
 				2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */,
 				2773C4BE1B5C1DD90021762C /* AnswerView.m in Sources */,
