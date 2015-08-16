@@ -20,17 +20,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+       
     ExamListTableViewController *eltvc = [[ExamListTableViewController alloc] init];
     UINavigationController *elnc = [[UINavigationController alloc] initWithRootViewController:eltvc];
+    [elnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
     
     QuestionListTableViewController *qltvc = [[QuestionListTableViewController alloc] init];
     UINavigationController *qlnc = [[UINavigationController alloc] initWithRootViewController:qltvc];
-//    qltvc.title = @"ValleyForge";
+    [qlnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
     
     ExamStoreViewController *esvc = [[ExamStoreViewController alloc] init];
     UINavigationController *esnc = [[UINavigationController alloc] initWithRootViewController:esvc];
-//    esvc.title = @"Exam Store";
+    [esnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
     tbc.viewControllers = @[elnc, qlnc, esnc];
