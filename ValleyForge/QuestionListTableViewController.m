@@ -32,7 +32,6 @@
         
         self.tabBarItem.title = @"Exam";
         self.tabBarItem.image = [UIImage imageNamed:@"exam"];
-        NSLog(@"exam image: %@", self.tabBarItem.image);
     }
     
     return self;
