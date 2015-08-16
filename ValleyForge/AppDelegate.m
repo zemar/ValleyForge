@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "QuestionListTableViewController.h"
 #import "ExamStoreViewController.h"
+#import "ExamListTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,12 +21,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    QuestionListTableViewController *tvc = [[QuestionListTableViewController alloc] init];
-    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:tvc];
+    ExamListTableViewController *eltvc = [[ExamListTableViewController alloc] init];
+    UINavigationController *elnc = [[UINavigationController alloc] initWithRootViewController:eltvc];
+    
+    QuestionListTableViewController *qltvc = [[QuestionListTableViewController alloc] init];
+    UINavigationController *qlnc = [[UINavigationController alloc] initWithRootViewController:qltvc];
+//    qltvc.title = @"ValleyForge";
+    
     ExamStoreViewController *esvc = [[ExamStoreViewController alloc] init];
+    UINavigationController *esnc = [[UINavigationController alloc] initWithRootViewController:esvc];
+//    esvc.title = @"Exam Store";
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    tbc.viewControllers = @[nv, esvc];
+    tbc.viewControllers = @[elnc, qlnc, esnc];
     
     self.window.rootViewController = tbc;
     
