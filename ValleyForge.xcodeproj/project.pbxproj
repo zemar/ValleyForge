@@ -23,6 +23,9 @@
 		279EB4E71B800FF900858A62 /* ExamStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4E61B800FF900858A62 /* ExamStoreViewController.m */; };
 		279EB4F01B80DE4700858A62 /* ExamListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */; };
 		279EB4F31B81294300858A62 /* ExamListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F21B81294300858A62 /* ExamListModel.m */; };
+		279EB4F61B812F7900858A62 /* ExamListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F51B812F7900858A62 /* ExamListTableView.m */; };
+		279EB4FA1B812FC300858A62 /* ExamListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F81B812FC300858A62 /* ExamListTableViewCell.m */; };
+		279EB4FB1B812FC300858A62 /* ExamListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279EB4F91B812FC300858A62 /* ExamListTableViewCell.xib */; };
 		27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5D9301B800B11003BEDFD /* Media.xcassets */; };
 		DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0446021B63D77200A82969 /* QuestionListModel.m */; };
 		DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */; };
@@ -68,6 +71,11 @@
 		279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListTableViewController.m; sourceTree = "<group>"; };
 		279EB4F11B81294300858A62 /* ExamListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListModel.h; sourceTree = "<group>"; };
 		279EB4F21B81294300858A62 /* ExamListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListModel.m; sourceTree = "<group>"; };
+		279EB4F41B812F7900858A62 /* ExamListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListTableView.h; sourceTree = "<group>"; };
+		279EB4F51B812F7900858A62 /* ExamListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListTableView.m; sourceTree = "<group>"; };
+		279EB4F71B812FC300858A62 /* ExamListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListTableViewCell.h; sourceTree = "<group>"; };
+		279EB4F81B812FC300858A62 /* ExamListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListTableViewCell.m; sourceTree = "<group>"; };
+		279EB4F91B812FC300858A62 /* ExamListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamListTableViewCell.xib; sourceTree = "<group>"; };
 		27F5D9301B800B11003BEDFD /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DD0446011B63D77200A82969 /* QuestionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListModel.h; sourceTree = "<group>"; };
 		DD0446021B63D77200A82969 /* QuestionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListModel.m; sourceTree = "<group>"; };
@@ -126,6 +134,11 @@
 				271962041B6E8F0F0064C30B /* ExamItem.m */,
 				279EB4F11B81294300858A62 /* ExamListModel.h */,
 				279EB4F21B81294300858A62 /* ExamListModel.m */,
+				279EB4F41B812F7900858A62 /* ExamListTableView.h */,
+				279EB4F51B812F7900858A62 /* ExamListTableView.m */,
+				279EB4F71B812FC300858A62 /* ExamListTableViewCell.h */,
+				279EB4F81B812FC300858A62 /* ExamListTableViewCell.m */,
+				279EB4F91B812FC300858A62 /* ExamListTableViewCell.xib */,
 				279EB4EE1B80DE4700858A62 /* ExamListTableViewController.h */,
 				279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */,
 				279EB4E51B800FF900858A62 /* ExamStoreViewController.h */,
@@ -260,6 +273,7 @@
 				278501361B67343300074C64 /* QuestionListTableViewCell.xib in Resources */,
 				278501351B67342D00074C64 /* AnswerView.xib in Resources */,
 				2773C4C41B61E8910021762C /* CitizenshipExam2014Wi.xml in Resources */,
+				279EB4FB1B812FC300858A62 /* ExamListTableViewCell.xib in Resources */,
 				2773C4B61B59E0E40021762C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +302,9 @@
 				2773C4BB1B5C1D940021762C /* AnswerViewController.m in Sources */,
 				275010891B52DBC300C0CC71 /* main.m in Sources */,
 				279EB4F31B81294300858A62 /* ExamListModel.m in Sources */,
+				279EB4F61B812F7900858A62 /* ExamListTableView.m in Sources */,
 				2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */,
+				279EB4FA1B812FC300858A62 /* ExamListTableViewCell.m in Sources */,
 				275010B31B53018300C0CC71 /* QuestionListTableViewController.m in Sources */,
 				DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */,
 			);
