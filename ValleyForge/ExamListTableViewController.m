@@ -38,6 +38,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerNib:[UINib nibWithNibName:@"ExamListTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExamListCell"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,13 +55,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return [self.model.examList count];
+    NSInteger examCount = [self.model.examList count];
+    return examCount;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
     
 //    cell.questionLabel.text = [self.model question:indexPath.section];
     
