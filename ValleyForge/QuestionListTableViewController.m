@@ -130,8 +130,10 @@
     avc.answer = [self.model answer:(NSInteger)indexPath.section];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:avc];
-    navController.modalPresentationStyle = UIModalPresentationPageSheet;
+    
+    navController.modalPresentationStyle = UIModalPresentationFullScreen;
     navController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+
     
     [self presentViewController:navController animated:YES completion:NULL];
 }

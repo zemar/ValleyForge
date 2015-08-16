@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnswerViewController">
@@ -17,13 +16,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="240" text="Answer Cell" lineBreakMode="wordWrap" numberOfLines="20" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38X-M3-MgN" userLabel="Label">
-                    <rect key="frame" x="10" y="78" width="300" height="400"/>
+                    <rect key="frame" x="10" y="80" width="300" height="400"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="S94-cH-NOv"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Z6R-mb-OYs"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -34,9 +29,10 @@
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="38X-M3-MgN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0GI-O1-BFi" secondAttribute="leading" constant="10" id="Bes-fs-JVh"/>
-                <constraint firstAttribute="bottom" secondItem="38X-M3-MgN" secondAttribute="bottom" constant="50" id="bUq-sR-9uo"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="38X-M3-MgN" secondAttribute="trailing" constant="10" id="cJp-YN-IQM"/>
+                <constraint firstAttribute="trailing" secondItem="38X-M3-MgN" secondAttribute="trailing" constant="10" id="4Z4-Xb-MdH"/>
+                <constraint firstAttribute="bottom" secondItem="38X-M3-MgN" secondAttribute="bottom" constant="48" id="TKm-GV-PsK"/>
+                <constraint firstItem="38X-M3-MgN" firstAttribute="top" secondItem="0GI-O1-BFi" secondAttribute="top" constant="80" id="gSq-2w-Ygg"/>
+                <constraint firstItem="38X-M3-MgN" firstAttribute="leading" secondItem="0GI-O1-BFi" secondAttribute="leading" constant="10" id="iuy-Tb-Nl3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="28" y="393"/>

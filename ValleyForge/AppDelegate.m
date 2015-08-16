@@ -21,11 +21,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     QuestionListTableViewController *tvc = [[QuestionListTableViewController alloc] init];
-//    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:tvc];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:tvc];
     ExamStoreViewController *esvc = [[ExamStoreViewController alloc] init];
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    tbc.viewControllers = @[tvc, esvc];
+    tbc.viewControllers = @[nv, esvc];
     
     self.window.rootViewController = tbc;
     
