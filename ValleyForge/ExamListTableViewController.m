@@ -8,6 +8,7 @@
 
 #import "ExamListTableViewController.h"
 #import "ExamListModel.h"
+#import "ExamListTableViewCell.h"
 
 @interface ExamListTableViewController ()
 
@@ -61,9 +62,10 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
+    ExamListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
     
-//    cell.questionLabel.text = [self.model question:indexPath.section];
+//    cell.textLabel.text = self.model.examList[indexPath.row];
+    cell.examLabel.text = @"Hello";
     
     return cell;
 }
