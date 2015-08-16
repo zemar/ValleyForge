@@ -55,7 +55,7 @@
 
 - (void)initializeDefaultExam {
 
-    NSString *defaultExamFile = @"CitizenshipExam2014";
+    NSString *defaultExamFile = @"CitizenshipExam2014Wi";
     NSString *filePath = [[NSBundle mainBundle] pathForResource:defaultExamFile ofType:@"xml"];
     NSURL *fileURL = [NSURL fileURLWithPath:filePath];
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:fileURL];
@@ -128,6 +128,12 @@
 #pragma mark - NSXMLParser Delegate
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
+    if ([elementName isEqualToString:@"examName"]) {
+
+        // Create CoreData Exam entry
+        self.examName = [NSEntityDescription insertNewObjectForEntityForName:@"Exam" inManagedObjectContext:self.context];
+    }
+    
     if ( [elementName isEqualToString:@"examItem"] ) {
         
         // Create CoreData ExamItem entry
@@ -135,12 +141,13 @@
         self.currentExamItem = item;
         self.currentExamItem.examName = self.examName;
         
-        if (!self.tempElement) {
-            self.tempElement = [[NSMutableString alloc] init];
-        }
-        [self.tempElement setString:@""];
-        
     }
+    
+    if (!self.tempElement) {
+        self.tempElement = [[NSMutableString alloc] init];
+    }
+    [self.tempElement setString:@""];
+        
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
@@ -148,6 +155,10 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    
+    if ( [elementName isEqualToString:@"examName"]) {
+        self.examName = self.tempElement;
+    }
     
     if ( [elementName isEqualToString:@"question"] ) {
         self.currentExamItem.question = [self.tempElement stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

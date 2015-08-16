@@ -7,8 +7,11 @@
 //
 
 #import "ExamListTableViewController.h"
+#import "ExamListModel.h"
 
 @interface ExamListTableViewController ()
+
+@property (nonatomic, strong) ExamListModel *model;
 
 @end
 
@@ -20,6 +23,8 @@
     if (self) {
         self.tabBarItem.title = @"Exam List";
         self.tabBarItem.image = [UIImage imageNamed:@"list"];
+
+        self.model = [[ExamListModel alloc] init];
     }
     
     return self;
@@ -44,23 +49,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return 0;
+    
+    return [self.model.examList count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+//    cell.questionLabel.text = [self.model question:indexPath.section];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
