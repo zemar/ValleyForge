@@ -28,6 +28,7 @@
         self.view = webView;
         
         self.tabBarItem.title = @"Exam Store";
+        self.tabBarItem.image = [UIImage imageNamed:@"store"];
         
     }
     return self;
