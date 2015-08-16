@@ -22,12 +22,10 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="T8s-ij-h7O" appends="YES" id="Gqo-0p-pOE"/>
-                    </connections>
                 </label>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="38X-M3-MgN" secondAttribute="trailing" constant="10" id="4Z4-Xb-MdH"/>
                 <constraint firstAttribute="bottom" secondItem="38X-M3-MgN" secondAttribute="bottom" constant="48" id="TKm-GV-PsK"/>
@@ -35,11 +33,20 @@
                 <constraint firstItem="38X-M3-MgN" firstAttribute="leading" secondItem="0GI-O1-BFi" secondAttribute="leading" constant="10" id="iuy-Tb-Nl3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="oaA-98-gZ1" appends="YES" id="LIz-MF-igA"/>
+                <outletCollection property="gestureRecognizers" destination="I71-hI-xaq" appends="YES" id="Ea3-7v-dNv"/>
+            </connections>
             <point key="canvasLocation" x="28" y="393"/>
         </view>
-        <swipeGestureRecognizer direction="right" id="T8s-ij-h7O">
+        <tapGestureRecognizer id="oaA-98-gZ1">
             <connections>
-                <action selector="dismiss:" destination="-1" id="n8t-ak-c34"/>
+                <action selector="dismiss:" destination="-1" id="2fM-1H-Bab"/>
+            </connections>
+        </tapGestureRecognizer>
+        <swipeGestureRecognizer direction="left" id="I71-hI-xaq">
+            <connections>
+                <action selector="dismiss:" destination="-1" id="wk8-Jh-hhe"/>
             </connections>
         </swipeGestureRecognizer>
     </objects>
