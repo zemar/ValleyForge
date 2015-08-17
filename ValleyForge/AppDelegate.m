@@ -20,20 +20,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-       
+    
+    UIColor *navBarColor = [UIColor colorWithRed:(10.0f/255.0f) green:(10.0f/255.0f) blue:(10.0f/255.0f) alpha:1.0f];
+    
     ExamListTableViewController *eltvc = [[ExamListTableViewController alloc] init];
     UINavigationController *elnc = [[UINavigationController alloc] initWithRootViewController:eltvc];
     [elnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
+    elnc.navigationBar.barTintColor = navBarColor;
+    elnc.navigationBar.barStyle = UIBarStyleBlack;
     
     QuestionListTableViewController *qltvc = [[QuestionListTableViewController alloc] init];
     UINavigationController *qlnc = [[UINavigationController alloc] initWithRootViewController:qltvc];
     [qlnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
-    
+    qlnc.navigationBar.barTintColor = navBarColor;
+    qlnc.navigationBar.barStyle = UIBarStyleBlack;
+
     ExamStoreViewController *esvc = [[ExamStoreViewController alloc] init];
     UINavigationController *esnc = [[UINavigationController alloc] initWithRootViewController:esvc];
     [esnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
+    esnc.navigationBar.barTintColor = navBarColor;
+    esnc.navigationBar.barStyle = UIBarStyleBlack;
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
+    [tbc.tabBar setBarTintColor:[UIColor colorWithRed:(10.0f/255.0f) green:(10.0f/255.0f) blue:(10.0f/255.0f) alpha:1.0f]];
+    [tbc.tabBar setBarStyle:UIBarStyleBlack];
     tbc.viewControllers = @[elnc, qlnc, esnc];
     
     self.window.rootViewController = tbc;
