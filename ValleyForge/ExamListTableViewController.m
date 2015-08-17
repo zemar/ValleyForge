@@ -81,6 +81,14 @@
     } else {
         cell.examLabel.text = @"No exam found";
     }
+
+    // This didn't work
+//    UIView *view = [[UIView alloc]initWithFrame:cell.frame];
+//    view.layer.cornerRadius = 8;
+//    cell.backgroundView = view;
+    
+    cell.layer.cornerRadius = 20;
+    cell.layer.masksToBounds = YES;
     
     return cell;
 }
