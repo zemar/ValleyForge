@@ -55,8 +55,13 @@
     NSError *error;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
     
-//    NSLog(@"Exams are: %@", result);
-    return result;
+    // Retrieve the name string from each NSManagedObject and create a new array
+    NSMutableArray *_examList = [[NSMutableArray alloc] init];
+    for (id exam in result) {
+        [_examList addObject:[exam name]];
+    }
+    
+    return _examList;
 }
 
 @end

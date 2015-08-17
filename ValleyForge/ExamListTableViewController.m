@@ -64,9 +64,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ExamListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
     
-    NSArray *test = self.model.examList;
-    NSLog(@"Test is: %@", test);
-    cell.examLabel.text = @"Hello";
+    NSInteger row = indexPath.row;
+    
+    if (row <= [self.model.examList count]) {
+        cell.examLabel.text = self.model.examList[row];
+    } else {
+        cell.examLabel.text = @"No exam found";
+    }
     
     return cell;
 }
