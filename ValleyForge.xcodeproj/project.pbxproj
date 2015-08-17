@@ -29,6 +29,7 @@
 		27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5D9301B800B11003BEDFD /* Media.xcassets */; };
 		DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0446021B63D77200A82969 /* QuestionListModel.m */; };
 		DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */; };
+		DDAE5A741B826A6C0087DB13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDAE5A731B826A6C0087DB13 /* LaunchScreen.xib */; };
 		DDB1DCFD1B823BD900CEC3C6 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB1DCFC1B823BD900CEC3C6 /* Exam.m */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +52,6 @@
 		2750108A1B52DBC300C0CC71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2750108B1B52DBC300C0CC71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2750108E1B52DBC300C0CC71 /* ValleyForge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ValleyForge.xcdatamodel; sourceTree = "<group>"; };
-		275010991B52DBC300C0CC71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2750109F1B52DBC300C0CC71 /* ValleyForgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValleyForgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275010A41B52DBC300C0CC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValleyForgeTests.m; sourceTree = "<group>"; };
@@ -83,6 +83,7 @@
 		DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListTableViewCell.xib; sourceTree = "<group>"; };
 		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewCell.h; sourceTree = "<group>"; };
 		DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewCell.m; sourceTree = "<group>"; };
+		DDAE5A731B826A6C0087DB13 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		DDB1DCFB1B823BD900CEC3C6 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
 		DDB1DCFC1B823BD900CEC3C6 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,7 +159,7 @@
 				DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */,
 				DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */,
 				27F5D9301B800B11003BEDFD /* Media.xcassets */,
-				275010981B52DBC300C0CC71 /* LaunchScreen.xib */,
+				DDAE5A731B826A6C0087DB13 /* LaunchScreen.xib */,
 				2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */,
 				275010861B52DBC300C0CC71 /* Supporting Files */,
 			);
@@ -275,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */,
+				DDAE5A741B826A6C0087DB13 /* LaunchScreen.xib in Resources */,
 				278501361B67343300074C64 /* QuestionListTableViewCell.xib in Resources */,
 				278501351B67342D00074C64 /* AnswerView.xib in Resources */,
 				2773C4C41B61E8910021762C /* CitizenshipExam2014Wi.xml in Resources */,
@@ -333,17 +335,6 @@
 			targetProxy = 275010A01B52DBC300C0CC71 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		275010981B52DBC300C0CC71 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				275010991B52DBC300C0CC71 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		275010A71B52DBC300C0CC71 /* Debug */ = {

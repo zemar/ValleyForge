@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExamListTableViewController"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" alpha="0.5" contentMode="center" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ExamListCell" rowHeight="63" id="kdP-m9-lgP" customClass="ExamListTableViewCell">
+        <tableViewCell clipsSubviews="YES" alpha="0.5" contentMode="center" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" selectionStyle="blue" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="ExamListCell" rowHeight="63" id="kdP-m9-lgP" customClass="ExamListTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="307" height="64"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" tableViewCell="kdP-m9-lgP" id="8in-gw-0DS">
-                <rect key="frame" x="0.0" y="0.0" width="274" height="64"/>
+                <rect key="frame" x="0.0" y="0.0" width="260" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" fixedFrame="YES" text="Exam Cell" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0d1-c6-CXH">
@@ -23,7 +23,7 @@
                 </subviews>
                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="examLabel" destination="0d1-c6-CXH" id="YUq-A1-PMp"/>
             </connections>
