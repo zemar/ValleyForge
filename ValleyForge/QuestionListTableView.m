@@ -13,13 +13,15 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
-    self.backgroundColor = [UIColor colorWithRed:(72.0f/255.0f) green:(72.0f/255.0f) blue:(72.0f/255.0f) alpha:1.0f];
-    self.rowHeight = 100.0;
-    self.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
-    self.separatorColor = [UIColor blueColor];
-    self.separatorEffect = [[UIBlurEffect alloc] init];
-    self.separatorInset = UIEdgeInsetsMake(0, 50, 0, 50);
-
+    if (self) {
+        self.backgroundColor = [UIColor colorWithRed:(72.0f/255.0f) green:(72.0f/255.0f) blue:(72.0f/255.0f) alpha:1.0f];
+        self.rowHeight = 100.0;
+        self.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+        self.separatorColor = [UIColor blueColor];
+        self.separatorEffect = [[UIBlurEffect alloc] init];
+        self.separatorInset = UIEdgeInsetsMake(0, 50, 0, 50);
+    }
+    
     return self;
 }
 

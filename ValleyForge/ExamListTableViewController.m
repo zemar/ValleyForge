@@ -9,10 +9,12 @@
 #import "ExamListTableViewController.h"
 #import "ExamListModel.h"
 #import "ExamListTableViewCell.h"
+#import "ExamListTableView.h"
 
 @interface ExamListTableViewController ()
 
 @property (nonatomic, strong) ExamListModel *model;
+@property (nonatomic) ExamListTableView *eltv;
 
 @end
 
@@ -29,6 +31,14 @@
     }
     
     return self;
+}
+
+- (void)loadView {
+    CGRect frame = [UIScreen mainScreen].bounds;
+    self.eltv = [[ExamListTableView alloc] initWithFrame:frame];
+    self.eltv.delegate = self;
+    self.eltv.dataSource = self;
+    self.view = self.eltv;
 }
 
 - (void)viewDidLoad {
