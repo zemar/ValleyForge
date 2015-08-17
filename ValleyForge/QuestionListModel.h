@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class Exam;
+
 @interface QuestionListModel : NSObject <NSXMLParserDelegate>
 
-@property (nonatomic, strong) NSString *examName;
+@property (nonatomic, strong) Exam *exam;
 
 - (NSString *)question:(NSInteger)index;
 - (NSString *)answer:(NSInteger)index;

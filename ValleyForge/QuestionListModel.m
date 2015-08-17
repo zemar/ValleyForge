@@ -8,6 +8,7 @@
 
 #import "QuestionListModel.h"
 #import "ExamItem.h"
+#import "Exam.h"
 
 @import CoreData;
 
@@ -62,7 +63,7 @@
     parser.delegate = self;
     [parser parse];
     
-    self.examName = defaultExamFile;
+    self.exam.name = defaultExamFile;
 }
 
 #pragma mark - Fetch from CoreData
@@ -131,7 +132,7 @@
     if ([elementName isEqualToString:@"examName"]) {
 
         // Create CoreData Exam entry
-        self.examName = [NSEntityDescription insertNewObjectForEntityForName:@"Exam" inManagedObjectContext:self.context];
+        self.exam = [NSEntityDescription insertNewObjectForEntityForName:@"Exam" inManagedObjectContext:self.context];
     }
     
     if ( [elementName isEqualToString:@"examItem"] ) {
@@ -139,7 +140,7 @@
         // Create CoreData ExamItem entry
         ExamItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"ExamItem" inManagedObjectContext:self.context];
         self.currentExamItem = item;
-        self.currentExamItem.examName = self.examName;
+        self.currentExamItem.examName = self.exam.name;
         
     }
     
@@ -157,7 +158,7 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     if ( [elementName isEqualToString:@"examName"]) {
-        self.examName = self.tempElement;
+        self.exam.name = self.tempElement;
     }
     
     if ( [elementName isEqualToString:@"question"] ) {

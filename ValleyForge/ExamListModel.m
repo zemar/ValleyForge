@@ -55,7 +55,7 @@
     NSError *error;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
     
-    NSLog(@"Exams are: %@", result);
+//    NSLog(@"Exams are: %@", result);
     return result;
 }
 

@@ -64,7 +64,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ExamListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
     
-//    cell.textLabel.text = self.model.examList[indexPath.row];
+    NSArray *test = self.model.examList;
+    NSLog(@"Test is: %@", test);
     cell.examLabel.text = @"Hello";
     
     return cell;
