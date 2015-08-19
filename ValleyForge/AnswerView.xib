@@ -16,12 +16,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="240" text="Answer Cell" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="20" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38X-M3-MgN" userLabel="Label">
+                <label opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="240" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="20" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38X-M3-MgN" userLabel="Label">
                     <rect key="frame" x="10" y="80" width="300" height="400"/>
                     <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                     <gestureRecognizers/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Answer Cell">
+                            <attributes>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
