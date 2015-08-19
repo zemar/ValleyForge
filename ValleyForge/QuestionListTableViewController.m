@@ -107,7 +107,7 @@
     
     cell.questionLabel.text = [self.model question:indexPath.section];
     
-    cell.layer.cornerRadius = 20;
+    cell.layer.cornerRadius = 12;
     cell.layer.masksToBounds = YES;
     
     return cell;

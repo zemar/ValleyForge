@@ -29,6 +29,7 @@
 		27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5D9301B800B11003BEDFD /* Media.xcassets */; };
 		DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0446021B63D77200A82969 /* QuestionListModel.m */; };
 		DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */; };
+		DDAE383A1B852A2D001140B4 /* NSString+trimLeadingCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = DDAE38391B852A2D001140B4 /* NSString+trimLeadingCharacters.m */; };
 		DDAE5A741B826A6C0087DB13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDAE5A731B826A6C0087DB13 /* LaunchScreen.xib */; };
 		DDB1DCFD1B823BD900CEC3C6 /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB1DCFC1B823BD900CEC3C6 /* Exam.m */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,8 @@
 		DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListTableViewCell.xib; sourceTree = "<group>"; };
 		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewCell.h; sourceTree = "<group>"; };
 		DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewCell.m; sourceTree = "<group>"; };
+		DDAE38381B852A2D001140B4 /* NSString+trimLeadingCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+trimLeadingCharacters.h"; sourceTree = "<group>"; };
+		DDAE38391B852A2D001140B4 /* NSString+trimLeadingCharacters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+trimLeadingCharacters.m"; sourceTree = "<group>"; };
 		DDAE5A731B826A6C0087DB13 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		DDB1DCFB1B823BD900CEC3C6 /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
 		DDB1DCFC1B823BD900CEC3C6 /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */,
 				279EB4E51B800FF900858A62 /* ExamStoreViewController.h */,
 				279EB4E61B800FF900858A62 /* ExamStoreViewController.m */,
+				DDAE38381B852A2D001140B4 /* NSString+trimLeadingCharacters.h */,
+				DDAE38391B852A2D001140B4 /* NSString+trimLeadingCharacters.m */,
 				DD0446011B63D77200A82969 /* QuestionListModel.h */,
 				DD0446021B63D77200A82969 /* QuestionListModel.m */,
 				275010B11B53018300C0CC71 /* QuestionListTableViewController.h */,
@@ -305,6 +310,7 @@
 				271962051B6E8F0F0064C30B /* ExamItem.m in Sources */,
 				2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */,
 				2773C4BE1B5C1DD90021762C /* AnswerView.m in Sources */,
+				DDAE383A1B852A2D001140B4 /* NSString+trimLeadingCharacters.m in Sources */,
 				DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */,
 				2773C4BB1B5C1D940021762C /* AnswerViewController.m in Sources */,
 				275010891B52DBC300C0CC71 /* main.m in Sources */,

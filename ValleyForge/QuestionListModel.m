@@ -9,6 +9,7 @@
 #import "QuestionListModel.h"
 #import "ExamItem.h"
 #import "Exam.h"
+#import "NSString+trimLeadingCharacters.m"
 
 @import CoreData;
 
@@ -166,7 +167,10 @@
     }
     
     if ( [elementName isEqualToString:@"answer"] ) {
-        self.currentExamItem.answer = [self.tempElement stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSLog(@"Before: %@", self.tempElement);
+//        self.currentExamItem.answer = [self.tempElement stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        self.currentExamItem.answer = [self.tempElement stringByTrimmingLeadingWhitespace];
+        NSLog(@"After: %@", self.currentExamItem.answer);
     }
     
     NSError *error;
