@@ -8,7 +8,8 @@
 
 #import "ExamListTableViewController.h"
 #import "ExamListModel.h"
-#import "ExamListTableViewCell.h"
+//#import "ExamListTableViewCell.h"
+#import "CustomTableViewCell.h"
 #import "ExamListTableView.h"
 
 @interface ExamListTableViewController ()
@@ -49,7 +50,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView registerNib:[UINib nibWithNibName:@"ExamListTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExamListCell"];
+//    [self.tableView registerNib:[UINib nibWithNibName:@"ExamListTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExamListCell"];
+    [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"ExamListCell"];
+
 
 }
 
@@ -72,65 +75,45 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ExamListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
+//    ExamListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
+
     
     NSInteger row = indexPath.row;
     
-    if (row <= [self.model.examList count]) {
-        cell.examLabel.text = self.model.examList[row];
-    } else {
-        cell.examLabel.text = @"No exam found";
+//    if (row <= [self.model.examList count]) {
+//        cell.examLabel.text = self.model.examList[row];
+//    } else {
+//        cell.examLabel.text = @"No exam found";
+//    }
+
+    if (cell == nil ) {
+        cell = [[CustomTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ExamListCell"];
     }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
+    cell.accessoryType = UITableViewCellAccessoryDetailButton;
+    
+    NSString *examText;
+    if (row <= [self.model.examList count]) {
+        examText = [self.model.examList[row] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    } else {
+        examText = @"No exam found";
+    }
+    
+    cell.textLabel.text = examText;
+    cell.textLabel.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 4;
+    
+    UIImage *questionImage = [UIImage imageNamed:@"question"];
+    cell.imageView.image = questionImage;
 
     cell.layer.cornerRadius = 12;
     cell.layer.masksToBounds = YES;
     
     return cell;
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

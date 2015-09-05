@@ -20,6 +20,7 @@
 		2773C4C41B61E8910021762C /* CitizenshipExam2014Wi.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4C31B61E8910021762C /* CitizenshipExam2014Wi.xml */; };
 		278501351B67342D00074C64 /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4BF1B5C1DF50021762C /* AnswerView.xib */; };
 		278501361B67343300074C64 /* QuestionListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */; };
+		279DAD7D1B9A202800A0C4B4 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279DAD7C1B9A202800A0C4B4 /* CustomTableViewCell.m */; };
 		279EB4E71B800FF900858A62 /* ExamStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4E61B800FF900858A62 /* ExamStoreViewController.m */; };
 		279EB4F01B80DE4700858A62 /* ExamListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */; };
 		279EB4F31B81294300858A62 /* ExamListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F21B81294300858A62 /* ExamListModel.m */; };
@@ -67,6 +68,8 @@
 		2773C4BD1B5C1DD90021762C /* AnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerView.m; sourceTree = "<group>"; };
 		2773C4BF1B5C1DF50021762C /* AnswerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
 		2773C4C31B61E8910021762C /* CitizenshipExam2014Wi.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CitizenshipExam2014Wi.xml; sourceTree = "<group>"; };
+		279DAD7B1B9A202800A0C4B4 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		279DAD7C1B9A202800A0C4B4 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		279EB4E51B800FF900858A62 /* ExamStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamStoreViewController.h; sourceTree = "<group>"; };
 		279EB4E61B800FF900858A62 /* ExamStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamStoreViewController.m; sourceTree = "<group>"; };
 		279EB4EE1B80DE4700858A62 /* ExamListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListTableViewController.h; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */,
 				DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */,
 				DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */,
+				279DAD7B1B9A202800A0C4B4 /* CustomTableViewCell.h */,
+				279DAD7C1B9A202800A0C4B4 /* CustomTableViewCell.m */,
 				27F5D9301B800B11003BEDFD /* Media.xcassets */,
 				DDAE5A731B826A6C0087DB13 /* LaunchScreen.xib */,
 				2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */,
@@ -318,6 +323,7 @@
 				279EB4F61B812F7900858A62 /* ExamListTableView.m in Sources */,
 				2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */,
 				DDB1DCFD1B823BD900CEC3C6 /* Exam.m in Sources */,
+				279DAD7D1B9A202800A0C4B4 /* CustomTableViewCell.m in Sources */,
 				279EB4FA1B812FC300858A62 /* ExamListTableViewCell.m in Sources */,
 				275010B31B53018300C0CC71 /* QuestionListTableViewController.m in Sources */,
 				DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */,
