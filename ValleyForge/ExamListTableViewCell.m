@@ -12,6 +12,10 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ( self = [super initWithStyle:style reuseIdentifier:reuseIdentifier] ) {
+
+        self.separatorInset = UIEdgeInsetsMake(0.0, 10.0, 0.0, 10.0);
+        self.layer.cornerRadius = 12;
+        self.layer.masksToBounds = YES;
         
         self.selectionStyle = UITableViewCellSelectionStyleGray;
         self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
@@ -25,13 +29,17 @@
         
         //    UIImage *questionImage = [UIImage imageNamed:@"question"];
         //    cell.imageView.image = questionImage;
-        
-        self.layer.cornerRadius = 12;
-        self.layer.masksToBounds = YES;
-        
     }
     
     return self;
+}
+
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    CGRect origFrame = self.frame;
+    CGRect frame = CGRectMake(origFrame.origin.x + 5, origFrame.origin.y + 5, origFrame.size.width - 10, origFrame.size.height);
+    self.frame = frame;
 }
 
 - (void)awakeFromNib {

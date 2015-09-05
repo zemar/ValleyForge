@@ -33,6 +33,13 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    CGRect origFrame = self.frame;
+    CGRect frame = CGRectMake(origFrame.origin.x + 5, origFrame.origin.y, origFrame.size.width - 10, origFrame.size.height);
+    self.frame = frame;
+}
+
 - (void)awakeFromNib {
 }
 
