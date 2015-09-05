@@ -8,8 +8,7 @@
 
 #import "ExamListTableViewController.h"
 #import "ExamListModel.h"
-//#import "ExamListTableViewCell.h"
-#import "CustomTableViewCell.h"
+#import "ExamListTableViewCell.h"
 #import "ExamListTableView.h"
 
 @interface ExamListTableViewController ()
@@ -50,8 +49,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-//    [self.tableView registerNib:[UINib nibWithNibName:@"ExamListTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExamListCell"];
-    [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"ExamListCell"];
+    [self.tableView registerClass:[ExamListTableViewCell class] forCellReuseIdentifier:@"ExamListCell"];
 
 
 }
@@ -73,45 +71,29 @@
     return examCount;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)selection {
+    return 10.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)selection {
+    UIView *v = [[UIView alloc] init];
+    [v setBackgroundColor:[UIColor clearColor]];
+    return v;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    ExamListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
-    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell" forIndexPath:indexPath];
-
+    ExamListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamListCell"];
     
-    NSInteger row = indexPath.row;
-    
-//    if (row <= [self.model.examList count]) {
-//        cell.examLabel.text = self.model.examList[row];
-//    } else {
-//        cell.examLabel.text = @"No exam found";
-//    }
-
     if (cell == nil ) {
-        cell = [[CustomTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ExamListCell"];
+        cell = [[ExamListTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ExamListCell"];
     }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    cell.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
-    cell.accessoryType = UITableViewCellAccessoryDetailButton;
-    
-    NSString *examText;
-    if (row <= [self.model.examList count]) {
-        examText = [self.model.examList[row] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    } else {
-        examText = @"No exam found";
-    }
-    
-    cell.textLabel.text = examText;
-    cell.textLabel.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.numberOfLines = 4;
-    
-    UIImage *questionImage = [UIImage imageNamed:@"question"];
-    cell.imageView.image = questionImage;
 
-    cell.layer.cornerRadius = 12;
-    cell.layer.masksToBounds = YES;
+    NSInteger row = indexPath.row;
+    if (row <= [self.model.examList count]) {
+        cell.textLabel.text = [self.model.examList[row] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    } else {
+        cell.textLabel.text = @"No exam found";
+    }
     
     return cell;
 }

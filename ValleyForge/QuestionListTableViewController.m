@@ -8,11 +8,10 @@
 
 #import "QuestionListTableViewController.h"
 #import "QuestionListTableView.h"
-//#import "QuestionListTableViewCell.h"
 #import "AnswerViewController.h"
 #import "QuestionListModel.h"
 #import "ExamItem.h"
-#import "CustomTableViewCell.h"
+#import "QuestionListTableViewCell.h"
 
 @interface QuestionListTableViewController ()
 
@@ -55,8 +54,7 @@
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
     
-//    [self.tableView registerNib:[UINib nibWithNibName:@"QuestionListTableViewCell" bundle:nil] forCellReuseIdentifier:@"QuestionListCell"];
-    [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"QuestionTableViewCell"];
+    [self.tableView registerClass:[QuestionListTableViewCell class] forCellReuseIdentifier:@"QuestionTableViewCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,30 +78,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-//    QuestionListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionListCell" forIndexPath:indexPath];
-//    cell.questionLabel.text = [self.model question:indexPath.section];
-
-    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionTableViewCell" forIndexPath:indexPath];
+    QuestionListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionTableViewCell"];
 
     if (cell == nil ) {
-        cell = [[CustomTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"QuestionTableViewCell"];
+        cell = [[QuestionListTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"QuestionTableViewCell"];
     }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    cell.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
     
     NSString *questionText = [[self.model question:indexPath.section] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     cell.textLabel.text = questionText;
-    cell.textLabel.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.numberOfLines = 4;
-    
-    UIImage *questionImage = [UIImage imageNamed:@"question"];
-    cell.imageView.image = questionImage;
-    
-    
-    cell.layer.cornerRadius = 12;
-    cell.layer.masksToBounds = YES;
 
     return cell;
 }
