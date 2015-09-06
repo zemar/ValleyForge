@@ -36,8 +36,6 @@
         //    UIImage *questionImage = [UIImage imageNamed:@"question"];
         //    cell.imageView.image = questionImage;
         
-        self.origFrame = CGRectNull;
-        
     }
     
     return self;
@@ -47,11 +45,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    if ( CGRectIsNull(self.origFrame) ) {
-        self.origFrame = self.frame;
-    }
-
-    self.frame = CGRectMake(_origFrame.origin.x + 5, _origFrame.origin.y + 5, _origFrame.size.width - 10, _origFrame.size.height);
+    CGRect frame = self.frame;
+    self.frame = CGRectMake(5, frame.origin.y, self.tableWidth - 10, frame.size.height);
 }
 
 - (void)awakeFromNib {

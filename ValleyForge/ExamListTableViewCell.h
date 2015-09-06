@@ -10,6 +10,6 @@
 
 @interface ExamListTableViewCell : UITableViewCell
 
-//@property (weak, nonatomic) IBOutlet UILabel *examLabel;
+@property float tableWidth;
 
 @end
