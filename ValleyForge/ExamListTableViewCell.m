@@ -23,13 +23,13 @@
         self.layer.cornerRadius = 12;
         self.layer.masksToBounds = YES;
         
-        self.selectionStyle = UITableViewCellSelectionStyleGray;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
         self.accessoryType = UITableViewCellAccessoryDetailButton;
         
         self.textLabel.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
         self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.textLabel.numberOfLines = 4;
+        self.textLabel.numberOfLines = 2;
         self.textLabel.textAlignment = NSTextAlignmentLeft;
         self.textLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
         
