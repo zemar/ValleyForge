@@ -19,7 +19,6 @@
 		2773C4BE1B5C1DD90021762C /* AnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773C4BD1B5C1DD90021762C /* AnswerView.m */; };
 		2773C4C41B61E8910021762C /* CitizenshipExam2014Wi.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4C31B61E8910021762C /* CitizenshipExam2014Wi.xml */; };
 		278501351B67342D00074C64 /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4BF1B5C1DF50021762C /* AnswerView.xib */; };
-		278501361B67343300074C64 /* QuestionListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */; };
 		279EB4E71B800FF900858A62 /* ExamStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4E61B800FF900858A62 /* ExamStoreViewController.m */; };
 		279EB4F01B80DE4700858A62 /* ExamListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */; };
 		279EB4F31B81294300858A62 /* ExamListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F21B81294300858A62 /* ExamListModel.m */; };
@@ -81,7 +80,6 @@
 		27F5D9301B800B11003BEDFD /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DD0446011B63D77200A82969 /* QuestionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListModel.h; sourceTree = "<group>"; };
 		DD0446021B63D77200A82969 /* QuestionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListModel.m; sourceTree = "<group>"; };
-		DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListTableViewCell.xib; sourceTree = "<group>"; };
 		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewCell.h; sourceTree = "<group>"; };
 		DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewCell.m; sourceTree = "<group>"; };
 		DDAE38381B852A2D001140B4 /* NSString+trimLeadingCharacters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+trimLeadingCharacters.h"; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 				275010B71B53421C00C0CC71 /* QuestionListTableView.m */,
 				DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */,
 				DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */,
-				DD2968B11B5A9F3F007E152E /* QuestionListTableViewCell.xib */,
 				27F5D9301B800B11003BEDFD /* Media.xcassets */,
 				DDAE5A731B826A6C0087DB13 /* LaunchScreen.xib */,
 				2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */,
@@ -282,7 +279,6 @@
 			files = (
 				27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */,
 				DDAE5A741B826A6C0087DB13 /* LaunchScreen.xib in Resources */,
-				278501361B67343300074C64 /* QuestionListTableViewCell.xib in Resources */,
 				278501351B67342D00074C64 /* AnswerView.xib in Resources */,
 				2773C4C41B61E8910021762C /* CitizenshipExam2014Wi.xml in Resources */,
 				279EB4FB1B812FC300858A62 /* ExamListTableViewCell.xib in Resources */,
