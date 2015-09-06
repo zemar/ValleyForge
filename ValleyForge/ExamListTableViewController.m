@@ -88,7 +88,6 @@
         cell = [[ExamListTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ExamListCell"];
     }
 
-    cell.tableWidth = self.view.frame.size.width;
     NSInteger row = indexPath.row;
     if (row <= [self.model.examList count]) {
         cell.textLabel.text = [self.model.examList[row] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

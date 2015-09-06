@@ -10,6 +10,4 @@
 
 @interface ExamListTableViewCell : UITableViewCell
 
-@property float tableWidth;
-
 @end

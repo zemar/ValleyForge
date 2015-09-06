@@ -11,6 +11,5 @@
 @interface QuestionListTableViewCell : UITableViewCell
 
 @property NSInteger section;
-@property float tableWidth;
 
 @end

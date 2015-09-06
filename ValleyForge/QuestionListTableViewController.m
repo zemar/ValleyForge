@@ -88,7 +88,6 @@
     cell.textLabel.text = questionText;
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"question%ld", (long)indexPath.section]];
     cell.section = indexPath.section;
-    cell.tableWidth = self.view.frame.size.width;
     
     return cell;
 }

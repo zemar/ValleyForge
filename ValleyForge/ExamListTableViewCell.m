@@ -45,18 +45,10 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    UITableView *tv = (UITableView *) self.superview.superview;
+    
     CGRect frame = self.frame;
-    self.frame = CGRectMake(5, frame.origin.y, self.tableWidth - 10, frame.size.height);
-}
-
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    self.frame = CGRectMake(5, frame.origin.y, tv.frame.size.width - 10, frame.size.height);
 }
 
 @end
