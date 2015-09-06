@@ -8,6 +8,12 @@
 
 #import "ExamListTableViewCell.h"
 
+@interface ExamListTableViewCell ()
+
+@property CGRect origFrame;
+
+@end
+
 @implementation ExamListTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -29,6 +35,9 @@
         
         //    UIImage *questionImage = [UIImage imageNamed:@"question"];
         //    cell.imageView.image = questionImage;
+        
+        self.origFrame = CGRectNull;
+        
     }
     
     return self;
@@ -37,9 +46,12 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGRect origFrame = self.frame;
-    CGRect frame = CGRectMake(origFrame.origin.x + 5, origFrame.origin.y + 5, origFrame.size.width - 10, origFrame.size.height);
-    self.frame = frame;
+    
+    if ( CGRectIsNull(self.origFrame) ) {
+        self.origFrame = self.frame;
+    }
+
+    self.frame = CGRectMake(_origFrame.origin.x + 5, _origFrame.origin.y + 5, _origFrame.size.width - 10, _origFrame.size.height);
 }
 
 - (void)awakeFromNib {
