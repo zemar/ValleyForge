@@ -40,6 +40,7 @@
         // Create managed object context
         self.context = [[NSManagedObjectContext alloc] init];
         self.context.persistentStoreCoordinator = psc;
+        
     }
     
     return self;
@@ -62,6 +63,10 @@
     }
     
     return _examList;
+}
+
+- (void)dumpExamList {
+    NSLog(@"ExamLists: %@", self.examList);
 }
 
 @end

@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic, strong) NSManagedObjectModel *model;
 @property (nonatomic, strong) ExamItem *currentExamItem;
+@property NSInteger questionNumber;
 
 @end
 
@@ -50,6 +51,7 @@
         if ( ![self checkForExam] ) {
             [self initializeDefaultExam];
         }
+        self.questionNumber = 0;
     }
     
     return self;
@@ -127,6 +129,48 @@
     
 }
 
+- (void)dumpQuestions {
+    // CoreData read
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
+    request.entity = e;
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"index = index"];
+    [request setPredicate:p];
+    
+    NSError *error;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    
+    if (!result) {
+        [NSException raise:@"Fetch question failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    int i = 0;
+    for(ExamItem *item in result) {
+        NSLog(@"Question%d from CoreData: %@", i, item.question);
+        i++;
+    }
+}
+
+- (NSInteger)questionCount {
+    // CoreData read
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
+    request.entity = e;
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"index = index"];
+    [request setPredicate:p];
+    
+    NSError *error;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    
+    if (!result) {
+        [NSException raise:@"Fetch question failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    return [result count];
+}
+
 #pragma mark - NSXMLParser Delegate
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
@@ -160,17 +204,18 @@
     
     if ( [elementName isEqualToString:@"examName"]) {
         self.exam.name = self.tempElement;
+        NSLog(@"ExamName: %@", self.exam.name);
     }
     
     if ( [elementName isEqualToString:@"question"] ) {
-        self.currentExamItem.question = [self.tempElement stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        self.currentExamItem.question = [self.tempElement stringByTrimmingLeadingWhitespace];
+        NSLog(@"question%ld: %@", (long)self.questionNumber, self.currentExamItem.question);
+        self.questionNumber++;
     }
     
     if ( [elementName isEqualToString:@"answer"] ) {
-        NSLog(@"Before: %@", self.tempElement);
-//        self.currentExamItem.answer = [self.tempElement stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         self.currentExamItem.answer = [self.tempElement stringByTrimmingLeadingWhitespace];
-        NSLog(@"After: %@", self.currentExamItem.answer);
+        NSLog(@"Answer: %@", self.currentExamItem.answer);
     }
     
     NSError *error;

@@ -29,12 +29,11 @@
         self.textLabel.textAlignment = NSTextAlignmentLeft;
         self.textLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
       
-        self.imageView.image = [UIImage imageNamed:@"question"];
-        
         self.layer.cornerRadius = 12;
         self.layer.masksToBounds = YES;
         
         self.origFrame = CGRectNull;
+//        NSLog(@"Init origFrame for section %ld: %f %f %f %f", (long)self.section, self.origFrame.origin.x, self.origFrame.origin.y, self.origFrame.size.width, self.origFrame.size.height);
     }
     
     return self;
@@ -43,14 +42,16 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    if ( CGRectIsNull(self.origFrame) ) {
-        self.origFrame = self.frame;
-    }
-    
-    self.frame = CGRectMake(_origFrame.origin.x + 5, _origFrame.origin.y + 5, _origFrame.size.width - 10, _origFrame.size.height);
-}
 
-- (void)awakeFromNib {
+
+//    if ( CGRectIsNull(self.origFrame) ) {
+//        self.origFrame = self.frame;
+//        NSLog(@"layoutSubviews origFrame for section %ld: %f %f %f %f", (long)self.section, self.origFrame.origin.x, self.origFrame.origin.y, self.origFrame.size.width, self.origFrame.size.height);
+//    }
+//    
+//    self.frame = CGRectMake(_origFrame.origin.x + 5, _origFrame.origin.y, _origFrame.size.width - 10, _origFrame.size.height);
+//    NSLog(@"self.frame for section %ld: %f %f %f %f", (long)self.section, self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

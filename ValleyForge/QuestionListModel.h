@@ -16,5 +16,6 @@
 
 - (NSString *)question:(NSInteger)index;
 - (NSString *)answer:(NSInteger)index;
+- (NSInteger)questionCount;
 
 @end

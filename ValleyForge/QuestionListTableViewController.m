@@ -67,7 +67,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     // If this is 0, dataSource methods are ignored!!
-    return 15;
+    return self.model.questionCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -86,6 +86,8 @@
     
     NSString *questionText = [[self.model question:indexPath.section] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     cell.textLabel.text = questionText;
+    cell.section = indexPath.section;
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"question%ld", (long)indexPath.section]];
 
     return cell;
 }
