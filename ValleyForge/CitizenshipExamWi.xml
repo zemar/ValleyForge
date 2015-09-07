@@ -1,10 +1,10 @@
 <exam>
     <examName>
         Citizenship Exam Wi
-        <year>
-            2015
-        </year>
     </examName>
+    <year>
+        2015
+    </year>
 	<examItem>
 		<question>
 			What is the supreme law of the land?
