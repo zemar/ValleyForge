@@ -59,14 +59,20 @@
 
 - (void)initializeDefaultExam {
 
-    NSString *defaultExamFile = @"CitizenshipExam2014Wi";
+    NSString *defaultExamFile = @"CitizenshipExamWi";
     NSString *filePath = [[NSBundle mainBundle] pathForResource:defaultExamFile ofType:@"xml"];
-    NSURL *fileURL = [NSURL fileURLWithPath:filePath];
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:fileURL];
-    parser.delegate = self;
-    [parser parse];
-    
-    self.exam.name = defaultExamFile;
+    if (filePath) {
+        NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+        NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:fileURL];
+        parser.delegate = self;
+        [parser parse];
+        
+        self.exam.name = defaultExamFile;
+    } else {
+        NSError *error;
+        [NSException raise:@"Unable to open default exam file" format:@"%@", [error localizedDescription]];
+    }
+
 }
 
 #pragma mark - Fetch from CoreData
