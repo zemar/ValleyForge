@@ -11,9 +11,6 @@
 @interface AnswerViewController : UIViewController
 
 @property (nonatomic) NSInteger index;
-@property (nonatomic, strong) IBOutlet UILabel *answerLabel;
 @property (nonatomic) NSString *answer;
-
-- (IBAction) dismiss:(id)sender;
 
 @end

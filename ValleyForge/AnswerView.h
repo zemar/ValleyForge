@@ -10,4 +10,8 @@
 
 @interface AnswerView : UIView
 
+@property (strong, nonatomic) UILabel *label;
+
+- (instancetype)initWithFrame:(CGRect)frame labelText:(NSString *)text;
+
 @end

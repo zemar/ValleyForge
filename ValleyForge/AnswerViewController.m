@@ -11,6 +11,8 @@
 
 @interface AnswerViewController ()
 
+@property (nonatomic) AnswerView *av;
+
 @end
 
 @implementation AnswerViewController
@@ -30,9 +32,9 @@
 }
 
 - (void)loadView {
-    AnswerView *av = [[[NSBundle mainBundle] loadNibNamed:@"AnswerView" owner:self options:nil] firstObject];
-    self.view = av;
-    self.answerLabel.text = self.answer;
+    CGRect frame = [UIScreen mainScreen].bounds;
+    self.av = [[AnswerView alloc] initWithFrame:frame labelText:self.answer];
+    self.view = self.av;
 }
 
 - (void)dismiss:(id)sender {
