@@ -1,6 +1,9 @@
 <exam>
     <examName>
-        Citizenship Exam Wi 2014
+        Citizenship Exam Wi
+        <year>
+            2015
+        </year>
     </examName>
 	<examItem>
 		<question>
