@@ -23,10 +23,16 @@
                                                                self.frame.size.height / 1.3)];
         self.label.textColor = [UIColor blackColor];
         self.label.backgroundColor = [UIColor whiteColor];
-        self.label.text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        self.label.attributedText = [[NSAttributedString alloc] initWithString:[text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
         self.label.numberOfLines = 0;
         
         [self addSubview:self.label];
+        
+        NSDictionary *nameMap = @{@"label" : self.label};
+        NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:nil views:nameMap];
+        NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[label]-10-|" options:0 metrics:nil views:nameMap];
+        [self addConstraints:horizontalConstraints];
+        [self addConstraints:verticalConstraints];
 
     }
     
