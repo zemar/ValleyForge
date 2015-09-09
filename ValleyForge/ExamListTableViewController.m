@@ -10,6 +10,7 @@
 #import "ExamListModel.h"
 #import "ExamListTableViewCell.h"
 #import "ExamListTableView.h"
+#import "NSString+Extensions.h"
 
 @interface ExamListTableViewController ()
 
@@ -90,7 +91,7 @@
 
     NSInteger row = indexPath.row;
     if (row <= [self.model.examList count]) {
-        cell.textLabel.text = [self.model.examList[row] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        cell.textLabel.text = [self.model.examList[row] stringByTrimmingTabs];
     } else {
         cell.textLabel.text = @"No exam found";
     }

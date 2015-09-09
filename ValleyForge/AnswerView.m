@@ -7,7 +7,7 @@
 //
 
 #import "AnswerView.h"
-#import "NSString+trimMultipleWhitespace.h"
+#import "NSString+Extensions.h"
 
 @implementation AnswerView
 
@@ -26,7 +26,7 @@
 
         self.label.textColor = [UIColor blackColor];
         self.label.backgroundColor = [UIColor whiteColor];
-        self.label.attributedText = [[NSAttributedString alloc] initWithString:[text trimMultipleWhitespace]];
+        self.label.attributedText = [[NSAttributedString alloc] initWithString:[text stringByTrimmingTabs]];
         self.label.numberOfLines = 0;
         self.label.translatesAutoresizingMaskIntoConstraints = NO;
         

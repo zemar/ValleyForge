@@ -9,7 +9,7 @@
 #import "QuestionListModel.h"
 #import "ExamItem.h"
 #import "Exam.h"
-#import "NSString+trimLeadingCharacters.m"
+#import "NSString+Extensions.m"
 
 @import CoreData;
 
@@ -214,13 +214,13 @@
     }
     
     if ( [elementName isEqualToString:@"question"] ) {
-        self.currentExamItem.question = [self.tempElement stringByTrimmingLeadingWhitespace];
+        self.currentExamItem.question = [self.tempElement stringByTrimmingTabs];
         NSLog(@"question%ld: %@", (long)self.questionNumber, self.currentExamItem.question);
         self.questionNumber++;
     }
     
     if ( [elementName isEqualToString:@"answer"] ) {
-        self.currentExamItem.answer = [self.tempElement stringByTrimmingLeadingWhitespace];
+        self.currentExamItem.answer = [self.tempElement stringByTrimmingTabs];
         NSLog(@"Answer: %@", self.currentExamItem.answer);
     }
     

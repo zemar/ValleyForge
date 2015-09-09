@@ -1,5 +1,5 @@
 //
-//  NSString+trimMultipleWhitespace.h
+//  NSString+Extensions.h
 //  ValleyForge
 //
 //  Created by mike on 9/8/15.
@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (trimMultipleWhitespace)
+@interface NSString (Extensions)
 
-- (NSString *)trimMultipleWhitespace;
+- (NSString *)stringByTrimmingTabs;
+- (NSString *)stringByTrimmingLeadingWhitespace;
 
 @end

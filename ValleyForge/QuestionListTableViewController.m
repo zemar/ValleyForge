@@ -12,6 +12,7 @@
 #import "QuestionListModel.h"
 #import "ExamItem.h"
 #import "QuestionListTableViewCell.h"
+#import "NSString+Extensions.h"
 
 @interface QuestionListTableViewController ()
 
@@ -84,7 +85,7 @@
         cell = [[QuestionListTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"QuestionTableViewCell"];
     }
     
-    NSString *questionText = [[self.model question:indexPath.section] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *questionText = [[self.model question:indexPath.section] stringByTrimmingTabs];
     cell.textLabel.text = questionText;
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"question%ld", (long)indexPath.section]];
     cell.section = indexPath.section;
