@@ -13,7 +13,7 @@
 - (NSString *)trimMultipleWhitespace {
     NSError *error = nil;
     
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"  +" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\t" options:NSRegularExpressionCaseInsensitive error:&error];
     NSString *trimmedString = [regex stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, [self length]) withTemplate:@""];
    
     return trimmedString;
