@@ -28,7 +28,7 @@
         self.label.backgroundColor = [UIColor whiteColor];
         self.label.attributedText = [[NSAttributedString alloc] initWithString:[text stringByTrimmingTabs]];
         self.label.numberOfLines = 0;
-        self.label.translatesAutoresizingMaskIntoConstraints = NO;
+        self.label.translatesAutoresizingMaskIntoConstraints = NO;  // Got to have this!!!  Otherwise, extra constraints are added which conflict
         
         [self addSubview:self.label];
     }
