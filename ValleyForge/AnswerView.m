@@ -7,6 +7,7 @@
 //
 
 #import "AnswerView.h"
+#import "NSString+trimMultipleWhitespace.h"
 
 @implementation AnswerView
 
@@ -18,15 +19,14 @@
         self.translatesAutoresizingMaskIntoConstraints = YES;
 
 
-        self.label = [[UILabel alloc] initWithFrame:CGRectMake(
-                                                               self.frame.origin.x + 20,
+        self.label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.origin.x + 20,
                                                                self.frame.origin.y + 100,
                                                                self.frame.size.width / 1.3,
                                                                self.frame.size.height / 1.3)];
 
         self.label.textColor = [UIColor blackColor];
         self.label.backgroundColor = [UIColor whiteColor];
-        self.label.attributedText = [[NSAttributedString alloc] initWithString:[text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+        self.label.attributedText = [[NSAttributedString alloc] initWithString:[text trimMultipleWhitespace]];
         self.label.numberOfLines = 0;
         self.label.translatesAutoresizingMaskIntoConstraints = NO;
         
@@ -45,8 +45,6 @@
     NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[label]-100-|" options:0 metrics:nil views:nameMap];
     [self addConstraints:horizontalConstraints];
     [self addConstraints:verticalConstraints];
-    
-    
 }
 
 @end
