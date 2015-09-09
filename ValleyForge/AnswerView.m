@@ -15,7 +15,7 @@
     
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:(72.0f/255.0f) green:(72.0f/255.0f) blue:(72.0f/255.0f) alpha:1.0f];
-        self.translatesAutoresizingMaskIntoConstraints = NO;
+        self.translatesAutoresizingMaskIntoConstraints = YES;
 
 
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(
@@ -23,6 +23,7 @@
                                                                self.frame.origin.y + 100,
                                                                self.frame.size.width / 1.3,
                                                                self.frame.size.height / 1.3)];
+
         self.label.textColor = [UIColor blackColor];
         self.label.backgroundColor = [UIColor whiteColor];
         self.label.attributedText = [[NSAttributedString alloc] initWithString:[text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
@@ -41,7 +42,7 @@
     
     NSDictionary *nameMap = @{@"label" : self.label};
     NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-50-[label]-50-|" options:0 metrics:nil views:nameMap];
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-200-[label]-200-|" options:0 metrics:nil views:nameMap];
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[label]-100-|" options:0 metrics:nil views:nameMap];
     [self addConstraints:horizontalConstraints];
     [self addConstraints:verticalConstraints];
     
