@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		271962051B6E8F0F0064C30B /* ExamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 271962041B6E8F0F0064C30B /* ExamItem.m */; };
+		27207B431BA120E800D369DE /* CitizenshipExamOR.xml in Resources */ = {isa = PBXBuildFile; fileRef = 27207B421BA120E700D369DE /* CitizenshipExamOR.xml */; };
 		275010891B52DBC300C0CC71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 275010881B52DBC300C0CC71 /* main.m */; };
 		2750108C1B52DBC300C0CC71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2750108B1B52DBC300C0CC71 /* AppDelegate.m */; };
 		2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2750108D1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		271962031B6E8F0F0064C30B /* ExamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamItem.h; sourceTree = "<group>"; };
 		271962041B6E8F0F0064C30B /* ExamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamItem.m; sourceTree = "<group>"; };
+		27207B421BA120E700D369DE /* CitizenshipExamOR.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CitizenshipExamOR.xml; sourceTree = "<group>"; };
 		275010831B52DBC300C0CC71 /* ValleyForge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValleyForge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275010871B52DBC300C0CC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		275010881B52DBC300C0CC71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				2773C4C31B61E8910021762C /* CitizenshipExamWi.xml */,
+				27207B421BA120E700D369DE /* CitizenshipExamOR.xml */,
 				2773C4B51B59E0E40021762C /* Default-568h@2x.png */,
 				275010871B52DBC300C0CC71 /* Info.plist */,
 				275010881B52DBC300C0CC71 /* main.m */,
@@ -274,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27207B431BA120E800D369DE /* CitizenshipExamOR.xml in Resources */,
 				27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */,
 				DDAE5A741B826A6C0087DB13 /* LaunchScreen.xib in Resources */,
 				2773C4C41B61E8910021762C /* CitizenshipExamWi.xml in Resources */,
