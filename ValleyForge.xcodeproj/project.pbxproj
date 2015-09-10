@@ -18,7 +18,7 @@
 		2773C4B61B59E0E40021762C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4B51B59E0E40021762C /* Default-568h@2x.png */; };
 		2773C4BB1B5C1D940021762C /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773C4BA1B5C1D940021762C /* AnswerViewController.m */; };
 		2773C4BE1B5C1DD90021762C /* AnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2773C4BD1B5C1DD90021762C /* AnswerView.m */; };
-		2773C4C41B61E8910021762C /* CitizenshipExamWI.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4C31B61E8910021762C /* CitizenshipExamWI.xml */; };
+		2773C4C41B61E8910021762C /* CitizenshipExamWi.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2773C4C31B61E8910021762C /* CitizenshipExamWi.xml */; };
 		279DAD801B9FE7D800A0C4B4 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 279DAD7F1B9FE7D800A0C4B4 /* NSString+Extensions.m */; };
 		279EB4E71B800FF900858A62 /* ExamStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4E61B800FF900858A62 /* ExamStoreViewController.m */; };
 		279EB4F01B80DE4700858A62 /* ExamListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */; };
@@ -65,7 +65,7 @@
 		2773C4BA1B5C1D940021762C /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
 		2773C4BC1B5C1DD90021762C /* AnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerView.h; sourceTree = "<group>"; };
 		2773C4BD1B5C1DD90021762C /* AnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerView.m; sourceTree = "<group>"; };
-		2773C4C31B61E8910021762C /* CitizenshipExamWI.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CitizenshipExamWI.xml; sourceTree = "<group>"; };
+		2773C4C31B61E8910021762C /* CitizenshipExamWi.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CitizenshipExamWi.xml; sourceTree = "<group>"; };
 		279DAD7E1B9FE7D800A0C4B4 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
 		279DAD7F1B9FE7D800A0C4B4 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
 		279EB4E51B800FF900858A62 /* ExamStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamStoreViewController.h; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		275010861B52DBC300C0CC71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2773C4C31B61E8910021762C /* CitizenshipExamWI.xml */,
+				2773C4C31B61E8910021762C /* CitizenshipExamWi.xml */,
 				27207B421BA120E700D369DE /* CitizenshipExamOR.xml */,
 				2773C4B51B59E0E40021762C /* Default-568h@2x.png */,
 				275010871B52DBC300C0CC71 /* Info.plist */,
@@ -280,7 +280,7 @@
 				27207B431BA120E800D369DE /* CitizenshipExamOR.xml in Resources */,
 				27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */,
 				DDAE5A741B826A6C0087DB13 /* LaunchScreen.xib in Resources */,
-				2773C4C41B61E8910021762C /* CitizenshipExamWI.xml in Resources */,
+				2773C4C41B61E8910021762C /* CitizenshipExamWi.xml in Resources */,
 				279EB4FB1B812FC300858A62 /* ExamListTableViewCell.xib in Resources */,
 				2773C4B61B59E0E40021762C /* Default-568h@2x.png in Resources */,
 			);
