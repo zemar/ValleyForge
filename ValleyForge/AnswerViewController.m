@@ -35,6 +35,9 @@
     CGRect frame = [UIScreen mainScreen].bounds;
     self.av = [[AnswerView alloc] initWithFrame:frame labelText:self.answer];
     self.view = self.av;
+    
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self.view action:@selector(dismiss:)];
+    swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
 }
 
 - (void)dismiss:(id)sender {

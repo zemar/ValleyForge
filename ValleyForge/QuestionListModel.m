@@ -59,7 +59,7 @@
 
 - (void)initializeDefaultExam {
 
-    NSString *defaultExamFile = @"CitizenshipExamWi";
+    NSString *defaultExamFile = @"CitizenshipExamWI";
     NSString *filePath = [[NSBundle mainBundle] pathForResource:defaultExamFile ofType:@"xml"];
     if (filePath) {
         NSURL *fileURL = [NSURL fileURLWithPath:filePath];
