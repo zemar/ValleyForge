@@ -36,6 +36,7 @@
     qlnc.navigationBar.barStyle = UIBarStyleBlack;
 
     ExamStoreViewController *esvc = [[ExamStoreViewController alloc] init];
+    esvc.model = qltvc.model;
     UINavigationController *esnc = [[UINavigationController alloc] initWithRootViewController:esvc];
     [esnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
     esnc.navigationBar.barTintColor = navBarColor;

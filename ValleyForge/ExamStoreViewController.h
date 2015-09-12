@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuestionListTableViewController.h"
 
 @interface ExamStoreViewController : UIViewController <UIWebViewDelegate>
+
+@property (strong, nonatomic) QuestionListModel *model;
 
 @end

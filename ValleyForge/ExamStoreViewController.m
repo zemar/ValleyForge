@@ -7,6 +7,7 @@
 //
 
 #import "ExamStoreViewController.h"
+#import "QuestionListModel.h"
 
 @interface ExamStoreViewController ()
 
@@ -54,6 +55,7 @@
         loadPage = NO;
         NSError *error;
         NSString *fileData = [[NSString alloc] initWithContentsOfURL:requestedURL encoding:NSUTF8StringEncoding error:&error];
+        [self.model addExam:fileData];
         NSLog(@"Download data: %@", fileData);
     }
 
