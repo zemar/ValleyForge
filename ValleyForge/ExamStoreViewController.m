@@ -22,7 +22,7 @@
         webView.scalesPageToFit = YES;
         
         // Set the home URL
-        NSURL *url = [[NSURL alloc] initWithString:@"http://x-tic-systems.wix.com/exam-store"];
+        NSURL *url = [[NSURL alloc] initWithString:@"http://xtic.x10host.com/vf/"];
         
         [webView loadRequest:[NSURLRequest requestWithURL:url]];
         self.view = webView;
