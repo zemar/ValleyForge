@@ -75,6 +75,25 @@
 
 }
 
+- (void)addExam:(NSString *)examData {
+    
+    if (examData) {
+        NSXMLParser *parser = [[NSXMLParser alloc] initWithStream:(NSInputStream*)examData];
+        parser.delegate = self;
+        [parser parse];
+        
+        NSRange r1 = [examData rangeOfString:@"<examName>"];
+        NSRange r2 = [examData rangeOfString:@"</examName>"];
+        NSRange sub = NSMakeRange(r1.location + r1.length, r2.location - r1.location - r1.length);
+        
+        self.exam.name = [examData substringWithRange:sub];
+    } else {
+        NSError *error;
+        [NSException raise:@"Unable to read exam data" format:@"%@", [error localizedDescription]];
+    }
+    
+}
+
 #pragma mark - Fetch from CoreData
 - (BOOL)checkForExam {
     BOOL examPresent = false;

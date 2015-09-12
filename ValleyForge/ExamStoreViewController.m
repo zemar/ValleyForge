@@ -46,7 +46,18 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    return YES;
+
+    BOOL loadPage = YES;
+    NSURL *requestedURL = [request URL];
+    
+    if ( [requestedURL.absoluteString containsString:@".xml"] )  {
+        loadPage = NO;
+        NSError *error;
+        NSString *fileData = [[NSString alloc] initWithContentsOfURL:requestedURL encoding:NSUTF8StringEncoding error:&error];
+        NSLog(@"Download data: %@", fileData);
+    }
+
+    return loadPage;
 }
 
 @end
