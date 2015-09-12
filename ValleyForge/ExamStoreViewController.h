@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExamStoreViewController : UIViewController
+@interface ExamStoreViewController : UIViewController <UIWebViewDelegate>
 
 @end
