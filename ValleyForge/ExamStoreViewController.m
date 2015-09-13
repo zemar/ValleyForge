@@ -53,10 +53,10 @@
     
     if ( [requestedURL.absoluteString containsString:@".xml"] )  {
         loadPage = NO;
-        NSError *error;
-        NSString *fileData = [[NSString alloc] initWithContentsOfURL:requestedURL encoding:NSUTF8StringEncoding error:&error];
+        NSData *fileData = [[NSData alloc] initWithContentsOfURL:requestedURL];
         [self.model addExam:fileData];
-        NSLog(@"Download data: %@", fileData);
+        NSString *fileString = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+        NSLog(@"Download data: %@", fileString);
     }
 
     return loadPage;

@@ -17,6 +17,6 @@
 - (NSString *)question:(NSInteger)index;
 - (NSString *)answer:(NSInteger)index;
 - (NSInteger)questionCount;
-- (void)addExam:(NSString *)examData;
+- (void)addExam:(NSData *)examData;
 
 @end

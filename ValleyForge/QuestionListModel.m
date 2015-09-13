@@ -75,18 +75,19 @@
 
 }
 
-- (void)addExam:(NSString *)examData {
+- (void)addExam:(NSData *)examData {
     
     if (examData) {
-        NSXMLParser *parser = [[NSXMLParser alloc] initWithStream:(NSInputStream*)examData];
+        NSXMLParser *parser = [[NSXMLParser alloc] initWithData:examData];
         parser.delegate = self;
         [parser parse];
         
-        NSRange r1 = [examData rangeOfString:@"<examName>"];
-        NSRange r2 = [examData rangeOfString:@"</examName>"];
+        NSString *examString = [[NSString alloc] initWithData:examData encoding:NSUTF8StringEncoding];
+        NSRange r1 = [examString rangeOfString:@"<examName>"];
+        NSRange r2 = [examString rangeOfString:@"</examName>"];
         NSRange sub = NSMakeRange(r1.location + r1.length, r2.location - r1.location - r1.length);
         
-        self.exam.name = [examData substringWithRange:sub];
+        self.exam.name = [examString substringWithRange:sub];
     } else {
         NSError *error;
         [NSException raise:@"Unable to read exam data" format:@"%@", [error localizedDescription]];
