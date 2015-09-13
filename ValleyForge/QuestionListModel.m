@@ -52,6 +52,8 @@
             [self initializeDefaultExam];
         }
         self.questionNumber = 0;
+        
+        NSLog(@"Stored Exams: %@", [self storedExams]);
     }
     
     return self;
@@ -96,18 +98,44 @@
 }
 
 #pragma mark - Fetch from CoreData
-- (BOOL)checkForExam {
-    BOOL examPresent = false;
+- (NSArray *)storedExams {
     
-    // Query CoreData for existing exam
+    // CoreData read
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"Exam" inManagedObjectContext:self.context];
     request.entity = e;
     
     NSError *error;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
     
-    if ( [result count] > 0 ) {
+    if (!result) {
+        [NSException raise:@"Fetching stored exams failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    return result;
+}
+
+- (NSArray *)storedExamItems {
+    // CoreData read
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
+    request.entity = e;
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"index = index"];
+    [request setPredicate:p];
+    
+    NSError *error;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    
+    return result;
+}
+
+#pragma mark - Data parsing and checking
+- (BOOL)checkForExam {
+    BOOL examPresent = false;
+    
+    // Query CoreData for existing exam
+    if ( [ [self storedExams] count] > 0 ) {
         examPresent = true;
     }
     
@@ -115,86 +143,51 @@
 }
 
 - (NSString *)question:(NSInteger)index {
+    NSArray *examItems = [self storedExamItems];
     
-    // CoreData read
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
-    request.entity = e;
-    
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"index = index"];
-    [request setPredicate:p];
-    
-    NSError *error;
-    NSArray *result = [self.context executeFetchRequest:request error:&error];
-    
-    if (!result) {
+    if (!examItems) {
+        NSError *error;
         [NSException raise:@"Fetch question failed" format:@"Reason: %@", [error localizedDescription]];
     }
     
-    return [result[index] question];
-    
+    return [examItems[index] question];
 }
 
 - (NSString *)answer:(NSInteger)index {
+    NSArray *examItems = [self storedExamItems];
     
-    // CoreData read
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
-    request.entity = e;
-    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
-    request.sortDescriptors = @[sd];
-    
-    NSError *error;
-    NSArray *result = [self.context executeFetchRequest:request error:&error];
-    
-    if (!result) {
+    if (!examItems) {
+        NSError *error;
         [NSException raise:@"Fetch answer failed" format:@"Reason: %@", [error localizedDescription]];
     }
     
-    return [result[index] answer];
-    
+    return [examItems[index] answer];
 }
 
 - (void)dumpQuestions {
-    // CoreData read
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
-    request.entity = e;
+    NSArray *examItems = [self storedExamItems];
     
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"index = index"];
-    [request setPredicate:p];
-    
-    NSError *error;
-    NSArray *result = [self.context executeFetchRequest:request error:&error];
-    
-    if (!result) {
+    if (!examItems) {
+        NSError *error;
         [NSException raise:@"Fetch question failed" format:@"Reason: %@", [error localizedDescription]];
     }
     
     int i = 0;
-    for(ExamItem *item in result) {
+    for(ExamItem *item in examItems) {
         NSLog(@"Question%d from CoreData: %@", i, item.question);
         i++;
     }
 }
 
 - (NSInteger)questionCount {
-    // CoreData read
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
-    request.entity = e;
+    NSArray *examItems = [self storedExamItems];
     
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"index = index"];
-    [request setPredicate:p];
-    
-    NSError *error;
-    NSArray *result = [self.context executeFetchRequest:request error:&error];
-    
-    if (!result) {
-        [NSException raise:@"Fetch question failed" format:@"Reason: %@", [error localizedDescription]];
+    if (!examItems) {
+        NSError *error;
+        [NSException raise:@"Fetch storedExamItems failed" format:@"Reason: %@", [error localizedDescription]];
     }
     
-    return [result count];
+    return [examItems count];
 }
 
 #pragma mark - NSXMLParser Delegate

@@ -25,7 +25,6 @@
 		279EB4F31B81294300858A62 /* ExamListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F21B81294300858A62 /* ExamListModel.m */; };
 		279EB4F61B812F7900858A62 /* ExamListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F51B812F7900858A62 /* ExamListTableView.m */; };
 		279EB4FA1B812FC300858A62 /* ExamListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F81B812FC300858A62 /* ExamListTableViewCell.m */; };
-		279EB4FB1B812FC300858A62 /* ExamListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279EB4F91B812FC300858A62 /* ExamListTableViewCell.xib */; };
 		27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5D9301B800B11003BEDFD /* Media.xcassets */; };
 		DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0446021B63D77200A82969 /* QuestionListModel.m */; };
 		DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */; };
@@ -78,7 +77,6 @@
 		279EB4F51B812F7900858A62 /* ExamListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListTableView.m; sourceTree = "<group>"; };
 		279EB4F71B812FC300858A62 /* ExamListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListTableViewCell.h; sourceTree = "<group>"; };
 		279EB4F81B812FC300858A62 /* ExamListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListTableViewCell.m; sourceTree = "<group>"; };
-		279EB4F91B812FC300858A62 /* ExamListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamListTableViewCell.xib; sourceTree = "<group>"; };
 		27F5D9301B800B11003BEDFD /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DD0446011B63D77200A82969 /* QuestionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListModel.h; sourceTree = "<group>"; };
 		DD0446021B63D77200A82969 /* QuestionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListModel.m; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				279EB4F51B812F7900858A62 /* ExamListTableView.m */,
 				279EB4F71B812FC300858A62 /* ExamListTableViewCell.h */,
 				279EB4F81B812FC300858A62 /* ExamListTableViewCell.m */,
-				279EB4F91B812FC300858A62 /* ExamListTableViewCell.xib */,
 				279EB4EE1B80DE4700858A62 /* ExamListTableViewController.h */,
 				279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */,
 				279EB4E51B800FF900858A62 /* ExamStoreViewController.h */,
@@ -281,7 +278,6 @@
 				27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */,
 				DDAE5A741B826A6C0087DB13 /* LaunchScreen.xib in Resources */,
 				27207B451BA478BF00D369DE /* CitizenshipExamWI.xml in Resources */,
-				279EB4FB1B812FC300858A62 /* ExamListTableViewCell.xib in Resources */,
 				2773C4B61B59E0E40021762C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

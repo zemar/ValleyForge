@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) Exam *exam;
 
+- (NSArray *)storedExams;
 - (NSString *)question:(NSInteger)index;
 - (NSString *)answer:(NSInteger)index;
 - (NSInteger)questionCount;

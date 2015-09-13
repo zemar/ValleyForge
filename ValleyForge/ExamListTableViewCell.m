@@ -20,8 +20,8 @@
     if ( self = [super initWithStyle:style reuseIdentifier:reuseIdentifier] ) {
 
         self.separatorInset = UIEdgeInsetsMake(0.0, 10.0, 0.0, 10.0);
-        self.layer.cornerRadius = 12;
-        self.layer.masksToBounds = YES;
+//        self.layer.cornerRadius = 12;
+//        self.layer.masksToBounds = YES;
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];

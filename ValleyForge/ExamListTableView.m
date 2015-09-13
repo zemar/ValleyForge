@@ -15,8 +15,8 @@
     
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:(72.0f/255.0f) green:(72.0f/255.0f) blue:(72.0f/255.0f) alpha:1.0f];
-        self.rowHeight = 100.0;
-        self.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.rowHeight = 50.0;
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;        
     }
    
     return self;
