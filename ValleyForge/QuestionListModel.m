@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSManagedObjectModel *model;
 @property (nonatomic, strong) ExamItem *currentExamItem;
 @property NSInteger questionNumber;
+@property BOOL examExists;
 
 @end
 
@@ -52,6 +53,7 @@
             [self initializeDefaultExam];
         }
         self.questionNumber = 0;
+        self.examExists = NO;
     }
     
     return self;
@@ -191,13 +193,7 @@
 #pragma mark - NSXMLParser Delegate
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
-    if ([elementName isEqualToString:@"examName"]) {
-
-        // Create CoreData Exam entry
-        self.exam = [NSEntityDescription insertNewObjectForEntityForName:@"Exam" inManagedObjectContext:self.context];
-    }
-    
-    if ( [elementName isEqualToString:@"examItem"] ) {
+    if ( self.examExists == NO && [elementName isEqualToString:@"examItem"] ) {
         
         // Create CoreData ExamItem entry
         ExamItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"ExamItem" inManagedObjectContext:self.context];
@@ -220,8 +216,16 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     if ( [elementName isEqualToString:@"examName"]) {
-        self.exam.name = self.tempElement;
-        NSLog(@"ExamName: %@", self.exam.name);
+        if ( [[self storedExams] indexOfObject:self.tempElement] == NSNotFound) {
+            // Create CoreData Exam entry
+            self.exam = [NSEntityDescription insertNewObjectForEntityForName:@"Exam" inManagedObjectContext:self.context];
+            self.exam.name = self.tempElement;
+            NSLog(@"ExamName: %@", self.exam.name);
+
+        } else {
+            self.examExists = YES;
+            NSLog(@"%@ already exists in database", self.exam.name);
+        }
     }
     
     if ( [elementName isEqualToString:@"question"] ) {
