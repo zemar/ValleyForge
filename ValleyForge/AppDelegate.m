@@ -23,17 +23,18 @@
     
     UIColor *navBarColor = [UIColor colorWithRed:(10.0f/255.0f) green:(10.0f/255.0f) blue:(10.0f/255.0f) alpha:1.0f];
     
-    ExamListTableViewController *eltvc = [[ExamListTableViewController alloc] init];
-    UINavigationController *elnc = [[UINavigationController alloc] initWithRootViewController:eltvc];
-    [elnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
-    elnc.navigationBar.barTintColor = navBarColor;
-    elnc.navigationBar.barStyle = UIBarStyleBlack;
-    
     QuestionListTableViewController *qltvc = [[QuestionListTableViewController alloc] init];
     UINavigationController *qlnc = [[UINavigationController alloc] initWithRootViewController:qltvc];
     [qlnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
     qlnc.navigationBar.barTintColor = navBarColor;
     qlnc.navigationBar.barStyle = UIBarStyleBlack;
+    
+    ExamListTableViewController *eltvc = [[ExamListTableViewController alloc] init];
+    eltvc.model = qltvc.model;
+    UINavigationController *elnc = [[UINavigationController alloc] initWithRootViewController:eltvc];
+    [elnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
+    elnc.navigationBar.barTintColor = navBarColor;
+    elnc.navigationBar.barStyle = UIBarStyleBlack;
 
     ExamStoreViewController *esvc = [[ExamStoreViewController alloc] init];
     esvc.model = qltvc.model;

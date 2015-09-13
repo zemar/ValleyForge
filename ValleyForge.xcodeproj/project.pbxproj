@@ -22,7 +22,6 @@
 		279DAD801B9FE7D800A0C4B4 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 279DAD7F1B9FE7D800A0C4B4 /* NSString+Extensions.m */; };
 		279EB4E71B800FF900858A62 /* ExamStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4E61B800FF900858A62 /* ExamStoreViewController.m */; };
 		279EB4F01B80DE4700858A62 /* ExamListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */; };
-		279EB4F31B81294300858A62 /* ExamListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F21B81294300858A62 /* ExamListModel.m */; };
 		279EB4F61B812F7900858A62 /* ExamListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F51B812F7900858A62 /* ExamListTableView.m */; };
 		279EB4FA1B812FC300858A62 /* ExamListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EB4F81B812FC300858A62 /* ExamListTableViewCell.m */; };
 		27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5D9301B800B11003BEDFD /* Media.xcassets */; };
@@ -71,8 +70,6 @@
 		279EB4E61B800FF900858A62 /* ExamStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamStoreViewController.m; sourceTree = "<group>"; };
 		279EB4EE1B80DE4700858A62 /* ExamListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListTableViewController.h; sourceTree = "<group>"; };
 		279EB4EF1B80DE4700858A62 /* ExamListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListTableViewController.m; sourceTree = "<group>"; };
-		279EB4F11B81294300858A62 /* ExamListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListModel.h; sourceTree = "<group>"; };
-		279EB4F21B81294300858A62 /* ExamListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListModel.m; sourceTree = "<group>"; };
 		279EB4F41B812F7900858A62 /* ExamListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListTableView.h; sourceTree = "<group>"; };
 		279EB4F51B812F7900858A62 /* ExamListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListTableView.m; sourceTree = "<group>"; };
 		279EB4F71B812FC300858A62 /* ExamListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamListTableViewCell.h; sourceTree = "<group>"; };
@@ -136,8 +133,6 @@
 				DDB1DCFC1B823BD900CEC3C6 /* Exam.m */,
 				271962031B6E8F0F0064C30B /* ExamItem.h */,
 				271962041B6E8F0F0064C30B /* ExamItem.m */,
-				279EB4F11B81294300858A62 /* ExamListModel.h */,
-				279EB4F21B81294300858A62 /* ExamListModel.m */,
 				279EB4F41B812F7900858A62 /* ExamListTableView.h */,
 				279EB4F51B812F7900858A62 /* ExamListTableView.m */,
 				279EB4F71B812FC300858A62 /* ExamListTableViewCell.h */,
@@ -306,7 +301,6 @@
 				DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */,
 				2773C4BB1B5C1D940021762C /* AnswerViewController.m in Sources */,
 				275010891B52DBC300C0CC71 /* main.m in Sources */,
-				279EB4F31B81294300858A62 /* ExamListModel.m in Sources */,
 				279EB4F61B812F7900858A62 /* ExamListTableView.m in Sources */,
 				2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */,
 				DDB1DCFD1B823BD900CEC3C6 /* Exam.m in Sources */,

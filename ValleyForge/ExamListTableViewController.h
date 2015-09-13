@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuestionListModel.h"
 
 @interface ExamListTableViewController : UITableViewController
+
+@property (strong, nonatomic) QuestionListModel *model;
 
 @end

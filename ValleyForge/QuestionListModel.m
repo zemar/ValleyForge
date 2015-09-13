@@ -52,8 +52,6 @@
             [self initializeDefaultExam];
         }
         self.questionNumber = 0;
-        
-        NSLog(@"Stored Exams: %@", [self storedExams]);
     }
     
     return self;

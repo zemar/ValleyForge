@@ -7,14 +7,12 @@
 //
 
 #import "ExamListTableViewController.h"
-#import "ExamListModel.h"
 #import "ExamListTableViewCell.h"
 #import "ExamListTableView.h"
 #import "NSString+Extensions.h"
 
 @interface ExamListTableViewController ()
 
-@property (nonatomic, strong) ExamListModel *model;
 @property (nonatomic) ExamListTableView *eltv;
 
 @end
@@ -27,8 +25,6 @@
     if (self) {
         self.tabBarItem.title = @"Exam List";
         self.tabBarItem.image = [UIImage imageNamed:@"list"];
-
-        self.model = [[ExamListModel alloc] init];
     }
     
     return self;
@@ -68,7 +64,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger examCount = [self.model.examList count];
+    NSInteger examCount = [[self.model storedExams] count];
     return examCount;
 }
 
@@ -90,8 +86,10 @@
     }
 
     NSInteger row = indexPath.row;
-    if (row <= [self.model.examList count]) {
-        cell.textLabel.text = [self.model.examList[row] stringByTrimmingTabs];
+    if (row <= [[self.model storedExams] count]) {
+        NSArray *exams = [self.model storedExams];
+        NSString *examName = [exams[row] name];
+        cell.textLabel.text = examName;
     } else {
         cell.textLabel.text = @"No exam found";
     }
