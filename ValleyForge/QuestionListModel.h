@@ -19,6 +19,5 @@
 - (NSString *)answer:(NSInteger)index;
 - (NSInteger)questionCount;
 - (void)addExam:(NSData *)examData;
-- (instancetype)init:(id)parentId;
 
 @end

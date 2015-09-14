@@ -27,7 +27,7 @@
     
     if (self) {
         self = [self initWithStyle:UITableViewStylePlain];
-        self.model = [[QuestionListModel alloc] init:self];
+        self.model = [[QuestionListModel alloc] init];
         
         self.tabBarItem.title = @"Exam";
         self.tabBarItem.image = [UIImage imageNamed:@"exam"];
