@@ -7,6 +7,7 @@
 //
 
 #import "QuestionListModel.h"
+#import "QuestionListTableViewController.h"
 #import "ExamItem.h"
 #import "Exam.h"
 #import "NSString+Extensions.m"
@@ -21,12 +22,13 @@
 @property (nonatomic, strong) ExamItem *currentExamItem;
 @property NSInteger questionNumber;
 @property BOOL examExists;
+@property QuestionListTableViewController *qltvc;
 
 @end
 
 @implementation QuestionListModel
 
-- (instancetype)init {
+- (instancetype)init:(id)parentId {
     self = [super init];
 
     if (self) {
@@ -54,6 +56,7 @@
         }
         self.questionNumber = 0;
         self.examExists = NO;
+        self.qltvc = parentId;
     }
     
     return self;
@@ -120,6 +123,8 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
     request.entity = e;
+    
+    NSLog(@"Active exame is %@", self.qltvc.activeExam);
     
     NSPredicate *p = [NSPredicate predicateWithFormat:@"index = index"];
     [request setPredicate:p];

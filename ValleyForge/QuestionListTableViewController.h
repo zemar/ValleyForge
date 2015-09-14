@@ -13,5 +13,6 @@
 @interface QuestionListTableViewController : UITableViewController
 
 @property (nonatomic, strong) QuestionListModel *model;
+@property (strong, nonatomic) NSString *activeExam;
 
 @end

@@ -95,4 +95,15 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    if (row <= [[self.model storedExams] count]) {
+        NSArray *exams = [self.model storedExams];
+        NSString *examName = [exams[row] name];
+        self.activeExam = examName;
+    } else {
+        self.activeExam = @"No exam found";
+    }
+}
+
 @end
