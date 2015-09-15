@@ -21,6 +21,7 @@
 @property (nonatomic, strong) ExamItem *currentExamItem;
 @property NSInteger questionNumber;
 @property BOOL examExists;
+@property (nonatomic, strong) NSString* activeExam;
 
 @end
 
@@ -54,6 +55,9 @@
         }
         self.questionNumber = 0;
         self.examExists = NO;
+        
+        // Get notified when active exam changes
+        [self addObserver:self forKeyPath:@"activeExam" options:NSKeyValueObservingOptionNew context:nil];
     }
     
     return self;
@@ -95,6 +99,10 @@
         [NSException raise:@"Unable to read exam data" format:@"%@", [error localizedDescription]];
     }
     
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    NSLog(@"Observer hit.  keyPath: %@ object: %@ change: %@ context: %@", keyPath, object, change, context);
 }
 
 #pragma mark - Fetch from CoreData

@@ -25,6 +25,7 @@
     if (self) {
         self.tabBarItem.title = @"Exam List";
         self.tabBarItem.image = [UIImage imageNamed:@"list"];
+        self.activeExam = nil;
     }
     
     return self;
@@ -91,6 +92,11 @@
     } else {
         cell.textLabel.text = @"No exam found";
     }
+
+    // Default to first exam as the active
+    if (!self.activeExam) {
+        self.activeExam = cell.textLabel.text;
+    }
     
     return cell;
 }
@@ -100,10 +106,19 @@
     if (row <= [[self.model storedExams] count]) {
         NSArray *exams = [self.model storedExams];
         NSString *examName = [exams[row] name];
+        [self willChangeValueForKey:@"activeExam"];
         self.activeExam = examName;
+        NSLog(@"Set active exam to: %@", self.activeExam);
+        [self didChangeValueForKey:@"activeExam"];
     } else {
         self.activeExam = @"No exam found";
     }
+}
+
+#pragma mark - KVO notifications
++ (NSSet *)keyPathsForValuesAffectingActiveExam
+{
+    return [NSSet setWithObject:@"activeExam"];
 }
 
 @end
