@@ -133,10 +133,9 @@
     NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
     request.entity = e;
     
-    NSLog(@"Active exame is %@", @"help!!!!");
-    
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"index = index"];
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"(index = index) AND (examName != %@)", self.activeExam];
     [request setPredicate:p];
+    NSLog(@"Active exam is %@ with predicate: %@", self.activeExam, p);
     
     NSError *error;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
