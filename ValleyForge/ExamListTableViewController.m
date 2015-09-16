@@ -89,14 +89,13 @@
         NSArray *exams = [self.model storedExams];
         NSString *examName = [exams[row] name];
         cell.textLabel.text = examName;
-        // Default to first exam as the active
-        if (!self.activeExam) {
-            [self setValue:examName forKeyPath:@"self.activeExam"];
-        }
     } else {
         cell.textLabel.text = @"No exam found";
     }
-    
+    // Default to first exam as the active
+    if (!self.activeExam) {
+        self.activeExam = cell.textLabel.text;
+    }
     return cell;
 }
 
@@ -106,9 +105,9 @@
     if (row <= [[self.model storedExams] count]) {
         NSArray *exams = [self.model storedExams];
         NSString *examName = [exams[row] name];
-        [self setValue:examName forKeyPath:@"self.activeExam"];
-        NSLog(@"set activeExam: %@", self.activeExam);
-        [self didChangeValueForKey:@"activeExam"];
+        self.activeExam = examName;
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.activeExam forKey:@"activeExam"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ActiveExam" object:self userInfo:userInfo];
     } else {
         self.activeExam = @"No exam found";
     }

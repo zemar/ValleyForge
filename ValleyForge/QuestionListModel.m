@@ -57,8 +57,8 @@
         self.questionNumber = 0;
         self.examExists = NO;
         
-        // Get notified when active exam changes
-        [self addObserver:self forKeyPath:@"activeExam" options:NSKeyValueObservingOptionNew context:nil];
+        // Receive notification on active exam selection
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveActiveExam:) name:@"ActiveExam" object:nil];
     }
     
     return self;
@@ -102,8 +102,11 @@
     
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSLog(@"Observer hit.  keyPath: %@ change: %@", keyPath, change);
+- (void)receiveActiveExam:(NSNotification *)notification {
+    if ([[notification name] isEqualToString:@"ActiveExam"]) {
+        self.activeExam = [notification.userInfo objectForKey:@"activeExam"];
+        NSLog(@"Active exam changed to: %@", self.activeExam);
+    }
 }
 
 #pragma mark - Fetch from CoreData
