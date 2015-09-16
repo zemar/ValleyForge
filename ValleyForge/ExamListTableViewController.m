@@ -95,6 +95,8 @@
     // Default to first exam as the active
     if (!self.activeExam) {
         self.activeExam = cell.textLabel.text;
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.activeExam forKey:@"activeExam"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ActiveExam" object:self userInfo:userInfo];
     }
     return cell;
 }
