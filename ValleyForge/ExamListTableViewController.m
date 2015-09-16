@@ -89,13 +89,12 @@
         NSArray *exams = [self.model storedExams];
         NSString *examName = [exams[row] name];
         cell.textLabel.text = examName;
+        // Default to first exam as the active
+        if (!self.activeExam) {
+            [self setValue:examName forKeyPath:@"self.activeExam"];
+        }
     } else {
         cell.textLabel.text = @"No exam found";
-    }
-
-    // Default to first exam as the active
-    if (!self.activeExam) {
-        self.activeExam = cell.textLabel.text;
     }
     
     return cell;
@@ -103,22 +102,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
+
     if (row <= [[self.model storedExams] count]) {
         NSArray *exams = [self.model storedExams];
         NSString *examName = [exams[row] name];
-        [self willChangeValueForKey:@"activeExam"];
-        self.activeExam = examName;
-        NSLog(@"Set active exam to: %@", self.activeExam);
+        [self setValue:examName forKeyPath:@"self.activeExam"];
+        NSLog(@"set activeExam: %@", self.activeExam);
         [self didChangeValueForKey:@"activeExam"];
     } else {
         self.activeExam = @"No exam found";
     }
-}
-
-#pragma mark - KVO notifications
-+ (NSSet *)keyPathsForValuesAffectingActiveExam
-{
-    return [NSSet setWithObject:@"activeExam"];
 }
 
 @end

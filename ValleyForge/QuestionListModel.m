@@ -10,6 +10,7 @@
 #import "ExamItem.h"
 #import "Exam.h"
 #import "NSString+Extensions.m"
+#import "ExamListTableViewController.h"
 
 @import CoreData;
 
@@ -102,7 +103,7 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSLog(@"Observer hit.  keyPath: %@ object: %@ change: %@ context: %@", keyPath, object, change, context);
+    NSLog(@"Observer hit.  keyPath: %@ change: %@", keyPath, change);
 }
 
 #pragma mark - Fetch from CoreData
