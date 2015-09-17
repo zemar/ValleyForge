@@ -90,7 +90,7 @@
     if (row <= [[self.model storedExams] count]) {
         NSArray *exams = [self.model storedExams];
         NSString *examName = [exams[row] name];
-        cell.textLabel.text = examName;
+        cell.textLabel.text = [examName stringByTrimmingTabs];
     } else {
         cell.textLabel.text = @"No exam found";
     }
@@ -109,7 +109,7 @@
     if (row <= [[self.model storedExams] count]) {
         NSArray *exams = [self.model storedExams];
         NSString *examName = [exams[row] name];
-        self.activeExam = examName;
+        self.activeExam = [examName stringByTrimmingTabs];
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.activeExam forKey:@"activeExam"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"ActiveExam" object:self userInfo:userInfo];
     } else {

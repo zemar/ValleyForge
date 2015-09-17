@@ -74,7 +74,6 @@
         parser.delegate = self;
         [parser parse];
         
-        self.exam.name = defaultExamFile;
     } else {
         NSError *error;
         [NSException raise:@"Unable to open default exam file" format:@"%@", [error localizedDescription]];
@@ -89,12 +88,12 @@
         parser.delegate = self;
         [parser parse];
         
-        NSString *examString = [[NSString alloc] initWithData:examData encoding:NSUTF8StringEncoding];
-        NSRange r1 = [examString rangeOfString:@"<examName>"];
-        NSRange r2 = [examString rangeOfString:@"</examName>"];
-        NSRange sub = NSMakeRange(r1.location + r1.length, r2.location - r1.location - r1.length);
-        
-        self.exam.name = [examString substringWithRange:sub];
+//        NSString *examString = [[NSString alloc] initWithData:examData encoding:NSUTF8StringEncoding];
+//        NSRange r1 = [examString rangeOfString:@"<examName>"];
+//        NSRange r2 = [examString rangeOfString:@"</examName>"];
+//        NSRange sub = NSMakeRange(r1.location + r1.length, r2.location - r1.location - r1.length);
+//        
+//        self.exam.name = [[examString substringWithRange:sub] stringByTrimmingTabsAndNewline];
     } else {
         NSError *error;
         [NSException raise:@"Unable to read exam data" format:@"%@", [error localizedDescription]];
@@ -133,9 +132,8 @@
     NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
     request.entity = e;
     
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"(index = index) AND (examName != %@)", self.activeExam];
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"examName CONTAINS[c] %@", [self.activeExam stringByTrimmingTabsAndNewline]];
     [request setPredicate:p];
-    NSLog(@"Active exam is %@ with predicate: %@", self.activeExam, p);
     
     NSError *error;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
@@ -211,7 +209,7 @@
         // Create CoreData ExamItem entry
         ExamItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"ExamItem" inManagedObjectContext:self.context];
         self.currentExamItem = item;
-        self.currentExamItem.examName = self.exam.name;
+        self.currentExamItem.examName = [self.exam.name stringByTrimmingTabsAndNewline];
         
     }
     
@@ -232,7 +230,7 @@
         if ( [[self storedExams] indexOfObject:self.tempElement] == NSNotFound) {
             // Create CoreData Exam entry
             self.exam = [NSEntityDescription insertNewObjectForEntityForName:@"Exam" inManagedObjectContext:self.context];
-            self.exam.name = self.tempElement;
+            self.exam.name = [self.tempElement stringByTrimmingTabsAndNewline];
             NSLog(@"ExamName: %@", self.exam.name);
 
         } else {

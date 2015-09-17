@@ -29,4 +29,16 @@
     return [self substringFromIndex:i];
 }
 
+- (NSString *)stringByTrimmingTabsAndNewline {
+    NSError *error = nil;
+    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\t" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSString *trimmedString = [regex stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, [self length]) withTemplate:@""];
+ 
+    NSRegularExpression *regex2 = [NSRegularExpression regularExpressionWithPattern:@"\n" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSString *trimmedString2 = [regex2 stringByReplacingMatchesInString:trimmedString options:0 range:NSMakeRange(0, [trimmedString length]) withTemplate:@""];
+    
+    NSString *trimmedString3 = [trimmedString2 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return trimmedString3;
+}
 @end
