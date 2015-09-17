@@ -22,4 +22,8 @@
     return self;
 }
 
+- (void)viewWillLoad {
+    [self reloadData];
+}
+
 @end
