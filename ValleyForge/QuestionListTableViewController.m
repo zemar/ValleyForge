@@ -17,6 +17,8 @@
 @interface QuestionListTableViewController ()
 
 @property (nonatomic) QuestionListTableView *qltv;
+@property (strong, nonatomic) UIBarButtonItem *start;
+@property (strong, nonatomic) UIBarButtonItem *stop;
 
 @end
 
@@ -31,6 +33,17 @@
         
         self.tabBarItem.title = @"Exam";
         self.tabBarItem.image = [UIImage imageNamed:@"exam"];
+        
+        self.start = [[UIBarButtonItem alloc] initWithTitle:@"Start"
+                                              style:UIBarButtonItemStylePlain
+                                              target:self
+                                              action:@selector(start:)];
+        
+        self.stop = [[UIBarButtonItem alloc] initWithTitle:@"Stop"
+                                             style:UIBarButtonItemStylePlain
+                                             target:self
+                                             action:@selector(stop:)];
+        self.navigationItem.leftBarButtonItem = self.start;
     }
     
     return self;
@@ -61,6 +74,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Exam run
+- (void)start:(id)sender {
+    NSLog(@"Started exam");
+    self.navigationItem.leftBarButtonItem = self.stop;
+
+}
+
+- (void)stop:(id)sender {
+    NSLog(@"Stopped exam");
+    self.navigationItem.leftBarButtonItem = self.start;
+
 }
 
 #pragma mark - Table view data source
