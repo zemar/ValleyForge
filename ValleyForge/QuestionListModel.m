@@ -88,12 +88,6 @@
         parser.delegate = self;
         [parser parse];
         
-//        NSString *examString = [[NSString alloc] initWithData:examData encoding:NSUTF8StringEncoding];
-//        NSRange r1 = [examString rangeOfString:@"<examName>"];
-//        NSRange r2 = [examString rangeOfString:@"</examName>"];
-//        NSRange sub = NSMakeRange(r1.location + r1.length, r2.location - r1.location - r1.length);
-//        
-//        self.exam.name = [[examString substringWithRange:sub] stringByTrimmingTabsAndNewline];
     } else {
         NSError *error;
         [NSException raise:@"Unable to read exam data" format:@"%@", [error localizedDescription]];
@@ -204,7 +198,7 @@
 #pragma mark - NSXMLParser Delegate
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
-    if ( self.examExists == NO && [elementName isEqualToString:@"examItem"] ) {
+    if ( !self.examExists && [elementName isEqualToString:@"examItem"] ) {
         
         // Create CoreData ExamItem entry
         ExamItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"ExamItem" inManagedObjectContext:self.context];
@@ -227,27 +221,34 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     if ( [elementName isEqualToString:@"examName"]) {
-        if ( [[self storedExams] indexOfObject:self.tempElement] == NSNotFound) {
+        NSString *requestedExam = [self.tempElement stringByTrimmingTabsAndNewline];
+        for (Exam* item in [self storedExams]) {
+//            NSLog(@"%@", item.name);
+            if ([item.name containsString:requestedExam] ) {
+                self.examExists = YES;
+            }
+        }
+        
+        if ( !self.examExists) {
             // Create CoreData Exam entry
             self.exam = [NSEntityDescription insertNewObjectForEntityForName:@"Exam" inManagedObjectContext:self.context];
             self.exam.name = [self.tempElement stringByTrimmingTabsAndNewline];
-            NSLog(@"ExamName: %@", self.exam.name);
+//            NSLog(@"ExamName: %@", self.exam.name);
 
         } else {
-            self.examExists = YES;
-            NSLog(@"%@ already exists in database", self.exam.name);
+            NSLog(@"%@ already exists in database", requestedExam);
         }
     }
     
-    if ( [elementName isEqualToString:@"question"] ) {
+    if ( !self.examExists && [elementName isEqualToString:@"question"] ) {
         self.currentExamItem.question = [self.tempElement stringByTrimmingTabs];
-        NSLog(@"question%ld: %@", (long)self.questionNumber, self.currentExamItem.question);
+//        NSLog(@"question%ld: %@", (long)self.questionNumber, self.currentExamItem.question);
         self.questionNumber++;
     }
     
-    if ( [elementName isEqualToString:@"answer"] ) {
+    if ( !self.examExists && [elementName isEqualToString:@"answer"] ) {
         self.currentExamItem.answer = [self.tempElement stringByTrimmingTabs];
-        NSLog(@"Answer: %@", self.currentExamItem.answer);
+//        NSLog(@"Answer: %@", self.currentExamItem.answer);
     }
     
     NSError *error;

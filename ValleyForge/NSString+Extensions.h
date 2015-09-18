@@ -12,5 +12,6 @@
 
 - (NSString *)stringByTrimmingTabs;
 - (NSString *)stringByTrimmingLeadingWhitespace;
+- (NSString *)stringByTrimmingTabsAndNewline;
 
 @end

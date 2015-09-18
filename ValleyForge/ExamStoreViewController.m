@@ -55,8 +55,8 @@
         loadPage = NO;
         NSData *fileData = [[NSData alloc] initWithContentsOfURL:requestedURL];
         [self.model addExam:fileData];
-        NSString *fileString = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
-        NSLog(@"Download data: %@", fileString);
+//        NSString *fileString = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+//        NSLog(@"Download data: %@", fileString);
     }
 
     return loadPage;

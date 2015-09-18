@@ -48,8 +48,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerClass:[ExamListTableViewCell class] forCellReuseIdentifier:@"ExamListCell"];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,7 +92,7 @@
     if (row <= [[self.model storedExams] count]) {
         NSArray *exams = [self.model storedExams];
         NSString *examName = [exams[row] name];
-        cell.textLabel.text = [examName stringByTrimmingTabs];
+        cell.textLabel.text = [examName stringByTrimmingTabsAndNewline];
     } else {
         cell.textLabel.text = @"No exam found";
     }
