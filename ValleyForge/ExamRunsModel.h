@@ -17,5 +17,6 @@
 - (NSArray *)fetchResultsPerExam:(NSString *)examName;
 - (NSArray *)fetchResultsPerExamAndRun:(NSString *)examName runNumber:(NSInteger)runNumber;
 - (ExamRunItem *)fetchResultsQuestion:(NSString *)examName runNumber:(NSInteger)runNumber question:(NSString *)question;
+- (NSInteger)fetchRunNumber:(NSString *)examName;
 
 @end

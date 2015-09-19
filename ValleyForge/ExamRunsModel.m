@@ -103,4 +103,16 @@
     return result;
 }
 
+- (NSInteger)fetchRunNumber:(NSString *)examName {
+    NSArray *result = [self fetchResultsPerExam:examName];
+    NSMutableArray *runNumbers = [[NSMutableArray alloc] init];
+    
+    for (ExamRunItem *item in result) {
+        [runNumbers addObject:[NSNumber numberWithInteger:item.runNumber]];
+    }
+    NSInteger max = [[runNumbers valueForKeyPath:@"@max.intValue"] intValue];
+
+    return max;
+}
+
 @end
