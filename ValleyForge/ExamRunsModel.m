@@ -8,6 +8,7 @@
 
 #import "ExamRunsModel.h"
 #import "ExamRunItem.h"
+#import "NSString+Extensions.h"
 @import CoreData;
 
 @interface ExamRunsModel ()
@@ -46,14 +47,60 @@
     return self;
 }
 
-- (void)correctAnswer:(NSString *)examName question:(NSString *)question correct:(BOOL)correct {
+#pragma mark - CoreData read/writes
+- (void)addResult:(NSString *)examName runNumber:(NSInteger)runNumber question:(NSString *)question correct:(BOOL)correct {
     
     // Create CoreData ExamRun entry
     ExamRunItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"ExamRunItem" inManagedObjectContext:self.context];
     item.examName = examName;
+    item.runNumber = runNumber;
     item.question = question;
     item.correct = correct;
     
+}
+
+- (NSArray *)fetchAllResults:(NSString *)predicate {
+    // CoreData read
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamRunItem" inManagedObjectContext:self.context];
+    request.entity = e;
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:predicate];
+    [request setPredicate:p];
+    
+    NSError *error;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    
+    return result;
+}
+
+#pragma mark - Query wrappers
+- (NSArray *)fetchResultsPerExam:(NSString *)examName {
+    NSString *predicate = [NSString  stringWithFormat:@"examName CONTAINS[c] %@", [examName stringByTrimmingTabsAndNewline]];
+    
+    NSArray *result = [self fetchAllResults:predicate];
+    return result;
+}
+
+- (NSArray *)fetchResultsPerExamAndRun:(NSString *)examName runNumber:(NSInteger)runNumber {
+    NSString *predicate = [NSString  stringWithFormat:
+                           @"(examName CONTAINS[c] %@) AND (runNumber == %ld)",
+                           [examName stringByTrimmingTabsAndNewline],
+                           (long)runNumber];
+    
+    NSArray *result = [self fetchAllResults:predicate];
+    return result;
+}
+
+- (NSArray *)fetchResultsQuestion:(NSString *)examName runNumber:(NSInteger)runNumber question:(NSString *)question {
+    NSString *predicate = [NSString  stringWithFormat:
+                           @"(examName CONTAINS[c] %@) AND (runNumber == %ld) AND (question CONTAINS[c] %@)",
+                           [examName stringByTrimmingTabsAndNewline],
+                           (long)runNumber,
+                           question];
+    
+    NSArray *result = [self fetchAllResults:predicate];
+    return result;
 }
 
 @end

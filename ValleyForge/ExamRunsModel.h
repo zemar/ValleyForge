@@ -8,8 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class ExamRunItem;
+
 @interface ExamRunsModel : NSObject
 
-- (void)correctAnswer:(NSString *)examName question:(NSString *)question correct:(BOOL)correct;
+- (void)addResult:(NSString *)examName runNumber:(NSInteger)runNumber question:(NSString *)question correct:(BOOL)correct;
+- (NSArray *)fetchAllResults:(NSString *)predicate;
+- (NSArray *)fetchResultsPerExam:(NSString *)examName;
+- (NSArray *)fetchResultsPerExamAndRun:(NSString *)examName runNumber:(NSInteger)runNumber;
+- (ExamRunItem *)fetchResultsQuestion:(NSString *)examName runNumber:(NSInteger)runNumber question:(NSString *)question;
 
 @end
