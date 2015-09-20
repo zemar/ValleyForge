@@ -12,7 +12,7 @@
 @interface ExamRunItem: NSManagedObject
 
 @property (nonatomic, strong) NSString *examName;
-@property (nonatomic) NSInteger runNumber;
+@property (nonatomic) short runNumber;
 @property (nonatomic, strong) NSString *question;
 @property (nonatomic) BOOL correct;
 

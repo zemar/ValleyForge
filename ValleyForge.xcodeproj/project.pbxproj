@@ -46,8 +46,8 @@
 /* Begin PBXFileReference section */
 		271962031B6E8F0F0064C30B /* ExamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamItem.h; sourceTree = "<group>"; };
 		271962041B6E8F0F0064C30B /* ExamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamItem.m; sourceTree = "<group>"; };
-		27207B421BA120E700D369DE /* CitizenshipExamOR.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CitizenshipExamOR.xml; sourceTree = "<group>"; };
-		27207B441BA478BF00D369DE /* CitizenshipExamWI.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CitizenshipExamWI.xml; sourceTree = "<group>"; };
+		27207B421BA120E700D369DE /* CitizenshipExamOR.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; lineEnding = 0; path = CitizenshipExamOR.xml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
+		27207B441BA478BF00D369DE /* CitizenshipExamWI.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; lineEnding = 0; path = CitizenshipExamWI.xml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xml; };
 		275010831B52DBC300C0CC71 /* ValleyForge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValleyForge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		275010871B52DBC300C0CC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		275010881B52DBC300C0CC71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,13 +57,13 @@
 		2750109F1B52DBC300C0CC71 /* ValleyForgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValleyForgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275010A41B52DBC300C0CC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		275010A51B52DBC300C0CC71 /* ValleyForgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ValleyForgeTests.m; sourceTree = "<group>"; };
-		275010B11B53018300C0CC71 /* QuestionListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewController.h; sourceTree = "<group>"; };
-		275010B21B53018300C0CC71 /* QuestionListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewController.m; sourceTree = "<group>"; };
+		275010B11B53018300C0CC71 /* QuestionListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QuestionListTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		275010B21B53018300C0CC71 /* QuestionListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = QuestionListTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		275010B61B53421C00C0CC71 /* QuestionListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableView.h; sourceTree = "<group>"; };
 		275010B71B53421C00C0CC71 /* QuestionListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableView.m; sourceTree = "<group>"; };
-		275CAF101BAD026D0076B5A7 /* ExamRunsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamRunsModel.h; sourceTree = "<group>"; };
-		275CAF111BAD026D0076B5A7 /* ExamRunsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamRunsModel.m; sourceTree = "<group>"; };
-		275CAF131BAD08020076B5A7 /* ExamRunItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamRunItem.h; sourceTree = "<group>"; };
+		275CAF101BAD026D0076B5A7 /* ExamRunsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ExamRunsModel.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		275CAF111BAD026D0076B5A7 /* ExamRunsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ExamRunsModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		275CAF131BAD08020076B5A7 /* ExamRunItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ExamRunItem.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		275CAF141BAD08020076B5A7 /* ExamRunItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamRunItem.m; sourceTree = "<group>"; };
 		2773C4B51B59E0E40021762C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		2773C4B91B5C1D940021762C /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		279EB4F81B812FC300858A62 /* ExamListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamListTableViewCell.m; sourceTree = "<group>"; };
 		27F5D9301B800B11003BEDFD /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DD0446011B63D77200A82969 /* QuestionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListModel.h; sourceTree = "<group>"; };
-		DD0446021B63D77200A82969 /* QuestionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListModel.m; sourceTree = "<group>"; };
+		DD0446021B63D77200A82969 /* QuestionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = QuestionListModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewCell.h; sourceTree = "<group>"; };
 		DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableViewCell.m; sourceTree = "<group>"; };
 		DDAE5A731B826A6C0087DB13 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };

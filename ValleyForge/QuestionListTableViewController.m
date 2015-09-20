@@ -149,7 +149,7 @@
     AnswerViewController *avc = [[AnswerViewController alloc] init];
     avc.answer = [self.model answer:(NSInteger)indexPath.section];
     avc.examRunsModel = self.examRunsModel;
-    avc.question = [[self.model question:indexPath.section] stringByTrimmingTabs];
+    avc.question = [[self.model question:indexPath.section] stringByTrimmingTabsAndNewline];
     avc.activeExam = self.activeExam;
     avc.runNumber = self.runNumber;
     

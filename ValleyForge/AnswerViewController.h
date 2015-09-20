@@ -18,6 +18,6 @@
 // Used for the exam run
 @property (nonatomic, strong) NSString *question;
 @property (nonatomic, strong) NSString *activeExam;
-@property (nonatomic) NSInteger runNumber;
+@property (nonatomic) short runNumber;
 
 @end

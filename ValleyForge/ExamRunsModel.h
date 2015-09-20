@@ -12,11 +12,11 @@
 
 @interface ExamRunsModel : NSObject
 
-- (void)addResult:(NSString *)examName runNumber:(NSInteger)runNumber question:(NSString *)question correct:(BOOL)correct;
+- (void)addResult:(NSString *)examName runNumber:(short)runNumber question:(NSString *)question correct:(BOOL)correct;
 - (NSArray *)fetchAllResults:(NSString *)predicate;
 - (NSArray *)fetchResultsPerExam:(NSString *)examName;
-- (NSArray *)fetchResultsPerExamAndRun:(NSString *)examName runNumber:(NSInteger)runNumber;
-- (ExamRunItem *)fetchResultsQuestion:(NSString *)examName runNumber:(NSInteger)runNumber question:(NSString *)question;
-- (NSInteger)fetchRunNumber:(NSString *)examName;
+- (NSArray *)fetchResultsPerExamAndRun:(NSString *)examName runNumber:(short)runNumber;
+- (ExamRunItem *)fetchResultsQuestion:(NSString *)examName runNumber:(short)runNumber question:(NSString *)question;
+- (short)fetchRunNumber:(NSString *)examName;
 
 @end

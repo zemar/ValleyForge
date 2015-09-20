@@ -16,6 +16,6 @@
 @property (nonatomic, strong) QuestionListModel *model;
 @property (strong, nonatomic) NSString *activeExam;
 @property (nonatomic, strong) ExamRunsModel *examRunsModel;
-@property (nonatomic) NSInteger runNumber;
+@property (nonatomic) short runNumber;
 
 @end
