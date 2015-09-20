@@ -15,4 +15,9 @@
 @property (nonatomic) NSString *answer;
 @property (nonatomic, strong) ExamRunsModel *examRunsModel;
 
+// Used for the exam run
+@property (nonatomic, strong) NSString *question;
+@property (nonatomic, strong) NSString *activeExam;
+@property (nonatomic) NSInteger runNumber;
+
 @end

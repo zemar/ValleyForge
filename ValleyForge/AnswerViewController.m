@@ -56,10 +56,12 @@
 
 - (void)correct:(id)sender {
     [self dismiss:self];
+    [self.examRunsModel addResult:self.activeExam runNumber:self.runNumber question:self.question correct:YES];
 }
 
 - (void)incorrect:(id)sender {
     [self dismiss:self];
+    [self.examRunsModel addResult:self.activeExam runNumber:self.runNumber question:self.question correct:NO];
 }
 
 - (void)didReceiveMemoryWarning {

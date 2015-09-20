@@ -45,6 +45,9 @@
                                              target:self
                                              action:@selector(stop:)];
         self.navigationItem.leftBarButtonItem = self.start;
+        
+        // Receive notification on active exam selection
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveActiveExam:) name:@"ActiveExam" object:nil];
     }
     
     return self;
@@ -77,11 +80,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)receiveActiveExam:(NSNotification *)notification {
+    if ([[notification name] isEqualToString:@"ActiveExam"]) {
+        self.activeExam = [notification.userInfo objectForKey:@"activeExam"];
+    }
+}
+
 #pragma mark - Exam run
 - (void)start:(id)sender {
     NSLog(@"Started exam");
     self.navigationItem.leftBarButtonItem = self.stop;
-
+    NSInteger currentRun = [self.examRunsModel fetchRunNumber:self.activeExam];
+    self.runNumber = currentRun + 1;
 }
 
 - (void)stop:(id)sender {
@@ -139,6 +149,9 @@
     AnswerViewController *avc = [[AnswerViewController alloc] init];
     avc.answer = [self.model answer:(NSInteger)indexPath.section];
     avc.examRunsModel = self.examRunsModel;
+    avc.question = [[self.model question:indexPath.section] stringByTrimmingTabs];
+    avc.activeExam = self.activeExam;
+    avc.runNumber = self.runNumber;
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:avc];
     
