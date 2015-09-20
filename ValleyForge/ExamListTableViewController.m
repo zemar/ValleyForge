@@ -9,6 +9,7 @@
 #import "ExamListTableViewController.h"
 #import "ExamListTableViewCell.h"
 #import "ExamListTableView.h"
+#import "ExamResultsViewController.h"
 #import "NSString+Extensions.h"
 
 @interface ExamListTableViewController ()
@@ -114,9 +115,23 @@
         self.activeExam = [examName stringByTrimmingTabs];
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.activeExam forKey:@"activeExam"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"ActiveExam" object:self userInfo:userInfo];
+
     } else {
         self.activeExam = @"No exam found";
     }
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    ExamResultsViewController *ervc = [[ExamResultsViewController alloc] init];
+    ervc.examName  = self.activeExam;
+    ervc.examRunsModel = self.examRunsModel;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:ervc];
+    
+    navController.modalPresentationStyle = UIModalPresentationFullScreen;
+    navController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+    
+    [self presentViewController:navController animated:YES completion:NULL];
 }
 
 @end
