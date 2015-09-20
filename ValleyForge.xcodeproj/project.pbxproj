@@ -29,6 +29,7 @@
 		27D78E801BAF3D29005410CC /* ExamResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D78E7F1BAF3D29005410CC /* ExamResultsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		27D78E831BAF3D56005410CC /* ExamResultsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D78E821BAF3D56005410CC /* ExamResultsTableView.m */; settings = {ASSET_TAGS = (); }; };
 		27F5D9311B800B11003BEDFD /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F5D9301B800B11003BEDFD /* Media.xcassets */; };
+		27F71E161BAF5FC000096E2B /* ExamResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F71E151BAF5FBF00096E2B /* ExamResultsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		DD0446031B63D77200A82969 /* QuestionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0446021B63D77200A82969 /* QuestionListModel.m */; };
 		DD2968B51B5AF70C007E152E /* QuestionListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2968B41B5AF70C007E152E /* QuestionListTableViewCell.m */; };
 		DDAE5A741B826A6C0087DB13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDAE5A731B826A6C0087DB13 /* LaunchScreen.xib */; };
@@ -87,6 +88,8 @@
 		27D78E811BAF3D56005410CC /* ExamResultsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamResultsTableView.h; sourceTree = "<group>"; };
 		27D78E821BAF3D56005410CC /* ExamResultsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamResultsTableView.m; sourceTree = "<group>"; };
 		27F5D9301B800B11003BEDFD /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		27F71E141BAF5FBF00096E2B /* ExamResultsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamResultsTableViewCell.h; sourceTree = "<group>"; };
+		27F71E151BAF5FBF00096E2B /* ExamResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamResultsTableViewCell.m; sourceTree = "<group>"; };
 		DD0446011B63D77200A82969 /* QuestionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListModel.h; sourceTree = "<group>"; };
 		DD0446021B63D77200A82969 /* QuestionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = QuestionListModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		DD2968B31B5AF70C007E152E /* QuestionListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableViewCell.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				27D78E7F1BAF3D29005410CC /* ExamResultsTableViewController.m */,
 				27D78E811BAF3D56005410CC /* ExamResultsTableView.h */,
 				27D78E821BAF3D56005410CC /* ExamResultsTableView.m */,
+				27F71E141BAF5FBF00096E2B /* ExamResultsTableViewCell.h */,
+				27F71E151BAF5FBF00096E2B /* ExamResultsTableViewCell.m */,
 				275CAF131BAD08020076B5A7 /* ExamRunItem.h */,
 				275CAF141BAD08020076B5A7 /* ExamRunItem.m */,
 				275CAF101BAD026D0076B5A7 /* ExamRunsModel.h */,
@@ -326,6 +331,7 @@
 				27D78E831BAF3D56005410CC /* ExamResultsTableView.m in Sources */,
 				279EB4F61B812F7900858A62 /* ExamListTableView.m in Sources */,
 				2750108F1B52DBC300C0CC71 /* ValleyForge.xcdatamodeld in Sources */,
+				27F71E161BAF5FC000096E2B /* ExamResultsTableViewCell.m in Sources */,
 				DDB1DCFD1B823BD900CEC3C6 /* Exam.m in Sources */,
 				275CAF151BAD08020076B5A7 /* ExamRunItem.m in Sources */,
 				279EB4FA1B812FC300858A62 /* ExamListTableViewCell.m in Sources */,

@@ -8,8 +8,11 @@
 
 #import "ExamResultsTableViewController.h"
 #import "ExamResultsTableView.h"
+#import "ExamResultsTableViewCell.h"
 
 @interface ExamResultsTableViewController ()
+
+@property (nonatomic, strong) ExamResultsTableView *ertv;
 
 @end
 
@@ -19,17 +22,25 @@
     self = [super init];
     
     if (self) {
-        
+        self = [self initWithStyle:UITableViewStylePlain];
     }
     
     return self;
+}
+
+- (instancetype)initWithStyle:(UITableViewStyle)style {
+    
+    return [super initWithStyle:style];
 }
 
 - (void)loadView {
     [super loadView];
     
     CGRect frame = [UIScreen mainScreen].bounds;
-    self.view = [[ExamResultsTableView alloc] initWithFrame:frame];
+    self.ertv = [[ExamResultsTableView alloc] initWithFrame:frame];
+    self.ertv.delegate = self;
+    self.ertv.dataSource = self;
+    self.view  = self.ertv;
 
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self.view action:@selector(dismiss:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -41,6 +52,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.tableView registerClass:[ExamResultsTableViewCell class] forCellReuseIdentifier:@"ExamResultsCell"];
 
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -59,6 +72,38 @@
 
 - (void)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    short runNumber = [self.examRunsModel fetchRunNumber:self.examName];
+    return runNumber + 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)selection {
+    return 30.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)selection {
+    UIView *v = [[UIView alloc] init];
+    [v setBackgroundColor:[UIColor clearColor]];
+    return v;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ExamResultsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExamResultsCell"];
+    
+    if (cell == nil ) {
+        cell = [[ExamResultsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ExamResultsCell"];
+    }
+    
+    return cell;
 }
 
 @end
