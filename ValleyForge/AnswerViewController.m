@@ -21,10 +21,6 @@
     self = [super init];
     
     if (self) {
-        UIColor *navBarColor = [UIColor colorWithRed:(10.0f/255.0f) green:(10.0f/255.0f) blue:(10.0f/255.0f) alpha:1.0f];
-        self.navigationController.navigationBar.barTintColor = navBarColor;
-        self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-        
         UIBarButtonItem *correct = [[UIBarButtonItem alloc] initWithTitle:@"Correct"
                                                                     style:UIBarButtonItemStylePlain
                                                                     target:self
@@ -45,9 +41,21 @@
     CGRect frame = [UIScreen mainScreen].bounds;
     self.av = [[AnswerView alloc] initWithFrame:frame labelText:self.answer];
     self.view = self.av;
-    
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self.view action:@selector(dismiss:)];
+
+    UIColor *navBarColor = [UIColor colorWithRed:(10.0f/255.0f) green:(10.0f/255.0f) blue:(10.0f/255.0f) alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = navBarColor;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
+- (void)viewDidLoad {
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
+    
+    
+    [self.view addGestureRecognizer:swipeLeft];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)dismiss:(id)sender {
