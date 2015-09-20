@@ -31,6 +31,7 @@
     
     ExamListTableViewController *eltvc = [[ExamListTableViewController alloc] init];
     eltvc.model = qltvc.model;
+    eltvc.examRunsModel = qltvc.examRunsModel;
     UINavigationController *elnc = [[UINavigationController alloc] initWithRootViewController:eltvc];
     [elnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
     elnc.navigationBar.barTintColor = navBarColor;

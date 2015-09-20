@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExamRunsModel.h"
 
 @class QuestionListModel;
 
@@ -14,5 +15,6 @@
 
 @property (nonatomic, strong) QuestionListModel *model;
 @property (strong, nonatomic) NSString *activeExam;
+@property (nonatomic, strong) ExamRunsModel *examRunsModel;
 
 @end

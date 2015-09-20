@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "QuestionListModel.h"
+#import "ExamRunsModel.h"
 
 @interface ExamListTableViewController : UITableViewController
 
 @property (strong, nonatomic) QuestionListModel *model;
 @property (strong, nonatomic) NSString *activeExam;
+@property (nonatomic, strong) ExamRunsModel *examRunsModel;
 
 @end

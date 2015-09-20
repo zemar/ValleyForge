@@ -30,6 +30,7 @@
     if (self) {
         self = [self initWithStyle:UITableViewStylePlain];
         self.model = [[QuestionListModel alloc] init];
+        self.examRunsModel = [[ExamRunsModel alloc] init];
         
         self.tabBarItem.title = @"Exam";
         self.tabBarItem.image = [UIImage imageNamed:@"exam"];
@@ -137,12 +138,12 @@
     
     AnswerViewController *avc = [[AnswerViewController alloc] init];
     avc.answer = [self.model answer:(NSInteger)indexPath.section];
+    avc.examRunsModel = self.examRunsModel;
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:avc];
     
     navController.modalPresentationStyle = UIModalPresentationFullScreen;
     navController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
-
     
     [self presentViewController:navController animated:YES completion:NULL];
 }
