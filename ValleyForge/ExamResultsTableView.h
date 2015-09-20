@@ -1,5 +1,5 @@
 //
-//  ExamResultsView.h
+//  ExamResultsTableView.h
 //  ValleyForge
 //
 //  Created by mike on 9/20/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExamResultsView : UIView
+@interface ExamResultsTableView : UITableView
 
 
 

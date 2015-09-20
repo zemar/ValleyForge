@@ -1,19 +1,19 @@
 //
-//  ExamResultsViewController.m
+//  ExamResultsTableViewController.m
 //  ValleyForge
 //
 //  Created by mike on 9/20/15.
 //  Copyright © 2015 X-Tic Systems. All rights reserved.
 //
 
-#import "ExamResultsViewController.h"
-#import "ExamResultsView.h"
+#import "ExamResultsTableViewController.h"
+#import "ExamResultsTableView.h"
 
-@interface ExamResultsViewController ()
+@interface ExamResultsTableViewController ()
 
 @end
 
-@implementation ExamResultsViewController
+@implementation ExamResultsTableViewController
 
 - (instancetype)init {
     self = [super init];
@@ -29,7 +29,7 @@
     [super loadView];
     
     CGRect frame = [UIScreen mainScreen].bounds;
-    self.view = [[ExamResultsView alloc] initWithFrame:frame];
+    self.view = [[ExamResultsTableView alloc] initWithFrame:frame];
 
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self.view action:@selector(dismiss:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;

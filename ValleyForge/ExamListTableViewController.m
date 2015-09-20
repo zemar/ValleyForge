@@ -9,7 +9,7 @@
 #import "ExamListTableViewController.h"
 #import "ExamListTableViewCell.h"
 #import "ExamListTableView.h"
-#import "ExamResultsViewController.h"
+#import "ExamResultsTableViewController.h"
 #import "NSString+Extensions.h"
 
 @interface ExamListTableViewController ()
@@ -122,11 +122,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    ExamResultsViewController *ervc = [[ExamResultsViewController alloc] init];
-    ervc.examName  = self.activeExam;
-    ervc.examRunsModel = self.examRunsModel;
+    ExamResultsTableViewController *ertvc = [[ExamResultsTableViewController alloc] init];
+    ertvc.examName  = self.activeExam;
+    ertvc.examRunsModel = self.examRunsModel;
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:ervc];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:ertvc];
     
     navController.modalPresentationStyle = UIModalPresentationPopover;
     navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

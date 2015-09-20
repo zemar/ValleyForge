@@ -1,14 +1,14 @@
 //
-//  ExamResultsView.m
+//  ExamResultsTableView.m
 //  ValleyForge
 //
 //  Created by mike on 9/20/15.
 //  Copyright © 2015 X-Tic Systems. All rights reserved.
 //
 
-#import "ExamResultsView.h"
+#import "ExamResultsTableView.h"
 
-@implementation ExamResultsView
+@implementation ExamResultsTableView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

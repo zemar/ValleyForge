@@ -1,5 +1,5 @@
 //
-//  ExamResultsViewController.h
+//  ExamResultsTableViewController.h
 //  ValleyForge
 //
 //  Created by mike on 9/20/15.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ExamRunsModel.h"
 
-@interface ExamResultsViewController : UIViewController
+@interface ExamResultsTableViewController : UITableViewController
 
 @property (nonatomic, strong) ExamRunsModel *examRunsModel;
 @property (nonatomic, strong) NSString *examName;
