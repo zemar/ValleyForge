@@ -10,4 +10,8 @@
 
 @interface ExamResultsTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *runNumber;
+@property (nonatomic, strong) UILabel *correct;
+@property (nonatomic, strong) UILabel *incorrect;
+
 @end

@@ -103,6 +103,10 @@
         cell = [[ExamResultsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ExamResultsCell"];
     }
     
+    cell.runNumber.text = [NSString stringWithString:@"runNumber"];
+    cell.correct.text = [NSString stringWithString:@"correct"];
+    cell.incorrect.text = [NSString stringWithString:@"incorrect"];
+    
     return cell;
 }
 

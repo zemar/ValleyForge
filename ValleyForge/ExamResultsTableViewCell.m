@@ -15,17 +15,16 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
-        self.accessoryType = UITableViewCellAccessoryNone;
         
-        self.textLabel.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
-        self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.textLabel.numberOfLines = 4;
-        self.textLabel.textAlignment = NSTextAlignmentLeft;
-        self.textLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
-        
-        self.layer.cornerRadius = 12;
-        self.layer.masksToBounds = YES;
-        
+        self.runNumber = [[UILabel alloc] init];
+        self.correct = [[UILabel alloc] init];
+        self.incorrect = [[UILabel alloc] init];
+
+        self.runNumber.textColor = [UIColor whiteColor];
+        self.runNumber.translatesAutoresizingMaskIntoConstraints = NO;
+        self.correct.textColor = [UIColor whiteColor];
+        self.correct.textColor = [UIColor whiteColor];
+
     }
     
     return self;
@@ -38,13 +37,14 @@
     
     CGRect frame = self.frame;
     self.frame = CGRectMake(5, frame.origin.y, tv.frame.size.width - 10, frame.size.height);
+
+    [self.contentView addSubview:self.runNumber];
+    [self.contentView addSubview:self.correct];
+    [self.contentView addSubview:self.incorrect];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
+- (void)viewWillAppear {
+   
 }
-
 
 @end
