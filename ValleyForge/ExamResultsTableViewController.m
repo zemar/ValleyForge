@@ -9,6 +9,7 @@
 #import "ExamResultsTableViewController.h"
 #import "ExamResultsTableView.h"
 #import "ExamResultsTableViewCell.h"
+#import "ExamRunItem.h"
 
 @interface ExamResultsTableViewController ()
 
@@ -103,9 +104,20 @@
         cell = [[ExamResultsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ExamResultsCell"];
     }
     
-    cell.runNumber.text = [NSString stringWithString:@"runNumber"];
-    cell.correct.text = [NSString stringWithString:@"correct"];
-    cell.incorrect.text = [NSString stringWithString:@"incorrect"];
+    int correctCount = 0;
+    int incorrectCount = 0;
+    NSArray *resultsPerExam = [self.examRunsModel fetchResultsPerExam:self.examName];
+    for (ExamRunItem *item in resultsPerExam) {
+        if (item.correct) {
+            correctCount++;
+        } else {
+            incorrectCount++;
+        }
+    }
+    
+    cell.runNumber.text = [NSString stringWithFormat:@"%d", [self.examRunsModel fetchRunNumber:self.examName]];
+    cell.correct.text = [NSString stringWithFormat:@"%d", correctCount];
+    cell.incorrect.text = [NSString stringWithFormat:@"%d", incorrectCount];
     
     return cell;
 }
