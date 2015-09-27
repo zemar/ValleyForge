@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <exam>
     <examName>
-        Wisconsin
+        Texas
     </examName>
     <year>
         2015
@@ -186,8 +186,8 @@
 			Who is one of your state's U.S Senators now?
 		</question>
 		<answer>
-			1. Tammy Baldwin. 
-			2. Ron Johnson.
+			1. John Cornyn. 
+			2. Ted Cruz.
 		</answer>
 	</examItem>
 	<examItem>
@@ -211,7 +211,7 @@
 			Name your U.S Representative.
 		</question>
 		<answer>
-			Mark Pocan
+			Louis Gohmert.
 		</answer>
 	</examItem>
 	<examItem>
@@ -395,7 +395,7 @@
 			Who is the Governor of your state now?
 		</question>
 		<answer>
-			Scott Walker.
+			Greg Abbott.
 		</answer>
 	</examItem>
 	<examItem>
@@ -403,7 +403,7 @@
 			What is the Capital of your state?
 		</question>
 		<answer>
-			Madison.
+			Austin.
 		</answer>
 	</examItem>
 	<examItem>
