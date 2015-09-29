@@ -84,7 +84,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     short runNumber = [self.examRunsModel fetchRunNumbers:self.examName];
-    return runNumber + 1;
+    return runNumber;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)selection {
