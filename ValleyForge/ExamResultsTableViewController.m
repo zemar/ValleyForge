@@ -83,7 +83,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    short runNumber = [self.examRunsModel fetchRunNumber:self.examName];
+    short runNumber = [self.examRunsModel fetchRunNumbers:self.examName];
     return runNumber + 1;
 }
 
@@ -115,7 +115,7 @@
         }
     }
     
-    cell.runNumber.text = [NSString stringWithFormat:@"%d", [self.examRunsModel fetchRunNumber:self.examName]];
+    cell.runNumber.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     cell.correct.text = [NSString stringWithFormat:@"%d", correctCount];
     cell.incorrect.text = [NSString stringWithFormat:@"%d", incorrectCount];
     

@@ -112,7 +112,7 @@
     return result;
 }
 
-- (short)fetchRunNumber:(NSString *)examName {
+- (short)fetchNextRunNumber:(NSString *)examName {
     NSArray *result = [self fetchResultsPerExam:examName];
     NSMutableArray *runNumbers = [[NSMutableArray alloc] init];
     
@@ -123,7 +123,25 @@
 
 //    NSLog(@"fetchRunNumber with %@: %ld", examName, (long)max);
 
-    return max;
+    short nextRun = 0;
+    if (runNumbers.count != 0) {
+        nextRun = max + 1;
+    }
+    
+    return nextRun;
 }
 
+- (short)fetchRunNumbers:(NSString *)examName {
+    NSArray *result = [self fetchResultsPerExam:examName];
+    NSMutableArray *runNumbers = [[NSMutableArray alloc] init];
+    
+    for (ExamRunItem *item in result) {
+        [runNumbers addObject:[NSNumber numberWithInteger:item.runNumber]];
+    }
+    NSInteger max = [[runNumbers valueForKeyPath:@"@max.intValue"] intValue];
+    
+    //    NSLog(@"fetchRunNumber with %@: %ld", examName, (long)max);
+
+    return max;
+}
 @end

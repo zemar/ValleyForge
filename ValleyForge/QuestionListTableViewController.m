@@ -90,7 +90,7 @@
 - (void)start:(id)sender {
 
     self.navigationItem.leftBarButtonItem = self.stop;
-    self.runNumber = [self.examRunsModel fetchRunNumber:self.activeExam];
+    self.runNumber = [self.examRunsModel fetchNextRunNumber:self.activeExam];
     NSLog(@"Started exam for %@ runNumber:%d", self.activeExam, self.runNumber);
 }
 
