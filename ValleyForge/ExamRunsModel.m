@@ -66,7 +66,7 @@
     NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamRunItem" inManagedObjectContext:self.context];
     request.entity = e;
     
-    NSLog(@"fetchAllRsults with %@", predicate);
+//    NSLog(@"fetchAllRsults with %@", predicate);
     
     NSPredicate *p = [NSPredicate predicateWithFormat:predicate];
     [request setPredicate:p];
@@ -81,7 +81,7 @@
 - (NSArray *)fetchResultsPerExam:(NSString *)examName {
     NSString *predicate = [NSString  stringWithFormat:@"examName CONTAINS[c] \"%@\"", [examName stringByTrimmingTabsAndNewline]];
 
-    NSLog(@"fetchResultsPerExam with %@", predicate);
+//    NSLog(@"fetchResultsPerExam with %@", predicate);
 
     NSArray *result = [self fetchAllResults:predicate];
     return result;
@@ -93,7 +93,7 @@
                            [examName stringByTrimmingTabsAndNewline],
                            runNumber];
 
-    NSLog(@"fetchResultsPerExamAndRun with %@", predicate);
+//    NSLog(@"fetchResultsPerExamAndRun with %@", predicate);
 
     NSArray *result = [self fetchAllResults:predicate];
     return result;
@@ -106,7 +106,7 @@
                            runNumber,
                            question];
 
-    NSLog(@"fetchResultsQuestion with %@", predicate);
+//    NSLog(@"fetchResultsQuestion with %@", predicate);
     
     NSArray *result = [self fetchAllResults:predicate];
     return result;
@@ -121,7 +121,7 @@
     }
     NSInteger max = [[runNumbers valueForKeyPath:@"@max.intValue"] intValue];
 
-    NSLog(@"fetchRunNumber with %@: %ld", examName, (long)max);
+//    NSLog(@"fetchRunNumber with %@: %ld", examName, (long)max);
 
     return max;
 }

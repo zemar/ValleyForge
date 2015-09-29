@@ -88,10 +88,10 @@
 
 #pragma mark - Exam run
 - (void)start:(id)sender {
-    NSLog(@"Started exam");
+
     self.navigationItem.leftBarButtonItem = self.stop;
-    NSInteger currentRun = [self.examRunsModel fetchRunNumber:self.activeExam];
-    self.runNumber = currentRun + 1;
+    self.runNumber = [self.examRunsModel fetchRunNumber:self.activeExam];
+    NSLog(@"Started exam for %@ runNumber:%d", self.activeExam, self.runNumber);
 }
 
 - (void)stop:(id)sender {
