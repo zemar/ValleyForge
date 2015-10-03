@@ -156,6 +156,7 @@
     avc.question = [[self.model question:indexPath.section] stringByTrimmingTabsAndNewline];
     avc.activeExam = self.activeExam;
     avc.runNumber = self.runNumber;
+    avc.started = self.started;
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:avc];
     

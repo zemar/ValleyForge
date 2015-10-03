@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSString *question;
 @property (nonatomic, strong) NSString *activeExam;
 @property (nonatomic) short runNumber;
+@property (nonatomic) BOOL started;
 
 @end
