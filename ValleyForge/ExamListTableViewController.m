@@ -49,6 +49,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerClass:[ExamListTableViewCell class] forCellReuseIdentifier:@"ExamListCell"];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dumpResults:)];
+    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeRight];
+}
+
+- (void)dumpResults:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DumpResults" object:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

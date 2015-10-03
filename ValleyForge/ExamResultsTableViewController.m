@@ -58,12 +58,16 @@
 
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipeLeft];
+
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dumpResults:)];
+    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeRight];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss:)];
-    
-    
-    [self.view addGestureRecognizer:swipeLeft];
     [self.view addGestureRecognizer:tap];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,6 +77,10 @@
 
 - (void)dismiss:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)dumpResults:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DumpResults" object:self];
 }
 
 #pragma mark - Table view data source

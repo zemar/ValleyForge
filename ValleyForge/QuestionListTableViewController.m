@@ -75,6 +75,11 @@
     self.clearsSelectionOnViewWillAppear = NO;
     
     [self.tableView registerClass:[QuestionListTableViewCell class] forCellReuseIdentifier:@"QuestionTableViewCell"];
+
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dumpResults:)];
+    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeRight];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,6 +91,10 @@
     if ([[notification name] isEqualToString:@"ActiveExam"]) {
         self.activeExam = [notification.userInfo objectForKey:@"activeExam"];
     }
+}
+
+- (void)dumpResults:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DumpResults" object:self];
 }
 
 #pragma mark - Exam run
