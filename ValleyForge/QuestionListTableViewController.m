@@ -46,6 +46,8 @@
                                              action:@selector(stop:)];
         self.navigationItem.leftBarButtonItem = self.start;
         
+        self.started = false;
+        
         // Receive notification on active exam selection
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveActiveExam:) name:@"ActiveExam" object:nil];
     }
@@ -92,11 +94,13 @@
     self.navigationItem.leftBarButtonItem = self.stop;
     self.runNumber = [self.examRunsModel fetchNextRunNumber:self.activeExam];
     NSLog(@"Started exam for %@ runNumber:%d", self.activeExam, self.runNumber);
+    self.started = true;
 }
 
 - (void)stop:(id)sender {
     NSLog(@"Stopped exam");
     self.navigationItem.leftBarButtonItem = self.start;
+    self.started = false;
 
 }
 

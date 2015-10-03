@@ -65,6 +65,8 @@
 - (void)correct:(id)sender {
     [self dismiss:self];
     [self.examRunsModel addResult:self.activeExam runNumber:self.runNumber question:self.question correct:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DumpResults" object:self];
+
 }
 
 - (void)incorrect:(id)sender {

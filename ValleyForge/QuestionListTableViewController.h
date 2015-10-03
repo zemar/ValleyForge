@@ -17,5 +17,6 @@
 @property (strong, nonatomic) NSString *activeExam;
 @property (nonatomic, strong) ExamRunsModel *examRunsModel;
 @property (nonatomic) short runNumber;
+@property (nonatomic) BOOL started;
 
 @end

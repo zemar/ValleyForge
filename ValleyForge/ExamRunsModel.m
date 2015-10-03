@@ -41,7 +41,9 @@
         // Create managed object context
         self.context = [[NSManagedObjectContext alloc] init];
         self.context.persistentStoreCoordinator = psc;
-
+        
+        // Receive notification on active exam selection
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dumpAllResults:) name:@"DumpResults" object:nil];
     }
     
     return self;
@@ -57,7 +59,26 @@
     item.question = question;
     item.correct = correct;
     
-    NSLog(@"addResult: examName:%@ runNumber:%d question:%@ correct:%d", examName, runNumber, question, correct);
+//    NSLog(@"addResult: examName:%@ runNumber:%d question:%@ correct:%d", examName, runNumber, question, correct);
+}
+
+- (void)dumpAllResults:(NSNotification *)notification {
+    
+    if ( ![[notification name] isEqualToString:@"DumpResults"] ) {
+        return;
+    }
+    
+    // CoreData read
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [NSEntityDescription entityForName:@"ExamRunItem" inManagedObjectContext:self.context];
+    request.entity = e;
+    
+    NSError *error;
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    NSLog(@"Run Summary:");
+    for (ExamRunItem *item in result) {
+        NSLog(@"Name: %@ run: %d correct:%d\n", item.examName, item.runNumber, item.correct);
+    }
 }
 
 - (NSArray *)fetchAllResults:(NSString *)predicate {
