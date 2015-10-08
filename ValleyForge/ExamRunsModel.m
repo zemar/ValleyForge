@@ -42,6 +42,12 @@
     item.question = question;
     item.correct = correct;
     
+    // Save the object to persistent store
+    NSError *error;
+    if (![self.context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    
 //    NSLog(@"addResult: examName:%@ runNumber:%d question:%@ correct:%d", examName, runNumber, question, correct);
 }
 
