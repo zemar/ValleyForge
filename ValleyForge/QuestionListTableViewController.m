@@ -24,13 +24,13 @@
 
 @implementation QuestionListTableViewController
 
-- (instancetype)init {
+- (instancetype)initWithContext:(NSManagedObjectContext*)context {
     self = [super init];
     
     if (self) {
         self = [self initWithStyle:UITableViewStylePlain];
-        self.model = [[QuestionListModel alloc] init];
-        self.examRunsModel = [[ExamRunsModel alloc] init];
+        self.questionListModel = [[QuestionListModel alloc] initWithContext:context];
+        self.examRunsModel = [[ExamRunsModel alloc] initWithContext:context];
         
         self.tabBarItem.title = @"Exam";
         self.tabBarItem.image = [UIImage imageNamed:@"exam"];
@@ -118,7 +118,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     // If this is 0, dataSource methods are ignored!!
-    return self.model.questionCount;
+    return self.questionListModel.questionCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -135,7 +135,7 @@
         cell = [[QuestionListTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"QuestionTableViewCell"];
     }
     
-    NSString *questionText = [[self.model question:indexPath.section] stringByTrimmingTabs];
+    NSString *questionText = [[self.questionListModel question:indexPath.section] stringByTrimmingTabs];
     cell.textLabel.text = questionText;
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"question%ld", (long)indexPath.section]];
     cell.section = indexPath.section;
@@ -160,9 +160,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     AnswerViewController *avc = [[AnswerViewController alloc] init];
-    avc.answer = [self.model answer:(NSInteger)indexPath.section];
+    avc.answer = [self.questionListModel answer:(NSInteger)indexPath.section];
     avc.examRunsModel = self.examRunsModel;
-    avc.question = [[self.model question:indexPath.section] stringByTrimmingTabsAndNewline];
+    avc.question = [[self.questionListModel question:indexPath.section] stringByTrimmingTabsAndNewline];
     avc.activeExam = self.activeExam;
     avc.runNumber = self.runNumber;
     avc.started = self.started;

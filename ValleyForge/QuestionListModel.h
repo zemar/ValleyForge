@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@import CoreData;
 @class Exam;
 
 @interface QuestionListModel : NSObject <NSXMLParserDelegate>
@@ -19,5 +19,6 @@
 - (NSString *)answer:(NSInteger)index;
 - (NSInteger)questionCount;
 - (void)addExam:(NSData *)examData;
+- (instancetype)initWithContext:(NSManagedObjectContext*)context;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@import CoreData;
 
 @class ExamRunItem;
 
@@ -19,5 +20,6 @@
 - (ExamRunItem *)fetchResultsQuestion:(NSString *)examName runNumber:(short)runNumber question:(NSString *)question;
 - (short)fetchNextRunNumber:(NSString *)examName;
 - (short)fetchRunNumbers:(NSString *)examName;
+- (instancetype)initWithContext:(NSManagedObjectContext*)context;
 
 @end

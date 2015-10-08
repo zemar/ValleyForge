@@ -23,14 +23,14 @@
     
     UIColor *navBarColor = [UIColor colorWithRed:(10.0f/255.0f) green:(10.0f/255.0f) blue:(10.0f/255.0f) alpha:1.0f];
     
-    QuestionListTableViewController *qltvc = [[QuestionListTableViewController alloc] init];
+    QuestionListTableViewController *qltvc = [[QuestionListTableViewController alloc] initWithContext:self.managedObjectContext];
     UINavigationController *qlnc = [[UINavigationController alloc] initWithRootViewController:qltvc];
     [qlnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
     qlnc.navigationBar.barTintColor = navBarColor;
     qlnc.navigationBar.barStyle = UIBarStyleBlack;
     
     ExamListTableViewController *eltvc = [[ExamListTableViewController alloc] init];
-    eltvc.model = qltvc.model;
+    eltvc.model = qltvc.questionListModel;
     eltvc.examRunsModel = qltvc.examRunsModel;
     UINavigationController *elnc = [[UINavigationController alloc] initWithRootViewController:eltvc];
     [elnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
@@ -38,7 +38,7 @@
     elnc.navigationBar.barStyle = UIBarStyleBlack;
 
     ExamStoreViewController *esvc = [[ExamStoreViewController alloc] init];
-    esvc.model = qltvc.model;
+    esvc.model = qltvc.questionListModel;
     UINavigationController *esnc = [[UINavigationController alloc] initWithRootViewController:esvc];
     [esnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];
     esnc.navigationBar.barTintColor = navBarColor;

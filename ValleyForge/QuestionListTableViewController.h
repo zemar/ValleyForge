@@ -10,13 +10,16 @@
 #import "ExamRunsModel.h"
 
 @class QuestionListModel;
+@class NSManagedObjectContext;
 
 @interface QuestionListTableViewController : UITableViewController
 
-@property (nonatomic, strong) QuestionListModel *model;
+@property (nonatomic, strong) QuestionListModel *questionListModel;
 @property (strong, nonatomic) NSString *activeExam;
 @property (nonatomic, strong) ExamRunsModel *examRunsModel;
 @property (nonatomic) short runNumber;
 @property (nonatomic) BOOL started;
+
+- (instancetype)initWithContext:(NSManagedObjectContext*)context;
 
 @end

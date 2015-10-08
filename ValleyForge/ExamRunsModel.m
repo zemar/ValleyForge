@@ -9,39 +9,22 @@
 #import "ExamRunsModel.h"
 #import "ExamRunItem.h"
 #import "NSString+Extensions.h"
-@import CoreData;
 
 @interface ExamRunsModel ()
 
 @property (nonatomic, strong) NSManagedObjectContext *context;
-@property (nonatomic, strong) NSManagedObjectModel *model;
 
 @end
 
 @implementation ExamRunsModel
 
-- (instancetype)init {
+- (instancetype)initWithContext:(NSManagedObjectContext *)context {
     self = [super init];
     
     if (self) {
-        // Initialize CoreData ValleyForge.xcdatamodeld
-        self.model = [NSManagedObjectModel mergedModelFromBundles:nil];
-        NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
         
-        // SQLite file
-        NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-        NSString *path = [documentDirectory stringByAppendingPathComponent:@"examruns.data"];
-        NSURL *storageURL = [NSURL fileURLWithPath:path];
-        NSError *error;
-        
-        if (![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storageURL options:nil error:&error]) {
-            [NSException raise:@"SQLite Open Failure" format:@"%@", [error localizedDescription]];
-        }
-        
-        // Create managed object context
-        self.context = [[NSManagedObjectContext alloc] init];
-        self.context.persistentStoreCoordinator = psc;
-        
+        self.context = context;
+      
         // Receive notification on active exam selection
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dumpAllResults:) name:@"DumpResults" object:nil];
     }

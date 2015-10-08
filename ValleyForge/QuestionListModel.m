@@ -12,13 +12,10 @@
 #import "NSString+Extensions.m"
 #import "ExamListTableViewController.h"
 
-@import CoreData;
-
 @interface QuestionListModel ()
 
-@property NSMutableString *tempElement;
 @property (nonatomic, strong) NSManagedObjectContext *context;
-@property (nonatomic, strong) NSManagedObjectModel *model;
+@property NSMutableString *tempElement;
 @property (nonatomic, strong) ExamItem *currentExamItem;
 @property NSInteger questionNumber;
 @property BOOL examExists;
@@ -28,29 +25,13 @@
 
 @implementation QuestionListModel
 
-- (instancetype)init {
+- (instancetype)initWithContext:(NSManagedObjectContext *)context {
     self = [super init];
 
     if (self) {
         
-        // Initialize CoreData ValleyForge.xcdatamodeld
-        self.model = [NSManagedObjectModel mergedModelFromBundles:nil];
-        NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
+        self.context = context;
         
-        // SQLite file
-        NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-        NSString *path = [documentDirectory stringByAppendingPathComponent:@"questionlists.data"];
-        NSURL *storageURL = [NSURL fileURLWithPath:path];
-        NSError *error;
-        
-        if (![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storageURL options:nil error:&error]) {
-            [NSException raise:@"SQLite Open Failure" format:@"%@", [error localizedDescription]];
-        }
-        
-        // Create managed object context
-        self.context = [[NSManagedObjectContext alloc] init];
-        self.context.persistentStoreCoordinator = psc;
-
         if ( ![self checkForExam] ) {
             [self initializeDefaultExam];
         }
