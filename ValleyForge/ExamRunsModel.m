@@ -134,7 +134,9 @@
 //    NSLog(@"fetchRunNumber with %@: %ld", examName, (long)max);
 
     short nextRun = 0;
-    if (runNumbers.count != 0) {
+    if (runNumbers.count == 0) {
+        nextRun = 1;
+    } else {
         nextRun = max + 1;
     }
     

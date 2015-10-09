@@ -116,14 +116,16 @@
     int incorrectCount = 0;
     NSArray *resultsPerExam = [self.examRunsModel fetchResultsPerExam:self.examName];
     for (ExamRunItem *item in resultsPerExam) {
-        if (item.correct) {
-            correctCount++;
-        } else {
-            incorrectCount++;
+        if (item.runNumber == indexPath.row + 1) {
+            if (item.correct) {
+                correctCount++;
+            } else {
+                incorrectCount++;
+            }
         }
     }
     
-    cell.runNumber.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    cell.runNumber.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row + 1];
     cell.correct.text = [NSString stringWithFormat:@"%d", correctCount];
     cell.incorrect.text = [NSString stringWithFormat:@"%d", incorrectCount];
     
