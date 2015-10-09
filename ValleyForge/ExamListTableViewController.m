@@ -76,7 +76,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger examCount = [[self.model storedExams] count];
+    NSInteger examCount = [[self.questionListModel storedExams] count];
     return examCount;
 }
 
@@ -98,8 +98,8 @@
     }
 
     NSInteger row = indexPath.row;
-    if (row <= [[self.model storedExams] count]) {
-        NSArray *exams = [self.model storedExams];
+    if (row <= [[self.questionListModel storedExams] count]) {
+        NSArray *exams = [self.questionListModel storedExams];
         NSString *examName = [exams[row] name];
         cell.textLabel.text = [examName stringByTrimmingTabsAndNewline];
     } else {
@@ -117,8 +117,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
 
-    if (row <= [[self.model storedExams] count]) {
-        NSArray *exams = [self.model storedExams];
+    if (row <= [[self.questionListModel storedExams] count]) {
+        NSArray *exams = [self.questionListModel storedExams];
         NSString *examName = [exams[row] name];
         self.activeExam = [examName stringByTrimmingTabs];
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.activeExam forKey:@"activeExam"];
@@ -132,8 +132,8 @@
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
     
-    if (row <= [[self.model storedExams] count]) {
-        NSArray *exams = [self.model storedExams];
+    if (row <= [[self.questionListModel storedExams] count]) {
+        NSArray *exams = [self.questionListModel storedExams];
         NSString *examName = [exams[row] name];
         self.activeExam = [examName stringByTrimmingTabs];
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.activeExam forKey:@"activeExam"];
@@ -153,6 +153,22 @@
     navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
     [self presentViewController:navController animated:YES completion:NULL];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete object from database
+//        [self.questionListModel deleteExam:self.activeExam];
+        
+        // Remove device from table view
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 @end

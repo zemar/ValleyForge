@@ -20,5 +20,6 @@
 - (NSInteger)questionCount;
 - (void)addExam:(NSData *)examData;
 - (instancetype)initWithContext:(NSManagedObjectContext*)context;
+- (void)deleteExam:(NSString *)examName;
 
 @end

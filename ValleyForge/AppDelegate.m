@@ -30,7 +30,7 @@
     qlnc.navigationBar.barStyle = UIBarStyleBlack;
     
     ExamListTableViewController *eltvc = [[ExamListTableViewController alloc] init];
-    eltvc.model = qltvc.questionListModel;
+    eltvc.questionListModel = qltvc.questionListModel;
     eltvc.examRunsModel = qltvc.examRunsModel;
     UINavigationController *elnc = [[UINavigationController alloc] initWithRootViewController:eltvc];
     [elnc.navigationBar.topItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title"]]];

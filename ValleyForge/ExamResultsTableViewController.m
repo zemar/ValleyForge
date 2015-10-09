@@ -96,12 +96,26 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)selection {
-    return 30.0;
+    return 40.0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)selection {
     UIView *v = [[UIView alloc] init];
     [v setBackgroundColor:[UIColor clearColor]];
+
+    UILabel *runLabel = [[UILabel alloc] init];
+    runLabel.text = @"Exam Run";
+    runLabel.textColor = [UIColor whiteColor];
+    [v addSubview:runLabel];
+
+    UILabel *correctLabel = [[UILabel alloc] init];
+    correctLabel.text = @"Questions Correct";
+    [v addSubview:correctLabel];
+
+    UILabel *incorrectLabel = [[UILabel alloc] init];
+    incorrectLabel.text = @"Questions Incorrect";
+    [v addSubview:incorrectLabel];
+    
     return v;
 }
 
