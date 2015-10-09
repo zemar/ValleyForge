@@ -130,6 +130,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    
+    if (row <= [[self.model storedExams] count]) {
+        NSArray *exams = [self.model storedExams];
+        NSString *examName = [exams[row] name];
+        self.activeExam = [examName stringByTrimmingTabs];
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.activeExam forKey:@"activeExam"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ActiveExam" object:self userInfo:userInfo];
+        
+    } else {
+        self.activeExam = @"No exam found";
+    }
+    
     ExamResultsTableViewController *ertvc = [[ExamResultsTableViewController alloc] init];
     ertvc.examName  = self.activeExam;
     ertvc.examRunsModel = self.examRunsModel;
