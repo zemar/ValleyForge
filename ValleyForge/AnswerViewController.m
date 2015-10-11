@@ -45,6 +45,7 @@
     UIColor *navBarColor = [UIColor colorWithRed:(10.0f/255.0f) green:(10.0f/255.0f) blue:(10.0f/255.0f) alpha:1.0f];
     self.navigationController.navigationBar.barTintColor = navBarColor;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
 }
 
 - (void)viewDidLoad {
