@@ -12,6 +12,10 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RadialGradient" translatesAutoresizingMaskIntoConstraints="NO" id="dxS-NW-dN2">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                    <animations/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ValleyForge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zck-IN-7ab">
                     <rect key="frame" x="20" y="140" width="441" height="43"/>
                     <animations/>
@@ -19,8 +23,8 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright (c) 2015 X-Tic Systems.  All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2l-t5-T0c">
-                    <rect key="frame" x="20" y="440" width="441" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright (c) 2015 X-Tic Systems. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2l-t5-T0c">
+                    <rect key="frame" x="20" y="404" width="440" height="46"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -30,16 +34,22 @@
             <animations/>
             <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="A2l-t5-T0c" secondAttribute="bottom" constant="20" id="567-eT-Jwl"/>
+                <constraint firstAttribute="bottom" secondItem="dxS-NW-dN2" secondAttribute="bottom" id="0vT-9r-VWQ"/>
+                <constraint firstAttribute="trailing" secondItem="A2l-t5-T0c" secondAttribute="trailing" constant="20" id="6HW-Vf-ym6"/>
+                <constraint firstItem="A2l-t5-T0c" firstAttribute="leading" secondItem="3NC-kp-dYz" secondAttribute="leading" constant="20" id="ACh-2j-p2M"/>
+                <constraint firstItem="dxS-NW-dN2" firstAttribute="top" secondItem="3NC-kp-dYz" secondAttribute="top" id="AZ4-xH-a8G"/>
                 <constraint firstAttribute="centerX" secondItem="Zck-IN-7ab" secondAttribute="centerX" id="CoC-Fb-YSx"/>
-                <constraint firstAttribute="centerX" secondItem="A2l-t5-T0c" secondAttribute="centerX" id="Hph-nZ-Pl2"/>
                 <constraint firstItem="Zck-IN-7ab" firstAttribute="leading" secondItem="3NC-kp-dYz" secondAttribute="leading" constant="20" symbolic="YES" id="fFt-fE-o46"/>
+                <constraint firstItem="dxS-NW-dN2" firstAttribute="leading" secondItem="3NC-kp-dYz" secondAttribute="leading" id="lnO-Eq-9oY"/>
                 <constraint firstItem="Zck-IN-7ab" firstAttribute="centerY" secondItem="3NC-kp-dYz" secondAttribute="bottom" multiplier="1/3" constant="1" id="rOL-Sp-VLX"/>
-                <constraint firstItem="A2l-t5-T0c" firstAttribute="leading" secondItem="3NC-kp-dYz" secondAttribute="leading" constant="20" symbolic="YES" id="tap-tR-dBW"/>
+                <constraint firstAttribute="bottom" secondItem="A2l-t5-T0c" secondAttribute="bottom" constant="30" id="tal-cw-c3i"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="404" y="335"/>
         </view>
     </objects>
+    <resources>
+        <image name="RadialGradient" width="504" height="360"/>
+    </resources>
 </document>
