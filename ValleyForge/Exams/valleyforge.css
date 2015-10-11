@@ -4,6 +4,7 @@ body {
     font-size: 14px;    
 /*    background-color:#000000;*/
     background-image: url("RadialGradient.png");
+    background-repeat: no-repeat;
     color: #E0E0E0;
     font-weight: 700;
 }

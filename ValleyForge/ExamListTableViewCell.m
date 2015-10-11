@@ -24,7 +24,7 @@
 //        self.layer.masksToBounds = YES;
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
+//        self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
         self.accessoryType = UITableViewCellAccessoryDetailButton;
         
         self.textLabel.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
@@ -33,6 +33,9 @@
         self.textLabel.textAlignment = NSTextAlignmentLeft;
         self.textLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;
         
+        self.backgroundColor = [UIColor clearColor];
+        self.opaque = NO;
+        self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LinearGradient.png"]];
         //    UIImage *questionImage = [UIImage imageNamed:@"question"];
         //    cell.imageView.image = questionImage;
         

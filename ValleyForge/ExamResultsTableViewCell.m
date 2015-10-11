@@ -14,7 +14,7 @@
     if ( self = [super initWithStyle:style reuseIdentifier:reuseIdentifier] ) {
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
+//        self.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0];
         
         self.runNumber = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width / 3, self.frame.size.height)];
         self.correct = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.origin.x + self.frame.size.width / 3, self.frame.origin.y, self.frame.size.width / 3, self.frame.size.height)];
@@ -23,6 +23,10 @@
         self.runNumber.textColor = [UIColor whiteColor];
         self.correct.textColor = [UIColor whiteColor];
         self.incorrect.textColor = [UIColor whiteColor];
+        
+        self.backgroundColor = [UIColor clearColor];
+        self.opaque = NO;
+        self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LinearGradient.png"]];
     }
     
     return self;
