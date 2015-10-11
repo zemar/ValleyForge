@@ -21,7 +21,7 @@
         self.separatorInset = UIEdgeInsetsMake(0, 50, 0, 50);
         self.backgroundColor = [UIColor clearColor];
         self.opaque = NO;
-        self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"RadialGradient.png"]];
+        self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"RadialGradient"]];
     }
     
     return self;

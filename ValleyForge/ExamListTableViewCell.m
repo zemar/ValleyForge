@@ -35,7 +35,7 @@
         
         self.backgroundColor = [UIColor clearColor];
         self.opaque = NO;
-        self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LinearGradient.png"]];
+        self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LinearGradient"]];
         //    UIImage *questionImage = [UIImage imageNamed:@"question"];
         //    cell.imageView.image = questionImage;
         
