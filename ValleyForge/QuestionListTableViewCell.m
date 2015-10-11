@@ -47,6 +47,7 @@
     
     CGRect frame = self.frame;
     self.frame = CGRectMake(5, frame.origin.y, tv.frame.size.width - 10, frame.size.height);
+    self.imageView.frame = CGRectMake(20,30,28,28);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
