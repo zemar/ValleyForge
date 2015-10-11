@@ -1,127 +1,29 @@
 body {
-
-    margin: 0px;
-
-    padding: 0px;
-
-}
-
-
-.header {
-
-    height:50px; background-color:#000000; color:#ffffff;
-
-    position: relative;
-
-}
-
-
-
-.middle {
-
-    height: 400px;
-
-    padding: 0px 40px 0px 40px;
-
-}
-
-.bottom {
-
-    height:50px;
-
-    background-color: #cfd4d8;
-
-    color: #ffffff;
-
-    padding-right: 15px;
-
-}
-
-.title {
-
-    padding-top: 40px;
-
-    font-size: 38px;
-
-    color: #333333;
-
-}
-
-    .title b, .title strong {
-
-        color: #00a8ff;
-
-        font-weight: 100;
-
-    }
-
-.body {
-
-    padding-top: 25px;
-
-    font-size: 14px;
-    
-    background-color:#000000;
-
-    color: #111111;
-
+    margin: 10px;
+    padding: 0px;    
+    font-size: 14px;    
+/*    background-color:#000000;*/
+    background-image: url("RadialGradient.png");
+    color: #E0E0E0;
     font-weight: 700;
-
-    line-height: 22px;
-
 }
 
-    .body b, .body strong {
-
-
-    }
-
-a.primary {
-
-    color: #ffffff;
-
-    float: right;
-
-    margin: 10px 0px 0px 10px;
-
-    padding: 9px 15px 6px 15px;
-
-
-    font-size: 16px;
-
-    background-color: #00a8ff;
-
-    text-decoration: none;
-
-    min-width: 70px;
-
-    text-align: center;
-
+a {
+    color: #E0E0E0;
 }
 
-    a.primary:hover {
-
-        text-decoration: none;
-
-    }
-
-    a.primary:visited {
-
-        text-decoration: none;
-
-        color: #ffffff;
-
-    }
-
-a.GREY {
-
-    background-color: #6a737a;
-
+a:link {
+    color: #E0E0E0;
 }
 
-a.NONE {
-
-    display: none;
-
+a:visited {
+    color: #888888;
 }
 
+a:hover {
+    color: #2D54FF;
+}
+
+a:active {
+    color: #0000FF;
+}
