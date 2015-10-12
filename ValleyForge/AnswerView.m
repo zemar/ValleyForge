@@ -17,11 +17,12 @@
     if (self) {
 
         UIImageView *outerBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"RadialGradient"]];
+        UIImageView *innerBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"WhiteAged"]];
+
         self.backgroundColor = [UIColor clearColor];
         self.opaque = NO;
         
         self.translatesAutoresizingMaskIntoConstraints = YES;
-
 
         self.label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.origin.x + 20,
                                                                self.frame.origin.y + 100,
@@ -29,14 +30,13 @@
                                                                self.frame.size.height / 1.3)];
 
         self.label.textColor = [UIColor blackColor];
-        UIImageView *innerBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"WhiteAged"]];
         self.label.opaque = NO;
-        [self.label addSubview:innerBackground];
         self.label.attributedText = [[NSAttributedString alloc] initWithString:[text stringByTrimmingTabs]];
         self.label.numberOfLines = 0;
         self.label.translatesAutoresizingMaskIntoConstraints = NO;  // Got to have this!!!  Otherwise, extra constraints are added which conflict
         
         [self addSubview:outerBackground];
+        [self addSubview:innerBackground];
         [self addSubview:self.label];
     }
     
