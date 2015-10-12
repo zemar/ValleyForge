@@ -11,20 +11,24 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RadialGradient" translatesAutoresizingMaskIntoConstraints="NO" id="dxS-NW-dN2">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadialGradient" translatesAutoresizingMaskIntoConstraints="NO" id="dxS-NW-dN2">
+                    <rect key="frame" x="0.0" y="0.0" width="504" height="480"/>
                     <animations/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright (c) 2015 X-Tic Systems. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2l-t5-T0c">
-                    <rect key="frame" x="20" y="404" width="440" height="46"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) 2015 X-Tic Systems. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2l-t5-T0c">
+                    <rect key="frame" x="20" y="429" width="440" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="pwB-mq-jPI">
-                    <rect key="frame" x="114" y="186" width="240" height="40"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="pwB-mq-jPI">
+                    <rect key="frame" x="120" y="186" width="240" height="40"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Xus-gE-PXe"/>
+                        <constraint firstAttribute="width" constant="240" id="yif-j6-gsx"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <animations/>
@@ -34,7 +38,9 @@
                 <constraint firstAttribute="trailing" secondItem="A2l-t5-T0c" secondAttribute="trailing" constant="20" id="6HW-Vf-ym6"/>
                 <constraint firstItem="A2l-t5-T0c" firstAttribute="leading" secondItem="3NC-kp-dYz" secondAttribute="leading" constant="20" id="ACh-2j-p2M"/>
                 <constraint firstItem="dxS-NW-dN2" firstAttribute="top" secondItem="3NC-kp-dYz" secondAttribute="top" id="AZ4-xH-a8G"/>
+                <constraint firstItem="pwB-mq-jPI" firstAttribute="top" secondItem="3NC-kp-dYz" secondAttribute="top" constant="186" id="b0V-eO-OdT"/>
                 <constraint firstItem="dxS-NW-dN2" firstAttribute="leading" secondItem="3NC-kp-dYz" secondAttribute="leading" id="lnO-Eq-9oY"/>
+                <constraint firstItem="pwB-mq-jPI" firstAttribute="centerX" secondItem="3NC-kp-dYz" secondAttribute="centerX" id="qvn-FD-T5W"/>
                 <constraint firstAttribute="bottom" secondItem="A2l-t5-T0c" secondAttribute="bottom" constant="30" id="tal-cw-c3i"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
