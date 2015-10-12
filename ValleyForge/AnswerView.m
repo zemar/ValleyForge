@@ -17,7 +17,9 @@
     if (self) {
 
         UIImageView *outerBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"RadialGradient"]];
+        outerBackground.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
         UIImageView *innerBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"WhiteAged"]];
+        innerBackground.frame = CGRectMake(self.frame.origin.x + 50, self.frame.origin.y + 20, self.frame.size.width - 100, self.frame.size.height - 100);
 
         self.backgroundColor = [UIColor clearColor];
         self.opaque = NO;
