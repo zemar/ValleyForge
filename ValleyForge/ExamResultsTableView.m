@@ -18,6 +18,8 @@
         self.backgroundColor = [UIColor clearColor];
         self.opaque = NO;
         self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"RadialGradient"]];
+        self.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     }
     
     return self;
