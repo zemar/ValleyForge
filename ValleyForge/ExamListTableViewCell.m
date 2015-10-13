@@ -51,7 +51,7 @@
     UITableView *tv = (UITableView *) self.superview.superview;
     
     CGRect frame = self.frame;
-    self.frame = CGRectMake(5, frame.origin.y, tv.frame.size.width - 10, frame.size.height);
+    self.frame = CGRectMake(15, frame.origin.y, tv.frame.size.width - 30, frame.size.height);
 }
 
 @end

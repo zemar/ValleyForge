@@ -100,23 +100,31 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)selection {
-    UIView *v = [[UIView alloc] init];
-    [v setBackgroundColor:[UIColor clearColor]];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
+    [headerView setBackgroundColor:[UIColor clearColor]];
 
-    UILabel *runLabel = [[UILabel alloc] init];
-    runLabel.text = @"Exam Run";
+    UILabel *runLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, headerView.frame.size.width/3, headerView.frame.size.height)];
+    runLabel.text = @"Run";
+    runLabel.textAlignment = NSTextAlignmentLeft;
+    runLabel.backgroundColor = [UIColor clearColor];
     runLabel.textColor = [UIColor whiteColor];
-    [v addSubview:runLabel];
+    [headerView addSubview:runLabel];
 
-    UILabel *correctLabel = [[UILabel alloc] init];
-    correctLabel.text = @"Questions Correct";
-    [v addSubview:correctLabel];
+    UILabel *correctLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 0, headerView.frame.size.width/3, headerView.frame.size.height)];
+    correctLabel.text = @"Correct";
+    correctLabel.textAlignment = NSTextAlignmentLeft;
+    correctLabel.backgroundColor = [UIColor clearColor];
+    correctLabel.textColor = [UIColor whiteColor];
+    [headerView addSubview:correctLabel];
 
-    UILabel *incorrectLabel = [[UILabel alloc] init];
-    incorrectLabel.text = @"Questions Incorrect";
-    [v addSubview:incorrectLabel];
+    UILabel *incorrectLabel = [[UILabel alloc] initWithFrame:CGRectMake(240, 0, headerView.frame.size.width/3, headerView.frame.size.height)];
+    incorrectLabel.text = @"Incorrect";
+    incorrectLabel.textAlignment = NSTextAlignmentLeft;
+    incorrectLabel.backgroundColor = [UIColor clearColor];
+    incorrectLabel.textColor = [UIColor whiteColor];
+    [headerView addSubview:incorrectLabel];
     
-    return v;
+    return headerView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
