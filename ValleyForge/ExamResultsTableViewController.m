@@ -23,7 +23,7 @@
     self = [super init];
     
     if (self) {
-        self = [self initWithStyle:UITableViewStylePlain];
+//        self = [self initWithStyle:UITableViewStylePlain];
     }
     
     return self;
@@ -53,6 +53,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.tableFooterView = [[UIView alloc] init];
     
     [self.tableView registerClass:[ExamResultsTableViewCell class] forCellReuseIdentifier:@"ExamResultsCell"];
 
