@@ -28,6 +28,7 @@
         
         [webView loadRequest:[NSURLRequest requestWithURL:url]];
         self.view = webView;
+        self.view.backgroundColor = [UIColor clearColor];
         
         self.tabBarItem.title = @"Exam Store";
         self.tabBarItem.image = [UIImage imageNamed:@"store"];
