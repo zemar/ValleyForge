@@ -100,7 +100,7 @@
     NSInteger row = indexPath.row;
     if (row <= [[self.questionListModel storedExams] count]) {
         NSArray *exams = [self.questionListModel storedExams];
-        NSString *examName = [exams[row] name];
+        NSString *examName = [exams[row] examName];
         cell.textLabel.text = [examName stringByTrimmingTabsAndNewline];
     } else {
         cell.textLabel.text = @"No exam found";
@@ -119,7 +119,7 @@
 
     if (row <= [[self.questionListModel storedExams] count]) {
         NSArray *exams = [self.questionListModel storedExams];
-        NSString *examName = [exams[row] name];
+        NSString *examName = [exams[row] examName];
         self.activeExam = [examName stringByTrimmingTabs];
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.activeExam forKey:@"activeExam"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"ActiveExam" object:self userInfo:userInfo];
@@ -134,7 +134,7 @@
     
     if (row <= [[self.questionListModel storedExams] count]) {
         NSArray *exams = [self.questionListModel storedExams];
-        NSString *examName = [exams[row] name];
+        NSString *examName = [exams[row] examName];
         self.activeExam = [examName stringByTrimmingTabs];
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.activeExam forKey:@"activeExam"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"ActiveExam" object:self userInfo:userInfo];
@@ -161,10 +161,18 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger row = indexPath.row;
+    NSString *examName;
+    
+    if (row <= [[self.questionListModel storedExams] count]) {
+        NSArray *exams = [self.questionListModel storedExams];
+        examName = [[exams[row] examName] stringByTrimmingTabs];
+        
+    }
   
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-        [self.questionListModel deleteExam:self.activeExam];
+        [self.questionListModel deleteExam:examName];
         
         [tableView reloadData];
     }

@@ -12,6 +12,6 @@
 
 @interface Exam : NSManagedObject
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *examName;
 
 @end

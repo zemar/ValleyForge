@@ -9,6 +9,7 @@
 #import "QuestionListModel.h"
 #import "ExamItem.h"
 #import "Exam.h"
+#import "ExamRunItem.h"
 #import "NSString+Extensions.m"
 #import "ExamListTableViewController.h"
 
@@ -184,7 +185,7 @@
         // Create CoreData ExamItem entry
         ExamItem *item = [NSEntityDescription insertNewObjectForEntityForName:@"ExamItem" inManagedObjectContext:self.context];
         self.currentExamItem = item;
-        self.currentExamItem.examName = [self.exam.name stringByTrimmingTabsAndNewline];
+        self.currentExamItem.examName = [self.exam.examName stringByTrimmingTabsAndNewline];
         
     }
     
@@ -204,8 +205,8 @@
     if ( [elementName isEqualToString:@"examName"]) {
         NSString *requestedExam = [self.tempElement stringByTrimmingTabsAndNewline];
         for (Exam* item in [self storedExams]) {
-//            NSLog(@"%@", item.name);
-            if ([item.name containsString:requestedExam] ) {
+//            NSLog(@"%@", item.examName);
+            if ([item.examName containsString:requestedExam] ) {
                 self.examExists = YES;
             }
         }
@@ -213,8 +214,8 @@
         if ( !self.examExists) {
             // Create CoreData Exam entry
             self.exam = [NSEntityDescription insertNewObjectForEntityForName:@"Exam" inManagedObjectContext:self.context];
-            self.exam.name = [self.tempElement stringByTrimmingTabsAndNewline];
-//            NSLog(@"ExamName: %@", self.exam.name);
+            self.exam.examName = [self.tempElement stringByTrimmingTabsAndNewline];
+//            NSLog(@"ExamName: %@", self.exam.examName);
 
         } else {
             NSLog(@"%@ already exists in database", requestedExam);
@@ -259,7 +260,7 @@
     NSEntityDescription *e = [NSEntityDescription entityForName:@"Exam" inManagedObjectContext:self.context];
     request.entity = e;
     
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@", [examName stringByTrimmingTabsAndNewline]];
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"examName CONTAINS[c] %@", [examName stringByTrimmingTabsAndNewline]];
     [request setPredicate:p];
     
     NSError *error;
@@ -267,9 +268,33 @@
     
     for (Exam *exam in result) {
         
-        if ( exam.name == examName ) {
+        if ( [exam.examName stringByTrimmingTabsAndNewline] == [examName stringByTrimmingTabsAndNewline] ) {
             [self.context deleteObject:exam];
-            NSLog(@"%@ object deleted", examName);
+            NSLog(@"%@ object deleted", exam);
+        }
+    }
+    
+    request.entity = [NSEntityDescription entityForName:@"ExamItem" inManagedObjectContext:self.context];
+    [request setPredicate:p];
+    result = [self.context executeFetchRequest:request error:&error];
+    
+    for (ExamItem *item in result) {
+        
+        if ( [item.examName stringByTrimmingTabsAndNewline] == [examName stringByTrimmingTabsAndNewline] ) {
+            [self.context deleteObject:item];
+            NSLog(@"%@ object deleted", item);
+        }
+    }
+    
+    request.entity = [NSEntityDescription entityForName:@"ExamRunItem" inManagedObjectContext:self.context];
+    [request setPredicate:p];
+    result = [self.context executeFetchRequest:request error:&error];
+    
+    for (ExamRunItem *item in result) {
+        
+        if ( [item.examName stringByTrimmingTabsAndNewline] == [examName stringByTrimmingTabsAndNewline] ) {
+            [self.context deleteObject:item];
+            NSLog(@"%@ object deleted", item);
         }
     }
     

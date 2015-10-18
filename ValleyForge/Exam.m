@@ -10,6 +10,6 @@
 
 @implementation Exam
 
-@dynamic name;
+@dynamic examName;
 
 @end
