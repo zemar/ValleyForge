@@ -164,10 +164,9 @@
   
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete object from database
-//        [self.questionListModel deleteExam:self.activeExam];
+        [self.questionListModel deleteExam:self.activeExam];
         
-        // Remove device from table view
-        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadData];
     }
 }
 

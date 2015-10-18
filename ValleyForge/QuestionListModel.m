@@ -254,21 +254,6 @@
 #pragma mark - CoreData Delete
 - (void)deleteExam:(NSString *)examName {
 
-//    // CoreData read
-//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *e = [NSEntityDescription entityForName:@"Exam" inManagedObjectContext:self.context];
-//    request.entity = e;
-//    
-//    NSError *error;
-//    NSArray *result = [self.context executeFetchRequest:request error:&error];
-//    
-//    if (!result) {
-//        [NSException raise:@"Fetching stored exams failed" format:@"Reason: %@", [error localizedDescription]];
-//    }
-//    
-//    return result;
-//}
-
     // CoreData read
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *e = [NSEntityDescription entityForName:@"Exam" inManagedObjectContext:self.context];
@@ -280,6 +265,13 @@
     NSError *error;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
     
+    for (Exam *exam in result) {
+        
+        if ( exam.name == examName ) {
+            [self.context deleteObject:exam];
+            NSLog(@"%@ object deleted", examName);
+        }
+    }
     
     if ( ![self.context save:&error] ) {
         NSLog(@"Error saving: %@", [error localizedDescription]);
