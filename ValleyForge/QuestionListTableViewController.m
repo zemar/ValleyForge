@@ -137,7 +137,7 @@
     
     NSString *questionText = [[self.questionListModel question:indexPath.section] stringByTrimmingTabs];
     cell.textLabel.text = questionText;
-    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"question%ld", (long)indexPath.section]];
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"question%ld", (long)indexPath.section + 1]];
     cell.section = indexPath.section;
     
     return cell;
