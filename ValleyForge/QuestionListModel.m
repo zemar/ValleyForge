@@ -270,7 +270,7 @@
         
         if ( [exam.examName compare:examName] == NSOrderedSame ) {
             [self.context deleteObject:exam];
-            NSLog(@"%@ object deleted", exam);
+//            NSLog(@"%@ object deleted", exam);
         }
     }
     
@@ -282,7 +282,7 @@
         
         if ( [item.examName compare:examName] == NSOrderedSame ) {
             [self.context deleteObject:item];
-            NSLog(@"%@ object deleted", item);
+//            NSLog(@"%@ object deleted", item);
         }
     }
     
@@ -294,7 +294,7 @@
         
         if ( [item.examName compare:examName] == NSOrderedSame ) {
             [self.context deleteObject:item];
-            NSLog(@"%@ object deleted", item);
+//            NSLog(@"%@ object deleted", item);
         }
     }
     
