@@ -268,7 +268,7 @@
     
     for (Exam *exam in result) {
         
-        if ( [exam.examName stringByTrimmingTabsAndNewline] == [examName stringByTrimmingTabsAndNewline] ) {
+        if ( [exam.examName compare:examName] == NSOrderedSame ) {
             [self.context deleteObject:exam];
             NSLog(@"%@ object deleted", exam);
         }
@@ -280,7 +280,7 @@
     
     for (ExamItem *item in result) {
         
-        if ( [item.examName stringByTrimmingTabsAndNewline] == [examName stringByTrimmingTabsAndNewline] ) {
+        if ( [item.examName compare:examName] == NSOrderedSame ) {
             [self.context deleteObject:item];
             NSLog(@"%@ object deleted", item);
         }
@@ -292,7 +292,7 @@
     
     for (ExamRunItem *item in result) {
         
-        if ( [item.examName stringByTrimmingTabsAndNewline] == [examName stringByTrimmingTabsAndNewline] ) {
+        if ( [item.examName compare:examName] == NSOrderedSame ) {
             [self.context deleteObject:item];
             NSLog(@"%@ object deleted", item);
         }
