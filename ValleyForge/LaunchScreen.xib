@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,11 +12,11 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadialGradient" translatesAutoresizingMaskIntoConstraints="NO" id="dxS-NW-dN2">
-                    <rect key="frame" x="0.0" y="0.0" width="504" height="480"/>
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                     <animations/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) 2015 X-Tic Systems. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2l-t5-T0c">
-                    <rect key="frame" x="20" y="429" width="440" height="21"/>
+                    <rect key="frame" x="20" y="429" width="440" height="20.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -38,7 +38,9 @@
                 <constraint firstAttribute="trailing" secondItem="A2l-t5-T0c" secondAttribute="trailing" constant="20" id="6HW-Vf-ym6"/>
                 <constraint firstItem="A2l-t5-T0c" firstAttribute="leading" secondItem="3NC-kp-dYz" secondAttribute="leading" constant="20" id="ACh-2j-p2M"/>
                 <constraint firstItem="dxS-NW-dN2" firstAttribute="top" secondItem="3NC-kp-dYz" secondAttribute="top" id="AZ4-xH-a8G"/>
+                <constraint firstItem="dxS-NW-dN2" firstAttribute="leading" secondItem="3NC-kp-dYz" secondAttribute="leading" id="Uvb-EI-xRt"/>
                 <constraint firstItem="pwB-mq-jPI" firstAttribute="top" secondItem="3NC-kp-dYz" secondAttribute="top" constant="186" id="b0V-eO-OdT"/>
+                <constraint firstAttribute="trailing" secondItem="dxS-NW-dN2" secondAttribute="trailing" id="gp9-vO-1At"/>
                 <constraint firstItem="dxS-NW-dN2" firstAttribute="leading" secondItem="3NC-kp-dYz" secondAttribute="leading" id="lnO-Eq-9oY"/>
                 <constraint firstItem="pwB-mq-jPI" firstAttribute="centerX" secondItem="3NC-kp-dYz" secondAttribute="centerX" id="qvn-FD-T5W"/>
                 <constraint firstAttribute="bottom" secondItem="A2l-t5-T0c" secondAttribute="bottom" constant="30" id="tal-cw-c3i"/>

@@ -149,7 +149,7 @@
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:ertvc];
     
-    navController.modalPresentationStyle = UIModalPresentationPopover;
+    navController.modalPresentationStyle = UIModalPresentationFullScreen;
     navController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
     [self presentViewController:navController animated:YES completion:NULL];
